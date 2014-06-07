@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>72363D75-41B5-415E-B365-6A1C969F0C69</string>
+	<key>IDESourceControlProjectName</key>
+	<string>XHRefreshControl</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>F89635F9-C4CC-4C1D-9839-567F0A670D0E</key>
+		<string>https://github.com/xhzengAIB/XHRefreshControl.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>XHRefreshControl/XHRefreshControl.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>F89635F9-C4CC-4C1D-9839-567F0A670D0E</key>
+		<string>../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/xhzengAIB/XHRefreshControl.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>F89635F9-C4CC-4C1D-9839-567F0A670D0E</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>F89635F9-C4CC-4C1D-9839-567F0A670D0E</string>
+			<key>IDESourceControlWCCName</key>
+			<string>XHRefreshControl</string>
+		</dict>
+	</array>
+</dict>
+</plist>
