@@ -1,6 +1,6 @@
 //
-//  XHRefreshControlTests.m
-//  XHRefreshControlTests
+//  XHRefreshControlExampleTests.m
+//  XHRefreshControlExampleTests
 //
 //  Created by 曾 宪华 on 14-6-7.
 //  Copyright (c) 2014年 曾宪华 QQ群: (142557668) QQ:543413507  Gmail:xhzengAIB@gmail.com. All rights reserved.
@@ -8,11 +8,11 @@
 
 #import <XCTest/XCTest.h>
 
-@interface XHRefreshControlTests : XCTestCase
+@interface XHRefreshControlExampleTests : XCTestCase
 
 @end
 
-@implementation XHRefreshControlTests
+@implementation XHRefreshControlExampleTests
 
 - (void)setUp
 {

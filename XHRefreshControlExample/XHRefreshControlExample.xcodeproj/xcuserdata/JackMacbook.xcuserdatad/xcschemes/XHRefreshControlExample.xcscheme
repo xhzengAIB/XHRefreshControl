@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "AB0B33FD19429C4700EC0072"
-               BuildableName = "XHRefreshControl.app"
-               BlueprintName = "XHRefreshControl"
-               ReferencedContainer = "container:XHRefreshControl.xcodeproj">
+               BlueprintIdentifier = "AB0B344B19429D4700EC0072"
+               BuildableName = "XHRefreshControlExample.app"
+               BlueprintName = "XHRefreshControlExample"
+               ReferencedContainer = "container:XHRefreshControlExample.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -32,20 +32,20 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "AB0B341E19429C4700EC0072"
-               BuildableName = "XHRefreshControlTests.xctest"
-               BlueprintName = "XHRefreshControlTests"
-               ReferencedContainer = "container:XHRefreshControl.xcodeproj">
+               BlueprintIdentifier = "AB0B346F19429D4800EC0072"
+               BuildableName = "XHRefreshControlExampleTests.xctest"
+               BlueprintName = "XHRefreshControlExampleTests"
+               ReferencedContainer = "container:XHRefreshControlExample.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "AB0B33FD19429C4700EC0072"
-            BuildableName = "XHRefreshControl.app"
-            BlueprintName = "XHRefreshControl"
-            ReferencedContainer = "container:XHRefreshControl.xcodeproj">
+            BlueprintIdentifier = "AB0B344B19429D4700EC0072"
+            BuildableName = "XHRefreshControlExample.app"
+            BlueprintName = "XHRefreshControlExample"
+            ReferencedContainer = "container:XHRefreshControlExample.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
@@ -61,10 +61,10 @@
       <BuildableProductRunnable>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "AB0B33FD19429C4700EC0072"
-            BuildableName = "XHRefreshControl.app"
-            BlueprintName = "XHRefreshControl"
-            ReferencedContainer = "container:XHRefreshControl.xcodeproj">
+            BlueprintIdentifier = "AB0B344B19429D4700EC0072"
+            BuildableName = "XHRefreshControlExample.app"
+            BlueprintName = "XHRefreshControlExample"
+            ReferencedContainer = "container:XHRefreshControlExample.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -79,10 +79,10 @@
       <BuildableProductRunnable>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "AB0B33FD19429C4700EC0072"
-            BuildableName = "XHRefreshControl.app"
-            BlueprintName = "XHRefreshControl"
-            ReferencedContainer = "container:XHRefreshControl.xcodeproj">
+            BlueprintIdentifier = "AB0B344B19429D4700EC0072"
+            BuildableName = "XHRefreshControlExample.app"
+            BlueprintName = "XHRefreshControlExample"
+            ReferencedContainer = "container:XHRefreshControlExample.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

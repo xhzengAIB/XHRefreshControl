@@ -4,7 +4,7 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>XHRefreshControl.xcscheme</key>
+		<key>XHRefreshControlExample.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>0</integer>
@@ -12,12 +12,12 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>AB0B33FD19429C4700EC0072</key>
+		<key>AB0B344B19429D4700EC0072</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>AB0B341E19429C4700EC0072</key>
+		<key>AB0B346F19429D4800EC0072</key>
 		<dict>
 			<key>primary</key>
 			<true/>

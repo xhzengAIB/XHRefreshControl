@@ -1,0 +1,490 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		AB0B345019429D4700EC0072 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB0B344F19429D4700EC0072 /* Foundation.framework */; };
+		AB0B345219429D4700EC0072 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB0B345119429D4700EC0072 /* CoreGraphics.framework */; };
+		AB0B345419429D4700EC0072 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB0B345319429D4700EC0072 /* UIKit.framework */; };
+		AB0B345A19429D4700EC0072 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = AB0B345819429D4700EC0072 /* InfoPlist.strings */; };
+		AB0B345C19429D4700EC0072 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AB0B345B19429D4700EC0072 /* main.m */; };
+		AB0B346019429D4700EC0072 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AB0B345F19429D4700EC0072 /* AppDelegate.m */; };
+		AB0B346B19429D4700EC0072 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AB0B346A19429D4700EC0072 /* Images.xcassets */; };
+		AB0B347219429D4800EC0072 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB0B347119429D4800EC0072 /* XCTest.framework */; };
+		AB0B347319429D4800EC0072 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB0B344F19429D4700EC0072 /* Foundation.framework */; };
+		AB0B347419429D4800EC0072 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB0B345319429D4700EC0072 /* UIKit.framework */; };
+		AB0B347C19429D4800EC0072 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = AB0B347A19429D4800EC0072 /* InfoPlist.strings */; };
+		AB0B347E19429D4800EC0072 /* XHRefreshControlExampleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = AB0B347D19429D4800EC0072 /* XHRefreshControlExampleTests.m */; };
+		AB0B349019429D5E00EC0072 /* XHLoadMoreView.m in Sources */ = {isa = PBXBuildFile; fileRef = AB0B348919429D5E00EC0072 /* XHLoadMoreView.m */; };
+		AB0B349119429D5E00EC0072 /* XHRefreshCircleView.m in Sources */ = {isa = PBXBuildFile; fileRef = AB0B348B19429D5E00EC0072 /* XHRefreshCircleView.m */; };
+		AB0B349219429D5E00EC0072 /* XHRefreshControl.m in Sources */ = {isa = PBXBuildFile; fileRef = AB0B348D19429D5E00EC0072 /* XHRefreshControl.m */; };
+		AB0B349319429D5E00EC0072 /* XHRefreshView.m in Sources */ = {isa = PBXBuildFile; fileRef = AB0B348F19429D5E00EC0072 /* XHRefreshView.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		AB0B347519429D4800EC0072 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AB0B344419429D4700EC0072 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AB0B344B19429D4700EC0072;
+			remoteInfo = XHRefreshControlExample;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		AB0B344C19429D4700EC0072 /* XHRefreshControlExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = XHRefreshControlExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		AB0B344F19429D4700EC0072 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		AB0B345119429D4700EC0072 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		AB0B345319429D4700EC0072 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		AB0B345719429D4700EC0072 /* XHRefreshControlExample-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "XHRefreshControlExample-Info.plist"; sourceTree = "<group>"; };
+		AB0B345919429D4700EC0072 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		AB0B345B19429D4700EC0072 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		AB0B345D19429D4700EC0072 /* XHRefreshControlExample-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "XHRefreshControlExample-Prefix.pch"; sourceTree = "<group>"; };
+		AB0B345E19429D4700EC0072 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		AB0B345F19429D4700EC0072 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		AB0B346A19429D4700EC0072 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		AB0B347019429D4800EC0072 /* XHRefreshControlExampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = XHRefreshControlExampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		AB0B347119429D4800EC0072 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		AB0B347919429D4800EC0072 /* XHRefreshControlExampleTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "XHRefreshControlExampleTests-Info.plist"; sourceTree = "<group>"; };
+		AB0B347B19429D4800EC0072 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		AB0B347D19429D4800EC0072 /* XHRefreshControlExampleTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XHRefreshControlExampleTests.m; sourceTree = "<group>"; };
+		AB0B348819429D5E00EC0072 /* XHLoadMoreView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XHLoadMoreView.h; sourceTree = "<group>"; };
+		AB0B348919429D5E00EC0072 /* XHLoadMoreView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XHLoadMoreView.m; sourceTree = "<group>"; };
+		AB0B348A19429D5E00EC0072 /* XHRefreshCircleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XHRefreshCircleView.h; sourceTree = "<group>"; };
+		AB0B348B19429D5E00EC0072 /* XHRefreshCircleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XHRefreshCircleView.m; sourceTree = "<group>"; };
+		AB0B348C19429D5E00EC0072 /* XHRefreshControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XHRefreshControl.h; sourceTree = "<group>"; };
+		AB0B348D19429D5E00EC0072 /* XHRefreshControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XHRefreshControl.m; sourceTree = "<group>"; };
+		AB0B348E19429D5E00EC0072 /* XHRefreshView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XHRefreshView.h; sourceTree = "<group>"; };
+		AB0B348F19429D5E00EC0072 /* XHRefreshView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XHRefreshView.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		AB0B344919429D4700EC0072 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AB0B345219429D4700EC0072 /* CoreGraphics.framework in Frameworks */,
+				AB0B345419429D4700EC0072 /* UIKit.framework in Frameworks */,
+				AB0B345019429D4700EC0072 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AB0B346D19429D4800EC0072 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AB0B347219429D4800EC0072 /* XCTest.framework in Frameworks */,
+				AB0B347419429D4800EC0072 /* UIKit.framework in Frameworks */,
+				AB0B347319429D4800EC0072 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		AB0B344319429D4700EC0072 = {
+			isa = PBXGroup;
+			children = (
+				AB0B348719429D5E00EC0072 /* RefreshControl */,
+				AB0B345519429D4700EC0072 /* XHRefreshControlExample */,
+				AB0B347719429D4800EC0072 /* XHRefreshControlExampleTests */,
+				AB0B344E19429D4700EC0072 /* Frameworks */,
+				AB0B344D19429D4700EC0072 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		AB0B344D19429D4700EC0072 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				AB0B344C19429D4700EC0072 /* XHRefreshControlExample.app */,
+				AB0B347019429D4800EC0072 /* XHRefreshControlExampleTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		AB0B344E19429D4700EC0072 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				AB0B344F19429D4700EC0072 /* Foundation.framework */,
+				AB0B345119429D4700EC0072 /* CoreGraphics.framework */,
+				AB0B345319429D4700EC0072 /* UIKit.framework */,
+				AB0B347119429D4800EC0072 /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		AB0B345519429D4700EC0072 /* XHRefreshControlExample */ = {
+			isa = PBXGroup;
+			children = (
+				AB0B345E19429D4700EC0072 /* AppDelegate.h */,
+				AB0B345F19429D4700EC0072 /* AppDelegate.m */,
+				AB0B346A19429D4700EC0072 /* Images.xcassets */,
+				AB0B345619429D4700EC0072 /* Supporting Files */,
+			);
+			path = XHRefreshControlExample;
+			sourceTree = "<group>";
+		};
+		AB0B345619429D4700EC0072 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				AB0B345719429D4700EC0072 /* XHRefreshControlExample-Info.plist */,
+				AB0B345819429D4700EC0072 /* InfoPlist.strings */,
+				AB0B345B19429D4700EC0072 /* main.m */,
+				AB0B345D19429D4700EC0072 /* XHRefreshControlExample-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		AB0B347719429D4800EC0072 /* XHRefreshControlExampleTests */ = {
+			isa = PBXGroup;
+			children = (
+				AB0B347D19429D4800EC0072 /* XHRefreshControlExampleTests.m */,
+				AB0B347819429D4800EC0072 /* Supporting Files */,
+			);
+			path = XHRefreshControlExampleTests;
+			sourceTree = "<group>";
+		};
+		AB0B347819429D4800EC0072 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				AB0B347919429D4800EC0072 /* XHRefreshControlExampleTests-Info.plist */,
+				AB0B347A19429D4800EC0072 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		AB0B348719429D5E00EC0072 /* RefreshControl */ = {
+			isa = PBXGroup;
+			children = (
+				AB0B348819429D5E00EC0072 /* XHLoadMoreView.h */,
+				AB0B348919429D5E00EC0072 /* XHLoadMoreView.m */,
+				AB0B348A19429D5E00EC0072 /* XHRefreshCircleView.h */,
+				AB0B348B19429D5E00EC0072 /* XHRefreshCircleView.m */,
+				AB0B348C19429D5E00EC0072 /* XHRefreshControl.h */,
+				AB0B348D19429D5E00EC0072 /* XHRefreshControl.m */,
+				AB0B348E19429D5E00EC0072 /* XHRefreshView.h */,
+				AB0B348F19429D5E00EC0072 /* XHRefreshView.m */,
+			);
+			name = RefreshControl;
+			path = ../RefreshControl;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		AB0B344B19429D4700EC0072 /* XHRefreshControlExample */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AB0B348119429D4800EC0072 /* Build configuration list for PBXNativeTarget "XHRefreshControlExample" */;
+			buildPhases = (
+				AB0B344819429D4700EC0072 /* Sources */,
+				AB0B344919429D4700EC0072 /* Frameworks */,
+				AB0B344A19429D4700EC0072 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = XHRefreshControlExample;
+			productName = XHRefreshControlExample;
+			productReference = AB0B344C19429D4700EC0072 /* XHRefreshControlExample.app */;
+			productType = "com.apple.product-type.application";
+		};
+		AB0B346F19429D4800EC0072 /* XHRefreshControlExampleTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AB0B348419429D4800EC0072 /* Build configuration list for PBXNativeTarget "XHRefreshControlExampleTests" */;
+			buildPhases = (
+				AB0B346C19429D4800EC0072 /* Sources */,
+				AB0B346D19429D4800EC0072 /* Frameworks */,
+				AB0B346E19429D4800EC0072 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				AB0B347619429D4800EC0072 /* PBXTargetDependency */,
+			);
+			name = XHRefreshControlExampleTests;
+			productName = XHRefreshControlExampleTests;
+			productReference = AB0B347019429D4800EC0072 /* XHRefreshControlExampleTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		AB0B344419429D4700EC0072 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = "曾宪华 QQ群: (142557668) QQ:543413507  Gmail:xhzengAIB@gmail.com";
+				TargetAttributes = {
+					AB0B346F19429D4800EC0072 = {
+						TestTargetID = AB0B344B19429D4700EC0072;
+					};
+				};
+			};
+			buildConfigurationList = AB0B344719429D4700EC0072 /* Build configuration list for PBXProject "XHRefreshControlExample" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = AB0B344319429D4700EC0072;
+			productRefGroup = AB0B344D19429D4700EC0072 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				AB0B344B19429D4700EC0072 /* XHRefreshControlExample */,
+				AB0B346F19429D4800EC0072 /* XHRefreshControlExampleTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		AB0B344A19429D4700EC0072 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AB0B346B19429D4700EC0072 /* Images.xcassets in Resources */,
+				AB0B345A19429D4700EC0072 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AB0B346E19429D4800EC0072 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AB0B347C19429D4800EC0072 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		AB0B344819429D4700EC0072 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AB0B349119429D5E00EC0072 /* XHRefreshCircleView.m in Sources */,
+				AB0B349219429D5E00EC0072 /* XHRefreshControl.m in Sources */,
+				AB0B346019429D4700EC0072 /* AppDelegate.m in Sources */,
+				AB0B349019429D5E00EC0072 /* XHLoadMoreView.m in Sources */,
+				AB0B349319429D5E00EC0072 /* XHRefreshView.m in Sources */,
+				AB0B345C19429D4700EC0072 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AB0B346C19429D4800EC0072 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AB0B347E19429D4800EC0072 /* XHRefreshControlExampleTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		AB0B347619429D4800EC0072 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AB0B344B19429D4700EC0072 /* XHRefreshControlExample */;
+			targetProxy = AB0B347519429D4800EC0072 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		AB0B345819429D4700EC0072 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AB0B345919429D4700EC0072 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		AB0B347A19429D4800EC0072 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AB0B347B19429D4800EC0072 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		AB0B347F19429D4800EC0072 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		AB0B348019429D4800EC0072 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		AB0B348219429D4800EC0072 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "XHRefreshControlExample/XHRefreshControlExample-Prefix.pch";
+				INFOPLIST_FILE = "XHRefreshControlExample/XHRefreshControlExample-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		AB0B348319429D4800EC0072 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "XHRefreshControlExample/XHRefreshControlExample-Prefix.pch";
+				INFOPLIST_FILE = "XHRefreshControlExample/XHRefreshControlExample-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		AB0B348519429D4800EC0072 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/XHRefreshControlExample.app/XHRefreshControlExample";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "XHRefreshControlExample/XHRefreshControlExample-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "XHRefreshControlExampleTests/XHRefreshControlExampleTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		AB0B348619429D4800EC0072 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/XHRefreshControlExample.app/XHRefreshControlExample";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "XHRefreshControlExample/XHRefreshControlExample-Prefix.pch";
+				INFOPLIST_FILE = "XHRefreshControlExampleTests/XHRefreshControlExampleTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		AB0B344719429D4700EC0072 /* Build configuration list for PBXProject "XHRefreshControlExample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AB0B347F19429D4800EC0072 /* Debug */,
+				AB0B348019429D4800EC0072 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AB0B348119429D4800EC0072 /* Build configuration list for PBXNativeTarget "XHRefreshControlExample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AB0B348219429D4800EC0072 /* Debug */,
+				AB0B348319429D4800EC0072 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		AB0B348419429D4800EC0072 /* Build configuration list for PBXNativeTarget "XHRefreshControlExampleTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AB0B348519429D4800EC0072 /* Debug */,
+				AB0B348619429D4800EC0072 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = AB0B344419429D4700EC0072 /* Project object */;
+}
