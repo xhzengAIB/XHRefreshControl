@@ -23,6 +23,11 @@
 		AB0B349119429D5E00EC0072 /* XHRefreshCircleView.m in Sources */ = {isa = PBXBuildFile; fileRef = AB0B348B19429D5E00EC0072 /* XHRefreshCircleView.m */; };
 		AB0B349219429D5E00EC0072 /* XHRefreshControl.m in Sources */ = {isa = PBXBuildFile; fileRef = AB0B348D19429D5E00EC0072 /* XHRefreshControl.m */; };
 		AB0B349319429D5E00EC0072 /* XHRefreshView.m in Sources */ = {isa = PBXBuildFile; fileRef = AB0B348F19429D5E00EC0072 /* XHRefreshView.m */; };
+		ABCFC7FB194505B100E44551 /* XHBaseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ABCFC7F8194505B100E44551 /* XHBaseTableViewController.m */; };
+		ABCFC7FC194505B100E44551 /* XHPullRefreshTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ABCFC7FA194505B100E44551 /* XHPullRefreshTableViewController.m */; };
+		ABCFC7FF1945066800E44551 /* XHFoundationCommon.m in Sources */ = {isa = PBXBuildFile; fileRef = ABCFC7FE1945066800E44551 /* XHFoundationCommon.m */; };
+		ABCFC802194506CC00E44551 /* XHDemoTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ABCFC801194506CC00E44551 /* XHDemoTableViewController.m */; };
+		ABCFC8051945077D00E44551 /* XHRootTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ABCFC8041945077D00E44551 /* XHRootTableViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +65,16 @@
 		AB0B348D19429D5E00EC0072 /* XHRefreshControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XHRefreshControl.m; sourceTree = "<group>"; };
 		AB0B348E19429D5E00EC0072 /* XHRefreshView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XHRefreshView.h; sourceTree = "<group>"; };
 		AB0B348F19429D5E00EC0072 /* XHRefreshView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XHRefreshView.m; sourceTree = "<group>"; };
+		ABCFC7F7194505B100E44551 /* XHBaseTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XHBaseTableViewController.h; sourceTree = "<group>"; };
+		ABCFC7F8194505B100E44551 /* XHBaseTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XHBaseTableViewController.m; sourceTree = "<group>"; };
+		ABCFC7F9194505B100E44551 /* XHPullRefreshTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XHPullRefreshTableViewController.h; sourceTree = "<group>"; };
+		ABCFC7FA194505B100E44551 /* XHPullRefreshTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XHPullRefreshTableViewController.m; sourceTree = "<group>"; };
+		ABCFC7FD1945066800E44551 /* XHFoundationCommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XHFoundationCommon.h; sourceTree = "<group>"; };
+		ABCFC7FE1945066800E44551 /* XHFoundationCommon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XHFoundationCommon.m; sourceTree = "<group>"; };
+		ABCFC800194506CC00E44551 /* XHDemoTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XHDemoTableViewController.h; sourceTree = "<group>"; };
+		ABCFC801194506CC00E44551 /* XHDemoTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XHDemoTableViewController.m; sourceTree = "<group>"; };
+		ABCFC8031945077D00E44551 /* XHRootTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XHRootTableViewController.h; sourceTree = "<group>"; };
+		ABCFC8041945077D00E44551 /* XHRootTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XHRootTableViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +137,16 @@
 			children = (
 				AB0B345E19429D4700EC0072 /* AppDelegate.h */,
 				AB0B345F19429D4700EC0072 /* AppDelegate.m */,
+				ABCFC7FD1945066800E44551 /* XHFoundationCommon.h */,
+				ABCFC7FE1945066800E44551 /* XHFoundationCommon.m */,
+				ABCFC7F7194505B100E44551 /* XHBaseTableViewController.h */,
+				ABCFC7F8194505B100E44551 /* XHBaseTableViewController.m */,
+				ABCFC7F9194505B100E44551 /* XHPullRefreshTableViewController.h */,
+				ABCFC7FA194505B100E44551 /* XHPullRefreshTableViewController.m */,
+				ABCFC800194506CC00E44551 /* XHDemoTableViewController.h */,
+				ABCFC801194506CC00E44551 /* XHDemoTableViewController.m */,
+				ABCFC8031945077D00E44551 /* XHRootTableViewController.h */,
+				ABCFC8041945077D00E44551 /* XHRootTableViewController.m */,
 				AB0B346A19429D4700EC0072 /* Images.xcassets */,
 				AB0B345619429D4700EC0072 /* Supporting Files */,
 			);
@@ -269,11 +294,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ABCFC7FC194505B100E44551 /* XHPullRefreshTableViewController.m in Sources */,
+				ABCFC7FF1945066800E44551 /* XHFoundationCommon.m in Sources */,
+				ABCFC8051945077D00E44551 /* XHRootTableViewController.m in Sources */,
 				AB0B349119429D5E00EC0072 /* XHRefreshCircleView.m in Sources */,
 				AB0B349219429D5E00EC0072 /* XHRefreshControl.m in Sources */,
+				ABCFC7FB194505B100E44551 /* XHBaseTableViewController.m in Sources */,
 				AB0B346019429D4700EC0072 /* AppDelegate.m in Sources */,
 				AB0B349019429D5E00EC0072 /* XHLoadMoreView.m in Sources */,
 				AB0B349319429D5E00EC0072 /* XHRefreshView.m in Sources */,
+				ABCFC802194506CC00E44551 /* XHDemoTableViewController.m in Sources */,
 				AB0B345C19429D4700EC0072 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
