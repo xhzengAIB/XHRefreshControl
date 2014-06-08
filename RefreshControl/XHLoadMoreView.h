@@ -12,4 +12,8 @@
 
 @property (nonatomic, strong) UIButton *loadMoreButton;
 
+- (void)startLoading;
+
+- (void)endLoading;
+
 @end

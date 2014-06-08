@@ -160,14 +160,14 @@
 		AB0B348719429D5E00EC0072 /* RefreshControl */ = {
 			isa = PBXGroup;
 			children = (
-				AB0B348819429D5E00EC0072 /* XHLoadMoreView.h */,
-				AB0B348919429D5E00EC0072 /* XHLoadMoreView.m */,
-				AB0B348A19429D5E00EC0072 /* XHRefreshCircleView.h */,
-				AB0B348B19429D5E00EC0072 /* XHRefreshCircleView.m */,
 				AB0B348C19429D5E00EC0072 /* XHRefreshControl.h */,
 				AB0B348D19429D5E00EC0072 /* XHRefreshControl.m */,
 				AB0B348E19429D5E00EC0072 /* XHRefreshView.h */,
 				AB0B348F19429D5E00EC0072 /* XHRefreshView.m */,
+				AB0B348A19429D5E00EC0072 /* XHRefreshCircleView.h */,
+				AB0B348B19429D5E00EC0072 /* XHRefreshCircleView.m */,
+				AB0B348819429D5E00EC0072 /* XHLoadMoreView.h */,
+				AB0B348919429D5E00EC0072 /* XHLoadMoreView.m */,
 			);
 			name = RefreshControl;
 			path = ../RefreshControl;
@@ -475,6 +475,7 @@
 				AB0B348319429D4800EC0072 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		AB0B348419429D4800EC0072 /* Build configuration list for PBXNativeTarget "XHRefreshControlExampleTests" */ = {
 			isa = XCConfigurationList;
@@ -483,6 +484,7 @@
 				AB0B348619429D4800EC0072 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

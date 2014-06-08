@@ -13,6 +13,7 @@
 // 1、是否加载中
 // 2、将要开始下拉刷新的方法
 // 3、将要开始上提加载更多的方法
+// 4、最后更新数据的时间
 
 // 可选实现的delegate
 // 1、是否支持下拉刷新
@@ -46,6 +47,13 @@ typedef NS_ENUM(NSInteger, XHRefreshViewLayerType) {
  *  3、将要开始上提加载更多的方法
  */
 - (void)beginLoadMoreRefreshing;
+
+/**
+ *  4、最后更新数据的时间
+ *
+ *  @return 返回缓存最后更新某个页面的时间
+ */
+- (NSDate *)lastUpdateTime;
 
 @optional
 /**
