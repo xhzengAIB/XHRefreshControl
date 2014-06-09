@@ -98,10 +98,11 @@ typedef NS_ENUM(NSInteger, XHRefreshState) {
 #pragma mark - Load More Refreshing Method
 
 - (void)startLoadMoreRefreshing {
-    NSLog(@"进入上提多少次");
-//    if (self.loadMoreRefreshedCount < self.autoLoadMoreRefreshedCount) {
+    if (self.loadMoreRefreshedCount < self.autoLoadMoreRefreshedCount) {
         [self callBeginLoadMoreRefreshing];
-//    }
+    } else {
+        [self.loadMoreView configuraManualState];
+    }
 }
 
 - (void)callBeginLoadMoreRefreshing {
@@ -319,11 +320,11 @@ typedef NS_ENUM(NSInteger, XHRefreshState) {
         if (currentPostion > 0) {
             
             CGRect bounds = self.scrollView.bounds;//边界
-
+            
             CGSize size = self.scrollView.contentSize;//滚动视图内容区域size
-
+            
             UIEdgeInsets inset = self.scrollView.contentInset;//视图周围额外的滚动视图区域
-
+            
             float y = currentPostion + bounds.size.height + inset. bottom;
             
             //判断是否滚动到底部
