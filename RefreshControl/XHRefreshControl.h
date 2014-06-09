@@ -58,14 +58,14 @@ typedef NS_ENUM(NSInteger, XHRefreshViewLayerType) {
 /**
  *  1、是否支持下拉刷新
  *
- *  @return 如果没有实现该delegate方法，默认是不支持下拉的，为NO
+ *  @return 如果没有实现该delegate方法，默认是支持下拉的，为YES
  */
 - (BOOL)isPullDownRefreshed;
 
 /**
  *  2、是否支持上提加载更多
  *
- *  @return 如果没有实现该delegate方法，默认是不支持上提加载更多的，为NO
+ *  @return 如果没有实现该delegate方法，默认是支持上提加载更多的，为YES
  */
 - (BOOL)isLoadMoreRefreshed;
 
