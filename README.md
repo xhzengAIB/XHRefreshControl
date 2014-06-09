@@ -1,3 +1,4 @@
+![image](https://github.com/xhzengAIB/LearnEnglish/raw/master/Screenshots/XHRefreshControl.gif)
 XHRefreshControl
 ================
 
