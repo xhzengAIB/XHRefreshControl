@@ -65,10 +65,16 @@
 
 - (void)beginLoadMoreRefreshing {
     self.requestCurrentPage ++;
+    [self loadDataSource];
 }
 
 - (NSDate *)lastUpdateTime {
     return [NSDate date];
+}
+
+- (BOOL)keepiOS7NewApiCharacter {
+    BOOL keeped = [[[UIDevice currentDevice] systemVersion] integerValue] >= 7.0;
+    return keeped;
 }
 
 @end

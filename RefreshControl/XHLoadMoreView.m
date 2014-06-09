@@ -36,12 +36,12 @@
         _loadMoreButton.titleLabel.font = [UIFont systemFontOfSize:16];
         [_loadMoreButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
         [_loadMoreButton setBackgroundColor:[UIColor colorWithWhite:0.922 alpha:1.000]];
-        _loadMoreButton.layer.borderColor = [UIColor colorWithWhite:0.867 alpha:1.000].CGColor;
-        _loadMoreButton.layer.borderWidth = 1;
-        _loadMoreButton.layer.shadowColor = [UIColor colorWithWhite:0.867 alpha:1.000].CGColor;
-        _loadMoreButton.layer.shadowOffset = CGSizeMake(1, 1);
-        _loadMoreButton.layer.shadowRadius = 1;
-        _loadMoreButton.layer.shadowOpacity = 1;
+//        _loadMoreButton.layer.borderColor = [UIColor colorWithWhite:0.867 alpha:1.000].CGColor;
+//        _loadMoreButton.layer.borderWidth = 1;
+//        _loadMoreButton.layer.shadowColor = [UIColor colorWithWhite:0.867 alpha:1.000].CGColor;
+//        _loadMoreButton.layer.shadowOffset = CGSizeMake(1, 1);
+//        _loadMoreButton.layer.shadowRadius = 1;
+//        _loadMoreButton.layer.shadowOpacity = 1;
     }
     return _loadMoreButton;
 }
@@ -61,7 +61,7 @@
     self = [super initWithFrame:frame];
     if (self) {
         // Initialization code
-        self.backgroundColor = [UIColor redColor];
+        self.backgroundColor = [UIColor whiteColor];
         [self addSubview:self.loadMoreButton];
         [self addSubview:self.activityIndicatorView];
         [self endLoading];

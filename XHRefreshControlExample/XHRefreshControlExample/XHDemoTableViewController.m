@@ -21,9 +21,14 @@
         sleep(2);
         dispatch_async(dispatch_get_main_queue(), ^{
             self.isDataLoading = NO;
-            self.dataSource = dataSource;
+            if (self.requestCurrentPage) {
+                [self.dataSource addObjectsFromArray:dataSource];
+                [self endLoadMoreRefreshing];
+            } else {
+                self.dataSource = dataSource;
+                [self endPullDownRefreshing];
+            }
             [self.tableView reloadData];
-            [self endPullDownRefreshing];
         });
     });
 }

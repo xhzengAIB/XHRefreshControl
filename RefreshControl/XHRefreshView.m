@@ -18,9 +18,7 @@
 
 - (XHRefreshCircleView *)refreshCircleView {
     if (!_refreshCircleView) {
-        _refreshCircleView = [[XHRefreshCircleView alloc] initWithFrame:CGRectMake((CGRectGetWidth(self.bounds) - 20) / 2 - 30, (CGRectGetHeight(self.bounds) - 20) / 2 - 5, 20, 20)];
-        _refreshCircleView.heightBeginToRefresh = HEIGHT_BEGIN_TO_REFRESH - HEIGHT_BEGIN_TO_DRAW_CIRCLE;
-        _refreshCircleView.offsetY = 0;
+        _refreshCircleView = [[XHRefreshCircleView alloc] initWithFrame:CGRectMake((CGRectGetWidth(self.bounds) - kXHRefreshCircleViewHeight) / 2 - 30, (CGRectGetHeight(self.bounds) - kXHRefreshCircleViewHeight) / 2 - 5, kXHRefreshCircleViewHeight, kXHRefreshCircleViewHeight)];
     }
     return _refreshCircleView;
 }
