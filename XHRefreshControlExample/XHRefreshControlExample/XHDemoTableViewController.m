@@ -70,7 +70,7 @@
         
     }
     if (indexPath.row < self.dataSource.count) {
-        cell.textLabel.text = (indexPath.row % 2) ? @"曾宪华" : @"Aevit吴盛潮i";
+        cell.textLabel.text = (indexPath.row % 2) ? @"曾宪华" : @"xhzengAIB@gmail.com";
         cell.detailTextLabel.text = self.dataSource[indexPath.row];
     }
     
