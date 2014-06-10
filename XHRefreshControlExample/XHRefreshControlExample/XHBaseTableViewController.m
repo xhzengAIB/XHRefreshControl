@@ -50,6 +50,8 @@
         _tableView = [[UITableView alloc] initWithFrame:tableViewFrame style:self.tableViewStyle];
         _tableView.delegate = self;
         _tableView.dataSource = self;
+        
+        _tableView.tableFooterView = [[UIView alloc] init];
         if (![self validateSeparatorInset]) {
             if (self.tableViewStyle == UITableViewStyleGrouped) {
                 UIView *backgroundView = [[UIView alloc] initWithFrame:_tableView.bounds];

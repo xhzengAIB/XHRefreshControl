@@ -146,6 +146,9 @@ typedef NS_ENUM(NSInteger, XHRefreshState) {
         
         self.refreshState = XHRefreshStateNormal;
         
+        self.refreshView.refreshCircleView.offsetY = 0;
+        [self.refreshView.refreshCircleView setNeedsDisplay];
+        
         if (self.refreshView.refreshCircleView) {
             [self.refreshView.refreshCircleView.layer removeAllAnimations];
         }

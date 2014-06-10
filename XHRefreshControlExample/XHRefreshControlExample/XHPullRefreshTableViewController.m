@@ -87,7 +87,7 @@
 }
 
 - (BOOL)isLoadMoreRefreshed {
-    return NO;
+    return YES;
 }
 
 - (XHRefreshViewLayerType)refreshViewLayerType {

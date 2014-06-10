@@ -61,6 +61,9 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
     if (!cell) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:cellIdentifier];
+        cell.backgroundColor = [UIColor whiteColor];
+        cell.contentView.backgroundColor = [UIColor whiteColor];
+        cell.backgroundColor = [UIColor whiteColor];
         cell.textLabel.font = [UIFont systemFontOfSize:15];
         
         cell.detailTextLabel.font = [UIFont systemFontOfSize:12];
