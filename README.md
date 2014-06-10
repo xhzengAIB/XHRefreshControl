@@ -4,6 +4,15 @@ XHRefreshControl
 
 XHRefreshControl 是一款高扩展性、低耦合度的下拉刷新、上提加载更多的组件。
 
+## Podfile
+
+[CocosPods](http://cocosPods.org) is the recommended method to install XHRefreshControl, just add the following line to `Podfile`
+
+```
+pod 'XHRefreshControl'
+```
+
+and run `pod install`, then you're all done!
 
 ## How to use
 ```objc
