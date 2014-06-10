@@ -415,12 +415,9 @@ typedef NS_ENUM(NSInteger, XHRefreshState) {
             }
         }
     } else if ([keyPath isEqualToString:@"contentInset"]) {
-        UIEdgeInsets contentInset = [[change valueForKey:NSKeyValueChangeNewKey] UIEdgeInsetsValue];
-        NSLog(@"contentInset : %@", NSStringFromUIEdgeInsets(contentInset));
     } else if ([keyPath isEqualToString:@"contentSize"]) {
         if (self.isLoadMoreRefreshed) {
             CGSize contentSize = [[change valueForKey:NSKeyValueChangeNewKey] CGSizeValue];
-            NSLog(@"contentSize : %@", NSStringFromCGSize(contentSize));
             if (contentSize.height > CGRectGetHeight(self.scrollView.frame)) {
                 CGRect loadMoreViewFrame = self.loadMoreView.frame;
                 loadMoreViewFrame.origin.y = contentSize.height;
