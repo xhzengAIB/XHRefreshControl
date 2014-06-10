@@ -65,8 +65,13 @@ typedef NS_ENUM(NSInteger, XHRefreshState) {
         self.pullDownRefreshing = YES;
         
         NSDate *date = [self.delegate lastUpdateTime];
-        if (date || [date isKindOfClass:[NSDate class]]) {
-            self.refreshView.timeLabel.text = [NSString stringWithFormat:@"上次刷新：%@", @"10小时前"];
+        if ([date isKindOfClass:[NSDate class]] || date) {
+            NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+            
+            [dateFormatter setDateFormat:@"MM-dd HH:mm"];
+            
+            NSString *destDateString = [dateFormatter stringFromDate:date];
+            self.refreshView.timeLabel.text = [NSString stringWithFormat:@"上次刷新：%@", destDateString];
         }
         
         self.refreshState = XHRefreshStatePulling;
