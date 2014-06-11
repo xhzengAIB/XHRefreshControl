@@ -5,7 +5,7 @@ Pod::Spec.new do |s|
   s.homepage     = "https://github.com/xhzengAIB/XHRefreshControl"
   s.license      = "GPL v2"
   s.authors      = { "xhzengAIB" => "xhzengAIB@gmail.com" }
-  s.source       = { :git => "https://github.com/xhzengAIB/XHRefreshControl.git", :tag => "v0.2" }
+  s.source       = { :git => "https://github.com/xhzengAIB/XHRefreshControl.git", :tag => "v0.1.2" }
   s.frameworks   = 'Foundation', 'CoreGraphics', 'UIKit'
   s.platform     = :ios, '5.0'
   s.source_files = 'RefreshControl/*.{h,m}'
