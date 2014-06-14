@@ -111,4 +111,9 @@ typedef NS_ENUM(NSInteger, XHRefreshViewLayerType) {
  */
 - (void)endLoadMoreRefresing;
 
+/**
+ *  没有更多的数据加载
+ */
+- (void)endMoreOverWithMessage:(NSString *)message;
+
 @end

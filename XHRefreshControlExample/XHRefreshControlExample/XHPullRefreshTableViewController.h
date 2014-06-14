@@ -20,4 +20,6 @@
 
 - (void)endLoadMoreRefreshing;
 
+- (void)endMoreOverWithMessage:(NSString *)message;
+
 @end

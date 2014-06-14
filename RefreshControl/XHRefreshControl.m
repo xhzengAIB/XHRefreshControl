@@ -53,6 +53,7 @@ typedef NS_ENUM(NSInteger, XHRefreshState) {
 @property (nonatomic, assign) BOOL pullDownRefreshing;
 @property (nonatomic, assign) BOOL loadMoreRefreshing;
 
+@property (nonatomic, assign) BOOL noMoreDataForLoaded;
 
 @end
 
@@ -95,6 +96,8 @@ typedef NS_ENUM(NSInteger, XHRefreshState) {
 
 - (void)callBeginPullDownRefreshing {
     self.loadMoreRefreshedCount = 0;
+    self.noMoreDataForLoaded = NO;
+    
     [self.delegate beginPullDownRefreshing];
 }
 
@@ -139,6 +142,11 @@ typedef NS_ENUM(NSInteger, XHRefreshState) {
 
 - (void)loadMoreButtonClciked:(UIButton *)sender {
     [self callBeginLoadMoreRefreshing];
+}
+
+- (void)endMoreOverWithMessage:(NSString *)message {
+    self.noMoreDataForLoaded = YES;
+    [self.loadMoreView configuraNothingMoreWithMessage:message];
 }
 
 #pragma mark - Scroll View
@@ -378,7 +386,7 @@ typedef NS_ENUM(NSInteger, XHRefreshState) {
                 float y = currentPostion + bounds.size.height + inset. bottom;
                 
                 //判断是否滚动到底部
-                if((y - size.height) > kXHLoadMoreViewHeight && self.refreshState != XHRefreshStateLoading && self.isLoadMoreRefreshed && !self.loadMoreRefreshing) {
+                if((y - size.height) > kXHLoadMoreViewHeight && self.refreshState != XHRefreshStateLoading && self.isLoadMoreRefreshed && !self.loadMoreRefreshing && !self.noMoreDataForLoaded) {
                     [self startLoadMoreRefreshing];
                 }
             }
@@ -418,7 +426,7 @@ typedef NS_ENUM(NSInteger, XHRefreshState) {
         }
     } else if ([keyPath isEqualToString:@"contentInset"]) {
     } else if ([keyPath isEqualToString:@"contentSize"]) {
-        if (self.isLoadMoreRefreshed) {
+        if (self.isLoadMoreRefreshed && !self.noMoreDataForLoaded) {
             CGSize contentSize = [[change valueForKey:NSKeyValueChangeNewKey] CGSizeValue];
             if (contentSize.height > CGRectGetHeight(self.scrollView.frame)) {
                 CGRect loadMoreViewFrame = self.loadMoreView.frame;

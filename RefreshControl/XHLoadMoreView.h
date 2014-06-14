@@ -20,4 +20,6 @@
 
 - (void)configuraManualState;
 
+- (void)configuraNothingMoreWithMessage:(NSString *)message;
+
 @end

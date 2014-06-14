@@ -18,19 +18,28 @@
 
 - (void)startLoading {
     self.hidden = NO;
+    self.loadMoreButton.userInteractionEnabled = NO;
     [self.loadMoreButton setTitle:@"正在载入" forState:UIControlStateNormal];
     [self.activityIndicatorView startAnimating];
 }
 
 - (void)endLoading {
     self.hidden = YES;
+    self.loadMoreButton.userInteractionEnabled = NO;
     [self.loadMoreButton setTitle:@"显示下20条" forState:UIControlStateNormal];
     [self.activityIndicatorView stopAnimating];
 }
 
 - (void)configuraManualState {
     self.hidden = NO;
+    self.loadMoreButton.userInteractionEnabled = YES;
     [self.loadMoreButton setTitle:@"显示下20条" forState:UIControlStateNormal];
+}
+
+- (void)configuraNothingMoreWithMessage:(NSString *)message {
+    self.hidden = NO;
+    self.loadMoreButton.userInteractionEnabled = NO;
+    [self.loadMoreButton setTitle:message forState:UIControlStateNormal];
 }
 
 #pragma mark - Propertys

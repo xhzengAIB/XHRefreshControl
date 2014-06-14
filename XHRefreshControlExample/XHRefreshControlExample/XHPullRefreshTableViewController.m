@@ -30,6 +30,10 @@
     [self.refreshControl endLoadMoreRefresing];
 }
 
+- (void)endMoreOverWithMessage:(NSString *)message {
+    [self.refreshControl endMoreOverWithMessage:message];
+}
+
 #pragma mark - Propertys
 
 - (XHRefreshControl *)refreshControl {

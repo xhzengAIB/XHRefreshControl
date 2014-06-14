@@ -42,6 +42,7 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    [self performSelector:@selector(endMoreOverWithMessage:) withObject:@"没有更多数据了" afterDelay:30];
 }
 
 - (void)didReceiveMemoryWarning
