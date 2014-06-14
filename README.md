@@ -115,9 +115,9 @@ optional delegate for your design UI layout
 
 ## License
 
-中文: XHRefreshControl 是在MIT协议下使用的，可以在LICENSE文件里面找到相关的使用协议信息。
+中文: XHRefreshControl 是在GPL v2协议下使用的，可以在LICENSE文件里面找到相关的使用协议信息。
 
-English: XHRefreshControl is available under the MIT license, see the LICENSE file for more information.     
+English: XHRefreshControl is available under the GPL v2 license, see the LICENSE file for more information.     
 
 
 
