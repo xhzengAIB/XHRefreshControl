@@ -48,6 +48,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    self.pullDownRefreshed = YES;
+    self.loadMoreRefreshed = YES;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -87,11 +90,11 @@
 }
 
 - (BOOL)isPullDownRefreshed {
-    return YES;
+    return self.pullDownRefreshed;
 }
 
 - (BOOL)isLoadMoreRefreshed {
-    return YES;
+    return self.loadMoreRefreshed;
 }
 
 - (XHRefreshViewLayerType)refreshViewLayerType {

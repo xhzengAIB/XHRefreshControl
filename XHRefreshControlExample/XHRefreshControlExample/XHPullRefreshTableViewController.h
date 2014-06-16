@@ -12,6 +12,9 @@
 
 @property (nonatomic, assign) BOOL isDataLoading;
 
+@property (nonatomic, assign) BOOL pullDownRefreshed;
+@property (nonatomic, assign) BOOL loadMoreRefreshed;
+
 @property (nonatomic, assign) NSInteger requestCurrentPage;
 
 - (void)startPullDownRefreshing;
