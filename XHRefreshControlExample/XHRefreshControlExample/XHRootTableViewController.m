@@ -22,7 +22,7 @@
     // Do any additional setup after loading the view.
     [self.view addSubview:self.tableView];
     
-    self.dataSource = [[NSMutableArray alloc] initWithObjects:@"有导航条的", @"没有导航条的", nil];
+    self.dataSource = [[NSMutableArray alloc] initWithObjects:@"网易新闻样式有导航条的", @"网易新闻样式没有导航条的", @"iOS7的系统样式，自定出来啦！", nil];
 }
 
 - (void)didReceiveMemoryWarning
@@ -57,8 +57,11 @@
     XHDemoTableViewController *demoTableViewController = [[XHDemoTableViewController alloc] init];
     if (!indexPath.row) {
         [self.navigationController pushViewController:demoTableViewController animated:YES];
-    } else {
+    } else if (indexPath.row == 1) {
         [self presentViewController:demoTableViewController animated:YES completion:NULL];
+    } else {
+        demoTableViewController.isIOS7Style = YES;
+        [self.navigationController pushViewController:demoTableViewController animated:YES];
     }
 }
 

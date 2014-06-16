@@ -10,10 +10,9 @@
 
 // 需要大量的delegate用于外部做定制
 // 必须实现的delegate
-// 1、是否加载中
-// 2、将要开始下拉刷新的方法
-// 3、将要开始上提加载更多的方法
-// 4、最后更新数据的时间
+// 1、将要开始下拉刷新的方法
+// 2、将要开始上提加载更多的方法
+// 3、最后更新数据的时间
 
 // 可选实现的delegate
 // 1、是否支持下拉刷新
@@ -23,32 +22,30 @@
 // 5、多少次上提加载后，启用点击按钮进行加载一页数据
 
 typedef NS_ENUM(NSInteger, XHRefreshViewLayerType) {
-    XHRefreshViewLayerTypeOnScrollViews = 0,
-    XHRefreshViewLayerTypeOnSuperView = 1,
+    XHRefreshViewLayerTypeOnSuperView = 0,
+    XHRefreshViewLayerTypeOnScrollViews = 1,
+};
+
+typedef NS_ENUM(NSInteger, XHPullDownRefreshViewType) {
+    XHPullDownRefreshViewTypeCircle = 0,
+    XHPullDownRefreshViewTypeActivityIndicator = 1,
 };
 
 @protocol XHRefreshControlDelegate <NSObject>
 
 @required
 /**
- *  1、这个是用于标识用户是否在加载数据中，所以涉及到业务逻辑的问题，所以就外部传值
- *
- *  @return 如果不实现该delegate方法，所以效果都会实现
- */
-- (BOOL)isLoading;
-
-/**
- *  2、将要开始下拉刷新的方法
+ *  1、将要开始下拉刷新的方法
  */
 - (void)beginPullDownRefreshing;
 
 /**
- *  3、将要开始上提加载更多的方法
+ *  2、将要开始上提加载更多的方法
  */
 - (void)beginLoadMoreRefreshing;
 
 /**
- *  4、最后更新数据的时间
+ *  3、最后更新数据的时间
  *
  *  @return 返回缓存最后更新某个页面的时间
  */
@@ -75,6 +72,13 @@ typedef NS_ENUM(NSInteger, XHRefreshViewLayerType) {
  *  @return 如果没有实现该delegate方法，默认是scrollView的子View，为XHRefreshViewLayerTypeOnScrollViews
  */
 - (XHRefreshViewLayerType)refreshViewLayerType;
+
+/**
+ *  4、下拉刷新使用哪种样式
+ *
+ *  @return 如果没有实现该delegate方法，默认是网易新闻App的样式
+ */
+- (XHPullDownRefreshViewType)pullDownRefreshViewType;
 
 /**
  *  4、UIScrollView的控制器是否保留iOS7新的特性，意思是：tablView的内容是否可以穿透过导航条

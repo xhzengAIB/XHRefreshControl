@@ -20,9 +20,11 @@
 		AB0B347C19429D4800EC0072 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = AB0B347A19429D4800EC0072 /* InfoPlist.strings */; };
 		AB0B347E19429D4800EC0072 /* XHRefreshControlExampleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = AB0B347D19429D4800EC0072 /* XHRefreshControlExampleTests.m */; };
 		AB0B349019429D5E00EC0072 /* XHLoadMoreView.m in Sources */ = {isa = PBXBuildFile; fileRef = AB0B348919429D5E00EC0072 /* XHLoadMoreView.m */; };
-		AB0B349119429D5E00EC0072 /* XHRefreshCircleView.m in Sources */ = {isa = PBXBuildFile; fileRef = AB0B348B19429D5E00EC0072 /* XHRefreshCircleView.m */; };
+		AB0B349119429D5E00EC0072 /* XHCircleView.m in Sources */ = {isa = PBXBuildFile; fileRef = AB0B348B19429D5E00EC0072 /* XHCircleView.m */; };
 		AB0B349219429D5E00EC0072 /* XHRefreshControl.m in Sources */ = {isa = PBXBuildFile; fileRef = AB0B348D19429D5E00EC0072 /* XHRefreshControl.m */; };
-		AB0B349319429D5E00EC0072 /* XHRefreshView.m in Sources */ = {isa = PBXBuildFile; fileRef = AB0B348F19429D5E00EC0072 /* XHRefreshView.m */; };
+		AB0B349319429D5E00EC0072 /* XHRefreshCircleContainerView.m in Sources */ = {isa = PBXBuildFile; fileRef = AB0B348F19429D5E00EC0072 /* XHRefreshCircleContainerView.m */; };
+		AB228835194F92EB001B8E51 /* XHActivityIndicatorView.m in Sources */ = {isa = PBXBuildFile; fileRef = AB228834194F92EB001B8E51 /* XHActivityIndicatorView.m */; };
+		AB965A47194F98A500CDC2AA /* XHRefreshActivityIndicatorContainerView.m in Sources */ = {isa = PBXBuildFile; fileRef = AB965A46194F98A500CDC2AA /* XHRefreshActivityIndicatorContainerView.m */; };
 		ABCFC7FB194505B100E44551 /* XHBaseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ABCFC7F8194505B100E44551 /* XHBaseTableViewController.m */; };
 		ABCFC7FC194505B100E44551 /* XHPullRefreshTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ABCFC7FA194505B100E44551 /* XHPullRefreshTableViewController.m */; };
 		ABCFC7FF1945066800E44551 /* XHFoundationCommon.m in Sources */ = {isa = PBXBuildFile; fileRef = ABCFC7FE1945066800E44551 /* XHFoundationCommon.m */; };
@@ -59,12 +61,16 @@
 		AB0B347D19429D4800EC0072 /* XHRefreshControlExampleTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XHRefreshControlExampleTests.m; sourceTree = "<group>"; };
 		AB0B348819429D5E00EC0072 /* XHLoadMoreView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XHLoadMoreView.h; sourceTree = "<group>"; };
 		AB0B348919429D5E00EC0072 /* XHLoadMoreView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XHLoadMoreView.m; sourceTree = "<group>"; };
-		AB0B348A19429D5E00EC0072 /* XHRefreshCircleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XHRefreshCircleView.h; sourceTree = "<group>"; };
-		AB0B348B19429D5E00EC0072 /* XHRefreshCircleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XHRefreshCircleView.m; sourceTree = "<group>"; };
+		AB0B348A19429D5E00EC0072 /* XHCircleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XHCircleView.h; sourceTree = "<group>"; };
+		AB0B348B19429D5E00EC0072 /* XHCircleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XHCircleView.m; sourceTree = "<group>"; };
 		AB0B348C19429D5E00EC0072 /* XHRefreshControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XHRefreshControl.h; sourceTree = "<group>"; };
 		AB0B348D19429D5E00EC0072 /* XHRefreshControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XHRefreshControl.m; sourceTree = "<group>"; };
-		AB0B348E19429D5E00EC0072 /* XHRefreshView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XHRefreshView.h; sourceTree = "<group>"; };
-		AB0B348F19429D5E00EC0072 /* XHRefreshView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XHRefreshView.m; sourceTree = "<group>"; };
+		AB0B348E19429D5E00EC0072 /* XHRefreshCircleContainerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XHRefreshCircleContainerView.h; sourceTree = "<group>"; };
+		AB0B348F19429D5E00EC0072 /* XHRefreshCircleContainerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XHRefreshCircleContainerView.m; sourceTree = "<group>"; };
+		AB228833194F92EB001B8E51 /* XHActivityIndicatorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XHActivityIndicatorView.h; sourceTree = "<group>"; };
+		AB228834194F92EB001B8E51 /* XHActivityIndicatorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XHActivityIndicatorView.m; sourceTree = "<group>"; };
+		AB965A45194F98A500CDC2AA /* XHRefreshActivityIndicatorContainerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XHRefreshActivityIndicatorContainerView.h; sourceTree = "<group>"; };
+		AB965A46194F98A500CDC2AA /* XHRefreshActivityIndicatorContainerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XHRefreshActivityIndicatorContainerView.m; sourceTree = "<group>"; };
 		ABCFC7F7194505B100E44551 /* XHBaseTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XHBaseTableViewController.h; sourceTree = "<group>"; };
 		ABCFC7F8194505B100E44551 /* XHBaseTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XHBaseTableViewController.m; sourceTree = "<group>"; };
 		ABCFC7F9194505B100E44551 /* XHPullRefreshTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XHPullRefreshTableViewController.h; sourceTree = "<group>"; };
@@ -187,10 +193,14 @@
 			children = (
 				AB0B348C19429D5E00EC0072 /* XHRefreshControl.h */,
 				AB0B348D19429D5E00EC0072 /* XHRefreshControl.m */,
-				AB0B348E19429D5E00EC0072 /* XHRefreshView.h */,
-				AB0B348F19429D5E00EC0072 /* XHRefreshView.m */,
-				AB0B348A19429D5E00EC0072 /* XHRefreshCircleView.h */,
-				AB0B348B19429D5E00EC0072 /* XHRefreshCircleView.m */,
+				AB0B348E19429D5E00EC0072 /* XHRefreshCircleContainerView.h */,
+				AB0B348F19429D5E00EC0072 /* XHRefreshCircleContainerView.m */,
+				AB0B348A19429D5E00EC0072 /* XHCircleView.h */,
+				AB0B348B19429D5E00EC0072 /* XHCircleView.m */,
+				AB965A45194F98A500CDC2AA /* XHRefreshActivityIndicatorContainerView.h */,
+				AB965A46194F98A500CDC2AA /* XHRefreshActivityIndicatorContainerView.m */,
+				AB228833194F92EB001B8E51 /* XHActivityIndicatorView.h */,
+				AB228834194F92EB001B8E51 /* XHActivityIndicatorView.m */,
 				AB0B348819429D5E00EC0072 /* XHLoadMoreView.h */,
 				AB0B348919429D5E00EC0072 /* XHLoadMoreView.m */,
 			);
@@ -297,12 +307,14 @@
 				ABCFC7FC194505B100E44551 /* XHPullRefreshTableViewController.m in Sources */,
 				ABCFC7FF1945066800E44551 /* XHFoundationCommon.m in Sources */,
 				ABCFC8051945077D00E44551 /* XHRootTableViewController.m in Sources */,
-				AB0B349119429D5E00EC0072 /* XHRefreshCircleView.m in Sources */,
+				AB0B349119429D5E00EC0072 /* XHCircleView.m in Sources */,
 				AB0B349219429D5E00EC0072 /* XHRefreshControl.m in Sources */,
 				ABCFC7FB194505B100E44551 /* XHBaseTableViewController.m in Sources */,
+				AB228835194F92EB001B8E51 /* XHActivityIndicatorView.m in Sources */,
 				AB0B346019429D4700EC0072 /* AppDelegate.m in Sources */,
 				AB0B349019429D5E00EC0072 /* XHLoadMoreView.m in Sources */,
-				AB0B349319429D5E00EC0072 /* XHRefreshView.m in Sources */,
+				AB965A47194F98A500CDC2AA /* XHRefreshActivityIndicatorContainerView.m in Sources */,
+				AB0B349319429D5E00EC0072 /* XHRefreshCircleContainerView.m in Sources */,
 				ABCFC802194506CC00E44551 /* XHDemoTableViewController.m in Sources */,
 				AB0B345C19429D4700EC0072 /* main.m in Sources */,
 			);

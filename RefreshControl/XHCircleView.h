@@ -1,5 +1,5 @@
 //
-//  XHRefreshCircleView.h
+//  XHCircleView.h
 //  MessageDisplayExample
 //
 //  Created by 曾 宪华 on 14-6-6.
@@ -11,10 +11,7 @@
 //开始画圆圈时的offset
 #define kXHRefreshCircleViewHeight 20
 
-//圆圈开始旋转时的offset （即开始刷新数据时）
-//#define HEIGHT_BEGIN_TO_REFRESH         (50 + HEIGHT_BEGIN_TO_DRAW_CIRCLE)
-
-@interface XHRefreshCircleView : UIView
+@interface XHCircleView : UIView
 
 //圆圈开始旋转时的offset （即开始刷新数据时）
 @property (nonatomic, assign) CGFloat heightBeginToRefresh;

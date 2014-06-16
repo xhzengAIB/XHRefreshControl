@@ -8,9 +8,7 @@
 
 #import "XHPullRefreshTableViewController.h"
 
-#import "XHRefreshControl.h"
-
-@interface XHPullRefreshTableViewController () <XHRefreshControlDelegate>
+@interface XHPullRefreshTableViewController ()
 
 @property (nonatomic, strong) XHRefreshControl *refreshControl;
 
@@ -60,10 +58,6 @@
 
 #pragma mark - XHRefreshControl Delegate
 
-- (BOOL)isLoading {
-    return self.isDataLoading;
-}
-
 - (void)beginPullDownRefreshing {
     self.requestCurrentPage = 0;
     [self loadDataSource];
@@ -99,6 +93,10 @@
 
 - (XHRefreshViewLayerType)refreshViewLayerType {
     return XHRefreshViewLayerTypeOnSuperView;
+}
+
+- (XHPullDownRefreshViewType)pullDownRefreshViewType {
+    return XHPullDownRefreshViewTypeActivityIndicator;
 }
 
 @end

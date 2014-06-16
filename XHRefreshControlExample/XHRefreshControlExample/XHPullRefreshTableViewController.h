@@ -8,15 +8,16 @@
 
 #import "XHBaseTableViewController.h"
 
-@interface XHPullRefreshTableViewController : XHBaseTableViewController
+#import "XHRefreshControl.h"
 
-@property (nonatomic, assign) BOOL isDataLoading;
+@interface XHPullRefreshTableViewController : XHBaseTableViewController <XHRefreshControlDelegate>
 
 @property (nonatomic, assign) BOOL pullDownRefreshed;
 @property (nonatomic, assign) BOOL loadMoreRefreshed;
 
 @property (nonatomic, assign) NSInteger requestCurrentPage;
 
+// 以下所有方法都必须在tableView刷新完毕后才去调用，请自己去理解一下设计的原理哈！
 - (void)startPullDownRefreshing;
 
 - (void)endPullDownRefreshing;

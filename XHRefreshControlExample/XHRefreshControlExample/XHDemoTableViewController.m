@@ -15,26 +15,34 @@
 @implementation XHDemoTableViewController
 
 - (void)loadDataSource {
-    self.isDataLoading = YES;
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         NSMutableArray *dataSource = [[NSMutableArray alloc] initWithObjects:@"请问你现在在哪里啊？我在广州天河", @"点击我查看最新消息，里面有惊喜哦！", @"点击我查看最新消息，里面有惊喜哦！", @"点击我查看最新消息，里面有惊喜哦！", @"点进入聊天页面，这里有多种显示样式", @"点击我查看最新消息，里面有惊喜哦！", @"点击我查看最新消息，里面有惊喜哦！", @"点击我查看最新消息，里面有惊喜哦！", @"点击我查看最新消息，里面有惊喜哦！", @"点击我查看最新消息，里面有惊喜哦！", @"点进入聊天页面，这里有多种显示样式", @"点击我查看最新消息，里面有惊喜哦！", @"点击我查看最新消息，里面有惊喜哦！", @"点击我查看最新消息，里面有惊喜哦！", nil];
-        sleep(2);
+        
+        NSMutableArray *indexPaths;
+        if (self.requestCurrentPage) {
+            indexPaths = [[NSMutableArray alloc] initWithCapacity:dataSource.count];
+            [dataSource enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+                [indexPaths addObject:[NSIndexPath indexPathForRow:self.dataSource.count + idx inSection:0]];
+            }];
+        }
+        sleep(5.5);
         dispatch_async(dispatch_get_main_queue(), ^{
-            self.isDataLoading = NO;
             if (self.requestCurrentPage) {
                 [self.dataSource addObjectsFromArray:dataSource];
+                [self.tableView insertRowsAtIndexPaths:indexPaths withRowAnimation:UITableViewRowAnimationNone];
                 [self endLoadMoreRefreshing];
             } else {
                 self.dataSource = dataSource;
+                [self.tableView reloadData];
                 [self endPullDownRefreshing];
             }
-            [self.tableView reloadData];
         });
     });
 }
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
+    // 别把这行代码放到别处，然后导致了错误，那就不好了嘛！
     [self startPullDownRefreshing];
 }
 
@@ -48,6 +56,15 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+#pragma mark - XHRefreshControl Delegate
+
+- (XHPullDownRefreshViewType)pullDownRefreshViewType {
+    if (self.isIOS7Style) {
+        return XHPullDownRefreshViewTypeActivityIndicator;
+    }
+    return XHPullDownRefreshViewTypeCircle;
 }
 
 #pragma mark - UITableView DataSource
@@ -88,6 +105,13 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     return 50;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    if (!self.navigationController) {
+        [self dismissViewControllerAnimated:YES completion:NULL];
+    }
 }
 
 @end

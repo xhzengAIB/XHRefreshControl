@@ -6,26 +6,26 @@
 //  Copyright (c) 2014年 曾宪华 开发团队(http://iyilunba.com ) 本人QQ:543413507 本人QQ群（142557668）. All rights reserved.
 //
 
-#import "XHRefreshView.h"
+#import "XHRefreshCircleContainerView.h"
 
-@interface XHRefreshView ()
+@interface XHRefreshCircleContainerView ()
 
 @end
 
-@implementation XHRefreshView
+@implementation XHRefreshCircleContainerView
 
 #pragma mark - Propertys
 
-- (XHRefreshCircleView *)refreshCircleView {
-    if (!_refreshCircleView) {
-        _refreshCircleView = [[XHRefreshCircleView alloc] initWithFrame:CGRectMake((CGRectGetWidth(self.bounds) - kXHRefreshCircleViewHeight) / 2 - 40, (CGRectGetHeight(self.bounds) - kXHRefreshCircleViewHeight) / 2 - 5, kXHRefreshCircleViewHeight, kXHRefreshCircleViewHeight)];
+- (XHCircleView *)circleView {
+    if (!_circleView) {
+        _circleView = [[XHCircleView alloc] initWithFrame:CGRectMake((CGRectGetWidth(self.bounds) - kXHRefreshCircleViewHeight) / 2 - 40, (CGRectGetHeight(self.bounds) - kXHRefreshCircleViewHeight) / 2 - 5, kXHRefreshCircleViewHeight, kXHRefreshCircleViewHeight)];
     }
-    return _refreshCircleView;
+    return _circleView;
 }
 
 - (UILabel *)stateLabel {
     if (!_stateLabel) {
-        _stateLabel = [[UILabel alloc] initWithFrame:CGRectMake(CGRectGetMaxX(self.refreshCircleView.frame) + 5, CGRectGetMinY(self.refreshCircleView.frame), 160, 14)];
+        _stateLabel = [[UILabel alloc] initWithFrame:CGRectMake(CGRectGetMaxX(self.circleView.frame) + 5, CGRectGetMinY(self.circleView.frame), 160, 14)];
         _stateLabel.backgroundColor = [UIColor clearColor];
         _stateLabel.font = [UIFont systemFontOfSize:14.f];
         _stateLabel.textColor = [UIColor blackColor];
@@ -52,7 +52,7 @@
     if (self) {
         // Initialization code
         self.backgroundColor = [UIColor whiteColor];
-        [self addSubview:self.refreshCircleView];
+        [self addSubview:self.circleView];
         [self addSubview:self.stateLabel];
         [self addSubview:self.timeLabel];
     }

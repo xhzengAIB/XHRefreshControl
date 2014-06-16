@@ -8,7 +8,8 @@
 
 #import "XHRefreshControl.h"
 
-#import "XHRefreshView.h"
+#import "XHRefreshCircleContainerView.h"
+#import "XHRefreshActivityIndicatorContainerView.h"
 #import "XHLoadMoreView.h"
 
 #define fequal(a,b) (fabs((a) - (b)) < FLT_EPSILON)
@@ -31,13 +32,15 @@ typedef NS_ENUM(NSInteger, XHRefreshState) {
 @property (nonatomic, weak) id <XHRefreshControlDelegate> delegate;
 
 // getter
-@property (nonatomic, strong) XHRefreshView *refreshView;
+@property (nonatomic, strong) XHRefreshCircleContainerView *refreshCircleContainerView;
+@property (nonatomic, strong) XHRefreshActivityIndicatorContainerView *refreshActivityIndicatorContainerView;
 @property (nonatomic, strong) XHLoadMoreView *loadMoreView;
 @property (nonatomic, assign) BOOL isPullDownRefreshed;
 @property (nonatomic, assign) BOOL isLoadMoreRefreshed;
 @property (nonatomic, assign) CGFloat refreshTotalPixels;
 @property (nonatomic, assign) NSInteger autoLoadMoreRefreshedCount;
 @property (nonatomic, assign) XHRefreshViewLayerType refreshViewLayerType;
+@property (nonatomic, assign) XHPullDownRefreshViewType pullDownRefreshViewType;
 
 // recoder
 @property (nonatomic, readwrite) CGFloat originalTopInset;
@@ -72,7 +75,7 @@ typedef NS_ENUM(NSInteger, XHRefreshState) {
             [dateFormatter setDateFormat:@"MM-dd HH:mm"];
             
             NSString *destDateString = [dateFormatter stringFromDate:date];
-            self.refreshView.timeLabel.text = [NSString stringWithFormat:@"上次刷新：%@", destDateString];
+            self.refreshCircleContainerView.timeLabel.text = [NSString stringWithFormat:@"上次刷新：%@", destDateString];
         }
         
         self.refreshState = XHRefreshStatePulling;
@@ -82,19 +85,32 @@ typedef NS_ENUM(NSInteger, XHRefreshState) {
 }
 
 - (void)animationRefreshCircleView {
-    if (self.refreshView.refreshCircleView.offsetY != kXHDefaultRefreshTotalPixels - kXHRefreshCircleViewHeight) {
-        self.refreshView.refreshCircleView.offsetY = kXHDefaultRefreshTotalPixels - kXHRefreshCircleViewHeight;
-        [self.refreshView.refreshCircleView setNeedsDisplay];
+    switch (self.pullDownRefreshViewType) {
+        case XHPullDownRefreshViewTypeCircle: {
+            if (self.refreshCircleContainerView.circleView.offsetY != kXHDefaultRefreshTotalPixels - kXHRefreshCircleViewHeight) {
+                self.refreshCircleContainerView.circleView.offsetY = kXHDefaultRefreshTotalPixels - kXHRefreshCircleViewHeight;
+                [self.refreshCircleContainerView.circleView setNeedsDisplay];
+            }
+            // 先去除所有动画
+            [self.refreshCircleContainerView.circleView.layer removeAllAnimations];
+            // 添加旋转的动画
+            [self.refreshCircleContainerView.circleView.layer addAnimation:[XHCircleView repeatRotateAnimation] forKey:@"rotateAnimation"];
+            break;
+        }
+        case XHPullDownRefreshViewTypeActivityIndicator: {
+            [self.refreshActivityIndicatorContainerView.activityIndicatorView beginRefreshing];
+            break;
+        }
+        default:
+            break;
     }
-    // 先去除所有动画
-    [self.refreshView.refreshCircleView.layer removeAllAnimations];
-    // 添加旋转的动画
-    [self.refreshView.refreshCircleView.layer addAnimation:[XHRefreshCircleView repeatRotateAnimation] forKey:@"rotateAnimation"];
     
     [self callBeginPullDownRefreshing];
 }
 
 - (void)callBeginPullDownRefreshing {
+    [self setScrollViewContentInsetForNoLoadMore];
+    
     self.loadMoreRefreshedCount = 0;
     self.noMoreDataForLoaded = NO;
     
@@ -160,11 +176,22 @@ typedef NS_ENUM(NSInteger, XHRefreshState) {
         
         self.refreshState = XHRefreshStateNormal;
         
-        self.refreshView.refreshCircleView.offsetY = 0;
-        [self.refreshView.refreshCircleView setNeedsDisplay];
-        
-        if (self.refreshView.refreshCircleView) {
-            [self.refreshView.refreshCircleView.layer removeAllAnimations];
+        switch (self.pullDownRefreshViewType) {
+            case XHPullDownRefreshViewTypeCircle: {
+                self.refreshCircleContainerView.circleView.offsetY = 0;
+                [self.refreshCircleContainerView.circleView setNeedsDisplay];
+                
+                if (self.refreshCircleContainerView.circleView) {
+                    [self.refreshCircleContainerView.circleView.layer removeAllAnimations];
+                }
+                break;
+            }
+            case XHPullDownRefreshViewTypeActivityIndicator: {
+                [self.refreshActivityIndicatorContainerView.activityIndicatorView endRefreshing];
+                break;
+            }
+            default:
+                break;
         }
     }];
 }
@@ -180,8 +207,8 @@ typedef NS_ENUM(NSInteger, XHRefreshState) {
                          if (self.refreshState == XHRefreshStateStopped) {
                              self.refreshState = XHRefreshStateNormal;
                              
-                             if (self.refreshView.refreshCircleView) {
-                                 [self.refreshView.refreshCircleView.layer removeAllAnimations];
+                             if (self.refreshCircleContainerView.circleView) {
+                                 [self.refreshCircleContainerView.circleView.layer removeAllAnimations];
                              }
                          }
                      }];
@@ -201,17 +228,32 @@ typedef NS_ENUM(NSInteger, XHRefreshState) {
     [self setScrollViewContentInset:currentInsets];
 }
 
+- (void)setScrollViewContentInsetForNoLoadMore {
+    UIEdgeInsets currentInsets = self.scrollView.contentInset;
+    currentInsets.bottom = 0;
+    [self setScrollViewContentInset:currentInsets];
+}
+
 #pragma mark - Propertys
 
-- (XHRefreshView *)refreshView {
-    if (!_refreshView) {
-        _refreshView = [[XHRefreshView alloc] initWithFrame:CGRectMake(0, (self.refreshViewLayerType == XHRefreshViewLayerTypeOnScrollViews ? -kXHDefaultRefreshTotalPixels : self.originalTopInset), CGRectGetWidth([[UIScreen mainScreen] bounds]), kXHDefaultRefreshTotalPixels)];
-        _refreshView.backgroundColor = [UIColor clearColor];
-        _refreshView.refreshCircleView.heightBeginToRefresh = kXHDefaultRefreshTotalPixels - kXHRefreshCircleViewHeight;
-        _refreshView.refreshCircleView.offsetY = 0;
-        _refreshView.refreshCircleView.isRefreshViewOnTableView = self.refreshViewLayerType;
+- (XHRefreshCircleContainerView *)refreshCircleContainerView {
+    if (!_refreshCircleContainerView) {
+        _refreshCircleContainerView = [[XHRefreshCircleContainerView alloc] initWithFrame:CGRectMake(0, (self.refreshViewLayerType == XHRefreshViewLayerTypeOnScrollViews ? -kXHDefaultRefreshTotalPixels : self.originalTopInset), CGRectGetWidth([[UIScreen mainScreen] bounds]), kXHDefaultRefreshTotalPixels)];
+        _refreshCircleContainerView.backgroundColor = [UIColor clearColor];
+        _refreshCircleContainerView.circleView.heightBeginToRefresh = kXHDefaultRefreshTotalPixels - kXHRefreshCircleViewHeight;
+        _refreshCircleContainerView.circleView.offsetY = 0;
+        _refreshCircleContainerView.circleView.isRefreshViewOnTableView = self.refreshViewLayerType;
     }
-    return _refreshView;
+    return _refreshCircleContainerView;
+}
+
+- (XHRefreshActivityIndicatorContainerView *)refreshActivityIndicatorContainerView {
+    if (!_refreshActivityIndicatorContainerView) {
+        _refreshActivityIndicatorContainerView = [[XHRefreshActivityIndicatorContainerView alloc] initWithFrame:CGRectMake(0, (self.refreshViewLayerType == XHRefreshViewLayerTypeOnScrollViews ? -kXHDefaultRefreshTotalPixels : self.originalTopInset), CGRectGetWidth([[UIScreen mainScreen] bounds]), kXHDefaultRefreshTotalPixels)];
+        _refreshActivityIndicatorContainerView.backgroundColor = [UIColor clearColor];
+        _refreshActivityIndicatorContainerView.isRefreshViewOnTableView = self.refreshViewLayerType;
+    }
+    return _refreshActivityIndicatorContainerView;
 }
 
 - (XHLoadMoreView *)loadMoreView {
@@ -223,10 +265,6 @@ typedef NS_ENUM(NSInteger, XHRefreshState) {
 }
 
 #pragma mark - Getter Method
-
-- (BOOL)isLoading {
-    return [self.delegate isLoading];
-}
 
 - (BOOL)isPullDownRefreshed {
     BOOL pullDowned = YES;
@@ -273,19 +311,27 @@ typedef NS_ENUM(NSInteger, XHRefreshState) {
     return currentRefreshViewLayerType;
 }
 
+- (XHPullDownRefreshViewType)pullDownRefreshViewType {
+    XHPullDownRefreshViewType currentPullDownRefreshViewType = XHPullDownRefreshViewTypeCircle;
+    if ([self.delegate respondsToSelector:@selector(pullDownRefreshViewType)]) {
+        currentPullDownRefreshViewType = [self.delegate pullDownRefreshViewType];
+    }
+    return currentPullDownRefreshViewType;
+}
+
 #pragma mark - Setter Method
 
 - (void)setRefreshState:(XHRefreshState)refreshState {
     switch (refreshState) {
         case XHRefreshStateStopped:
         case XHRefreshStateNormal: {
-            self.refreshView.stateLabel.text = @"下拉刷新";
+            self.refreshCircleContainerView.stateLabel.text = @"下拉刷新";
             break;
         }
         case XHRefreshStateLoading: {
             
             if (self.pullDownRefreshing) {
-                self.refreshView.stateLabel.text = @"正在加载";
+                self.refreshCircleContainerView.stateLabel.text = @"正在加载";
                 [self setScrollViewContentInsetForLoading];
                 
                 if(_refreshState == XHRefreshStatePulling) {
@@ -295,7 +341,7 @@ typedef NS_ENUM(NSInteger, XHRefreshState) {
             break;
         }
         case XHRefreshStatePulling:
-            self.refreshView.stateLabel.text = @"释放立即刷新";
+            self.refreshCircleContainerView.stateLabel.text = @"释放立即刷新";
             break;
         default:
             break;
@@ -330,11 +376,29 @@ typedef NS_ENUM(NSInteger, XHRefreshState) {
         self.scrollView.backgroundColor = [UIColor clearColor];
         UIView *currentSuperView = self.scrollView.superview;
         if (self.isPullDownRefreshed) {
-            [currentSuperView insertSubview:self.refreshView belowSubview:self.scrollView];
+            switch (self.pullDownRefreshViewType) {
+                case XHPullDownRefreshViewTypeCircle:
+                    [currentSuperView insertSubview:self.refreshCircleContainerView belowSubview:self.scrollView];
+                    break;
+                case XHPullDownRefreshViewTypeActivityIndicator:
+                    [currentSuperView insertSubview:self.refreshActivityIndicatorContainerView belowSubview:self.scrollView];
+                    break;
+                default:
+                    break;
+            }
         }
     } else if (self.refreshViewLayerType == XHRefreshViewLayerTypeOnScrollViews) {
         if (self.isPullDownRefreshed) {
-            [self.scrollView addSubview:self.refreshView];
+            switch (self.pullDownRefreshViewType) {
+                case XHPullDownRefreshViewTypeCircle:
+                    [self.scrollView addSubview:self.refreshCircleContainerView];
+                    break;
+                case XHPullDownRefreshViewTypeActivityIndicator:
+                    [self.scrollView addSubview:self.refreshActivityIndicatorContainerView];
+                    break;
+                default:
+                    break;
+            }
         }
     }
     
@@ -359,7 +423,9 @@ typedef NS_ENUM(NSInteger, XHRefreshState) {
     [self removeObserverWithScrollView:self.scrollView];
     self.scrollView = nil;
     
-    self.refreshView = nil;
+    self.refreshCircleContainerView = nil;
+    
+    self.refreshActivityIndicatorContainerView = nil;
     
     self.loadMoreView = nil;
 }
@@ -399,8 +465,24 @@ typedef NS_ENUM(NSInteger, XHRefreshState) {
                     // 如果不是加载状态的时候
                     
                     if (ABS(self.scrollView.contentOffset.y + [self getAdaptorHeight]) >= kXHRefreshCircleViewHeight) {
-                        self.refreshView.refreshCircleView.offsetY = MIN(ABS(self.scrollView.contentOffset.y + [self getAdaptorHeight]), kXHDefaultRefreshTotalPixels) - kXHRefreshCircleViewHeight;
-                        [self.refreshView.refreshCircleView setNeedsDisplay];
+                        switch (self.pullDownRefreshViewType) {
+                            case XHPullDownRefreshViewTypeCircle: {
+                                self.refreshCircleContainerView.circleView.offsetY = MIN(ABS(self.scrollView.contentOffset.y + [self getAdaptorHeight]), kXHDefaultRefreshTotalPixels) - kXHRefreshCircleViewHeight;
+                                [self.refreshCircleContainerView.circleView setNeedsDisplay];
+                                break;
+                            }
+                            case XHPullDownRefreshViewTypeActivityIndicator: {
+                                CGFloat timeOffset = (MIN(ABS(self.scrollView.contentOffset.y + [self getAdaptorHeight]), kXHDefaultRefreshTotalPixels) - kXHRefreshCircleViewHeight) / 36.0;
+                                self.refreshActivityIndicatorContainerView.activityIndicatorView.timeOffset = timeOffset;
+                                break;
+                            }
+                            default:
+                                break;
+                        }
+                    } else {
+                        if (self.pullDownRefreshViewType == XHPullDownRefreshViewTypeActivityIndicator) {
+                            self.refreshActivityIndicatorContainerView.activityIndicatorView.timeOffset = 0.0;
+                        }
                     }
                     
                     CGFloat scrollOffsetThreshold;

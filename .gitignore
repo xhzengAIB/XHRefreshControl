@@ -6,7 +6,6 @@
 # Xcode
 #
 build/
-.gitignore
 *.xcuserstate
 *.xcbkptlist
 *.pbxuser
