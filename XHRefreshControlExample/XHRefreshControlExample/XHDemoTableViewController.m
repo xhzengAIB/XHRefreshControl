@@ -25,7 +25,7 @@
                 [indexPaths addObject:[NSIndexPath indexPathForRow:self.dataSource.count + idx inSection:0]];
             }];
         }
-        sleep(5.5);
+        sleep(1.5);
         dispatch_async(dispatch_get_main_queue(), ^{
             if (self.requestCurrentPage) {
                 [self.dataSource addObjectsFromArray:dataSource];
