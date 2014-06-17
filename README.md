@@ -24,33 +24,25 @@ XHRefreshControl *refreshControl = [[XHRefreshControl alloc] initWithScrollView:
 
 implementation XHRefreshControl required delegate:
 
+@required
 /**
- *  1、这个是用于标识用户是否在加载数据中，所以涉及到业务逻辑的问题，所以就外部传值
- *
- *  @return 如果不实现该delegate方法，所以效果都会实现
- */
-- (BOOL)isLoading;
-
-/**
- *  2、将要开始下拉刷新的方法
+ *  1、将要开始下拉刷新的方法
  */
 - (void)beginPullDownRefreshing;
 
 /**
- *  3、将要开始上提加载更多的方法
+ *  2、将要开始上提加载更多的方法
  */
 - (void)beginLoadMoreRefreshing;
 
 /**
- *  4、最后更新数据的时间
+ *  3、最后更新数据的时间
  *
  *  @return 返回缓存最后更新某个页面的时间
  */
 - (NSDate *)lastUpdateTime;
 
-
-optional delegate for your design UI layout
-
+@optional
 /**
  *  1、是否支持下拉刷新
  *
@@ -73,6 +65,13 @@ optional delegate for your design UI layout
 - (XHRefreshViewLayerType)refreshViewLayerType;
 
 /**
+ *  4、下拉刷新使用哪种样式
+ *
+ *  @return 如果没有实现该delegate方法，默认是网易新闻App的样式
+ */
+- (XHPullDownRefreshViewType)pullDownRefreshViewType;
+
+/**
  *  4、UIScrollView的控制器是否保留iOS7新的特性，意思是：tablView的内容是否可以穿透过导航条
  *
  *  @return 如果不是先该delegate方法，默认是不支持的
@@ -85,27 +84,6 @@ optional delegate for your design UI layout
  *  @return 如果不实现该delegate方法，默认是5次
  */
 - (NSInteger)autoLoadMoreRefreshedCountConverManual;
-
-@end
-
-@interface XHRefreshControl : NSObject
-
-- (id)initWithScrollView:(UIScrollView *)scrollView delegate:(id <XHRefreshControlDelegate>)delegate;
-
-/**
- *  外部手动启动下拉加载的方法，这个方法不需要手动去拖动UIScrollView
- */
-- (void)startPullDownRefreshing;
-
-/**
- *  停止下拉刷新的方法
- */
-- (void)endPullDownRefreshing;
-
-/**
- *  停止上提加载更多的方法
- */
-- (void)endLoadMoreRefresing;
 
 
 
