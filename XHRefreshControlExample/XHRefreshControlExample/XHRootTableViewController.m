@@ -10,6 +10,8 @@
 
 #import "XHDemoTableViewController.h"
 
+#import "XHDemoNormalTableViewController.h"
+
 @interface XHRootTableViewController ()
 
 @end
@@ -22,7 +24,7 @@
     // Do any additional setup after loading the view.
     [self.view addSubview:self.tableView];
     
-    self.dataSource = [[NSMutableArray alloc] initWithObjects:@"网易新闻样式有导航条的", @"网易新闻样式没有导航条的", @"iOS7的系统样式，自定出来啦！", nil];
+    self.dataSource = [[NSMutableArray alloc] initWithObjects:@"网易新闻样式有导航条的", @"网易新闻样式没有导航条的", @"iOS7的系统样式，自定出来啦！", @"系统级别的UITableViewController使用组件", nil];
 }
 
 - (void)didReceiveMemoryWarning
@@ -54,14 +56,22 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    XHDemoTableViewController *demoTableViewController = [[XHDemoTableViewController alloc] init];
+    UIViewController *viewController;
     if (!indexPath.row) {
-        [self.navigationController pushViewController:demoTableViewController animated:YES];
+        viewController = [[XHDemoTableViewController alloc] init];
+        [self.navigationController pushViewController:viewController animated:YES];
     } else if (indexPath.row == 1) {
-        [self presentViewController:demoTableViewController animated:YES completion:NULL];
-    } else {
+        viewController = [[XHDemoTableViewController alloc] init];
+
+        [self presentViewController:viewController animated:YES completion:NULL];
+    } else if (indexPath.row == 2) {
+        XHDemoTableViewController *demoTableViewController = [[XHDemoTableViewController alloc] init];
         demoTableViewController.isIOS7Style = YES;
-        [self.navigationController pushViewController:demoTableViewController animated:YES];
+        viewController = demoTableViewController;
+        [self.navigationController pushViewController:viewController animated:YES];
+    } else {
+        viewController = [[XHDemoNormalTableViewController alloc] initWithStyle:UITableViewStylePlain];
+        [self.navigationController pushViewController:viewController animated:YES];
     }
 }
 
