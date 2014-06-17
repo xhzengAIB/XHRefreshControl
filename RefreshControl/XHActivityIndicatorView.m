@@ -16,6 +16,7 @@ static NSString* const kXHRotationAnimation = @"XHRotationAnimation";
 @property (nonatomic, strong) CALayer *animationLayer;
 
 @property (nonatomic, strong) NSMutableArray *standbyLayersArray;
+@property (nonatomic, strong) NSMutableArray *animationLayerArray;
 
 @property (nonatomic, assign) BOOL isRotating;
 
@@ -25,6 +26,7 @@ static NSString* const kXHRotationAnimation = @"XHRotationAnimation";
 
 - (void)setup {
     self.standbyLayersArray = [[NSMutableArray alloc] init];
+    self.animationLayerArray = [[NSMutableArray alloc] init];
     
     self.isRotating = NO;
     
@@ -61,6 +63,10 @@ static NSString* const kXHRotationAnimation = @"XHRotationAnimation";
     _tintColor = tintColor;
     
     for (CALayer *layer in self.standbyLayersArray) {
+        layer.backgroundColor = tintColor.CGColor;
+    }
+    
+    for (CALayer *layer in self.animationLayerArray) {
         layer.backgroundColor = tintColor.CGColor;
     }
 }
@@ -127,6 +133,8 @@ static NSString* const kXHRotationAnimation = @"XHRotationAnimation";
         [layer addAnimation:animation forKey:[NSString stringWithFormat:@"key %d", i]];
         
         [self.animationLayer addSublayer:layer];
+        
+        [self.animationLayerArray addObject:layer];
     }
 }
 
