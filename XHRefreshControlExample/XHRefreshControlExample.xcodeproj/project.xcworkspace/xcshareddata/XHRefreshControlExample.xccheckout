@@ -5,34 +5,34 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>E1821ADD-10CF-42C8-B3F4-959157D99E92</string>
+	<string>F5B1985C-91D1-499D-8665-07B84DAB5197</string>
 	<key>IDESourceControlProjectName</key>
 	<string>XHRefreshControlExample</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>F89635F9-C4CC-4C1D-9839-567F0A670D0E</key>
-		<string>https://github.com/xhzengAIB/XHRefreshControl.git</string>
+		<key>A3B9DADF-46F7-46D7-B600-08FB3EEEC716</key>
+		<string>https://github.com/cherishloveyou/XHRefreshControl.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>XHRefreshControlExample/XHRefreshControlExample.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>F89635F9-C4CC-4C1D-9839-567F0A670D0E</key>
+		<key>A3B9DADF-46F7-46D7-B600-08FB3EEEC716</key>
 		<string>../../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>https://github.com/xhzengAIB/XHRefreshControl.git</string>
+	<string>https://github.com/cherishloveyou/XHRefreshControl.git</string>
 	<key>IDESourceControlProjectVersion</key>
 	<integer>110</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>F89635F9-C4CC-4C1D-9839-567F0A670D0E</string>
+	<string>A3B9DADF-46F7-46D7-B600-08FB3EEEC716</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>F89635F9-C4CC-4C1D-9839-567F0A670D0E</string>
+			<string>A3B9DADF-46F7-46D7-B600-08FB3EEEC716</string>
 			<key>IDESourceControlWCCName</key>
 			<string>XHRefreshControl</string>
 		</dict>
