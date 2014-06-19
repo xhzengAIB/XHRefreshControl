@@ -10,7 +10,7 @@
 
 #import "XHDemoTableViewController.h"
 
-#import "XHDemoNormalTableViewController.h"
+#import "XHSystemTableViewController.h"
 
 @interface XHRootTableViewController ()
 
@@ -70,7 +70,7 @@
         viewController = demoTableViewController;
         [self.navigationController pushViewController:viewController animated:YES];
     } else {
-        viewController = [[XHDemoNormalTableViewController alloc] initWithStyle:UITableViewStylePlain];
+        viewController = [[XHSystemTableViewController alloc] initWithStyle:UITableViewStylePlain];
         [self.navigationController pushViewController:viewController animated:YES];
     }
 }
