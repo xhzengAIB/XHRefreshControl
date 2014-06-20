@@ -60,14 +60,6 @@
 
 #pragma mark - XHRefreshControl Delegate
 
-- (XHPullDownRefreshViewType)pullDownRefreshViewType {
-    if (self.isIOS7Style) {
-        return XHPullDownRefreshViewTypeActivityIndicator;
-    }
-    // 如果返回XHPullDownRefreshViewTypeCustom, 会调用以下的Delegate回调
-    return XHPullDownRefreshViewTypeCustom;
-}
-
 - (UIView *)customPullDownRefreshView {
     UIView *backgroundView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 60)];
     backgroundView.backgroundColor = [UIColor whiteColor];

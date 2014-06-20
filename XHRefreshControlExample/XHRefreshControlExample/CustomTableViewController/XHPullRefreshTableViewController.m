@@ -96,7 +96,7 @@
 }
 
 - (XHPullDownRefreshViewType)pullDownRefreshViewType {
-    return XHPullDownRefreshViewTypeActivityIndicator;
+    return self.refreshViewType;
 }
 
 @end

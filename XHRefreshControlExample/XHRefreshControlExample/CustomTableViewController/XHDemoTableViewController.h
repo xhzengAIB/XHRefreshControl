@@ -10,6 +10,5 @@
 
 @interface XHDemoTableViewController : XHPullRefreshTableViewController
 
-@property (nonatomic, assign) BOOL isIOS7Style;
 
 @end
