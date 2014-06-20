@@ -64,7 +64,42 @@
     if (self.isIOS7Style) {
         return XHPullDownRefreshViewTypeActivityIndicator;
     }
-    return XHPullDownRefreshViewTypeCircle;
+    // 如果返回XHPullDownRefreshViewTypeCustom, 会调用以下的Delegate回调
+    return XHPullDownRefreshViewTypeCustom;
+}
+
+- (UIView *)customPullDownRefreshView {
+    UIView *backgroundView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 60)];
+    backgroundView.backgroundColor = [UIColor whiteColor];
+    UIProgressView *progressView = [[UIProgressView alloc] initWithProgressViewStyle:UIProgressViewStyleBar];
+    progressView.tag = 100;
+    progressView.frame = CGRectMake(0, CGRectGetHeight(backgroundView.bounds) / 2.0 - 3, 320, 3);
+    if ([progressView respondsToSelector:@selector(setTintColor:)]) {
+        progressView.tintColor = [UIColor orangeColor];
+    }
+    [backgroundView addSubview:progressView];
+    return backgroundView;
+}
+
+- (void)customPullDownRefreshView:(UIView *)customPullDownRefreshView withPullDownOffset:(CGFloat)pullDownOffset {
+    UIProgressView *progessView = (UIProgressView *)[customPullDownRefreshView viewWithTag:100];
+    [progessView setProgress:pullDownOffset / 40.0 animated:NO];
+}
+
+- (void)customPullDownRefreshViewWillStartRefresh:(UIView *)customPullDownRefreshView {
+    UIProgressView *progressView = (UIProgressView *)[customPullDownRefreshView viewWithTag:100];
+    [progressView setProgress:1.0];
+    if ([progressView respondsToSelector:@selector(setTintColor:)]) {
+        [progressView setTintColor:[UIColor greenColor]];
+    }
+}
+
+- (void)customPullDownRefreshViewWillEndRefresh:(UIView *)customPullDownRefreshView {
+    UIProgressView *progressView = (UIProgressView *)[customPullDownRefreshView viewWithTag:100];
+    if ([progressView respondsToSelector:@selector(setTintColor:)]) {
+        [progressView setTintColor:[UIColor orangeColor]];
+    }
+    [progressView setProgress:0.0 animated:NO];
 }
 
 #pragma mark - UITableView DataSource

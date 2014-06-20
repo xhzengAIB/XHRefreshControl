@@ -29,6 +29,7 @@ typedef NS_ENUM(NSInteger, XHRefreshViewLayerType) {
 typedef NS_ENUM(NSInteger, XHPullDownRefreshViewType) {
     XHPullDownRefreshViewTypeCircle = 0,
     XHPullDownRefreshViewTypeActivityIndicator = 1,
+    XHPullDownRefreshViewTypeCustom = 2,
 };
 
 @protocol XHRefreshControlDelegate <NSObject>
@@ -93,6 +94,35 @@ typedef NS_ENUM(NSInteger, XHPullDownRefreshViewType) {
  *  @return 如果不实现该delegate方法，默认是5次
  */
 - (NSInteger)autoLoadMoreRefreshedCountConverManual;
+
+/**
+ *  获取用户定义下拉的View
+ *
+ *  @return 返回用户定义的View
+ */
+- (UIView *)customPullDownRefreshView;
+
+/**
+ *  通知外部，下拉的距离，用于定制某个时机的状态
+ *
+ *  @param refreshView    需要改变状态的View
+ *  @param pullDownOffset 下拉的距离
+ */
+- (void)customPullDownRefreshView:(UIView *)customPullDownRefreshView withPullDownOffset:(CGFloat)pullDownOffset;
+
+/**
+ *  将要下拉的时候，被调用
+ *
+ *  @param customPullDownRefreshView 目标下拉的View
+ */
+- (void)customPullDownRefreshViewWillStartRefresh:(UIView *)customPullDownRefreshView;
+
+/**
+ *  将要停止下啦的时候，被调用
+ *
+ *  @param customPullDownRefreshView 目标下啦的View
+ */
+- (void)customPullDownRefreshViewWillEndRefresh:(UIView *)customPullDownRefreshView;
 
 @end
 
