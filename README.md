@@ -15,7 +15,7 @@ pod 'XHRefreshControl'
 and run `pod install`, then you're all done!
 
 ## To Do:
-* 添加外部自定义下拉View和下拉状态
+* 添加外部自定义下拉View和下拉状态-------已经完成
 
 ## How to use
 ```objc
