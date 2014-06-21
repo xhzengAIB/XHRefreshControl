@@ -24,7 +24,30 @@ and run `pod install`, then you're all done!
 
 XHRefreshControl *refreshControl = [[XHRefreshControl alloc] initWithScrollView:self.yourTableView delegate:self];
 
+以下手动可调用的方法
+/**
+ *  外部手动启动下拉加载的方法，这个方法不需要手动去拖动UIScrollView
+ */
+- (void)startPullDownRefreshing;
 
+/**
+ *  停止下拉刷新的方法
+ */
+- (void)endPullDownRefreshing;
+
+/**
+ *  停止上提加载更多的方法
+ */
+- (void)endLoadMoreRefresing;
+
+/**
+ *  没有更多的数据加载
+ */
+- (void)endMoreOverWithMessage:(NSString *)message;
+
+
+
+以下是delegate方法，用于外部定制
 implementation XHRefreshControl required delegate:
 
 @required
@@ -87,6 +110,35 @@ implementation XHRefreshControl required delegate:
  *  @return 如果不实现该delegate方法，默认是5次
  */
 - (NSInteger)autoLoadMoreRefreshedCountConverManual;
+
+/**
+ *  6、获取用户定义下拉的View
+ *
+ *  @return 返回用户定义的View
+ */
+- (UIView *)customPullDownRefreshView;
+
+/**
+ *  7、通知外部，下拉的距离，用于定制某个时机的状态
+ *
+ *  @param refreshView    需要改变状态的View
+ *  @param pullDownOffset 下拉的距离
+ */
+- (void)customPullDownRefreshView:(UIView *)customPullDownRefreshView withPullDownOffset:(CGFloat)pullDownOffset;
+
+/**
+ *  8、将要下拉的时候，被调用
+ *
+ *  @param customPullDownRefreshView 目标下拉的View
+ */
+- (void)customPullDownRefreshViewWillStartRefresh:(UIView *)customPullDownRefreshView;
+
+/**
+ *  9、将要停止下啦的时候，被调用
+ *
+ *  @param customPullDownRefreshView 目标下啦的View
+ */
+- (void)customPullDownRefreshViewWillEndRefresh:(UIView *)customPullDownRefreshView;
 
 
 
