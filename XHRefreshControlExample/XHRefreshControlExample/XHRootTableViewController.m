@@ -10,7 +10,7 @@
 
 #import "XHDemoTableViewController.h"
 
-#import "XHSystemTableViewController.h"
+#import "XHDemoSystemTableViewController.h"
 
 @interface XHRootTableViewController ()
 
@@ -70,7 +70,7 @@
         viewController = demoTableViewController;
         [self.navigationController pushViewController:viewController animated:YES];
     } else if (indexPath.row == 3) {
-        viewController = [[XHSystemTableViewController alloc] initWithStyle:UITableViewStylePlain];
+        viewController = [[XHDemoSystemTableViewController alloc] initWithStyle:UITableViewStylePlain];
         [self.navigationController pushViewController:viewController animated:YES];
     } else {
         XHDemoTableViewController *demoTableViewController = [[XHDemoTableViewController alloc] init];
