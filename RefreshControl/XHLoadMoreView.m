@@ -42,6 +42,16 @@
     [self.loadMoreButton setTitle:message forState:UIControlStateNormal];
 }
 
+- (void)setupCustomLoadMoreButton:(UIButton *)customLoadMoreButton {
+    customLoadMoreButton.frame = self.loadMoreButton.frame;
+    if (_loadMoreButton) {
+        [_loadMoreButton removeFromSuperview];
+        _loadMoreButton = nil;
+    }
+    _loadMoreButton = customLoadMoreButton;
+    [self insertSubview:_loadMoreButton atIndex:0];
+}
+
 #pragma mark - Propertys
 
 - (UIButton *)loadMoreButton {
@@ -50,12 +60,6 @@
         _loadMoreButton.titleLabel.font = [UIFont systemFontOfSize:16];
         [_loadMoreButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
         [_loadMoreButton setBackgroundColor:[UIColor colorWithWhite:0.922 alpha:1.000]];
-        //        _loadMoreButton.layer.borderColor = [UIColor colorWithWhite:0.867 alpha:1.000].CGColor;
-        //        _loadMoreButton.layer.borderWidth = 1;
-        //        _loadMoreButton.layer.shadowColor = [UIColor colorWithWhite:0.867 alpha:1.000].CGColor;
-        //        _loadMoreButton.layer.shadowOffset = CGSizeMake(1, 1);
-        //        _loadMoreButton.layer.shadowRadius = 1;
-        //        _loadMoreButton.layer.shadowOpacity = 1;
     }
     return _loadMoreButton;
 }

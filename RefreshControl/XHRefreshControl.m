@@ -175,6 +175,7 @@ typedef NS_ENUM(NSInteger, XHRefreshState) {
 }
 
 - (void)endMoreOverWithMessage:(NSString *)message {
+    [self endLoadMoreRefresing];
     self.noMoreDataForLoaded = YES;
     [self.loadMoreView configuraNothingMoreWithMessage:message];
 }
@@ -273,7 +274,17 @@ typedef NS_ENUM(NSInteger, XHRefreshState) {
 - (XHLoadMoreView *)loadMoreView {
     if (!_loadMoreView) {
         _loadMoreView = [[XHLoadMoreView alloc] initWithFrame:CGRectMake(0, CGRectGetHeight([[UIScreen mainScreen] bounds])-kXHLoadMoreViewHeight, CGRectGetWidth([[UIScreen mainScreen] bounds]), kXHLoadMoreViewHeight)];
-        [_loadMoreView.loadMoreButton addTarget:self action:@selector(loadMoreButtonClciked:) forControlEvents:UIControlEventTouchUpInside];
+        if ([self.delegate respondsToSelector:@selector(customLoadMoreButton)]) {
+            UIButton *customLoadMoreButton = [self.delegate customLoadMoreButton];
+            if (customLoadMoreButton) {
+                [customLoadMoreButton addTarget:self action:@selector(loadMoreButtonClciked:) forControlEvents:UIControlEventTouchUpInside];
+                [_loadMoreView setupCustomLoadMoreButton:customLoadMoreButton];
+            } else {
+                [_loadMoreView.loadMoreButton addTarget:self action:@selector(loadMoreButtonClciked:) forControlEvents:UIControlEventTouchUpInside];
+            }
+        } else {
+            [_loadMoreView.loadMoreButton addTarget:self action:@selector(loadMoreButtonClciked:) forControlEvents:UIControlEventTouchUpInside];
+        }
     }
     return _loadMoreView;
 }

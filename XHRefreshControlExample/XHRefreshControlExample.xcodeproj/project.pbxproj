@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7D264F10195A9D180091FED8 /* XHCustomLoadMoreButtonDemoTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D264F0F195A9D180091FED8 /* XHCustomLoadMoreButtonDemoTableViewController.m */; };
 		7D97DDB2195021AF00137633 /* XHBaseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D97DDA4195021AF00137633 /* XHBaseTableViewController.m */; };
 		7D97DDB3195021AF00137633 /* XHDemoTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D97DDA6195021AF00137633 /* XHDemoTableViewController.m */; };
 		7D97DDB4195021AF00137633 /* XHFoundationCommon.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D97DDA8195021AF00137633 /* XHFoundationCommon.m */; };
@@ -46,6 +47,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7D264F0E195A9D180091FED8 /* XHCustomLoadMoreButtonDemoTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XHCustomLoadMoreButtonDemoTableViewController.h; sourceTree = "<group>"; };
+		7D264F0F195A9D180091FED8 /* XHCustomLoadMoreButtonDemoTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XHCustomLoadMoreButtonDemoTableViewController.m; sourceTree = "<group>"; };
 		7D97DDA3195021AF00137633 /* XHBaseTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XHBaseTableViewController.h; sourceTree = "<group>"; };
 		7D97DDA4195021AF00137633 /* XHBaseTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XHBaseTableViewController.m; sourceTree = "<group>"; };
 		7D97DDA5195021AF00137633 /* XHDemoTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XHDemoTableViewController.h; sourceTree = "<group>"; };
@@ -127,6 +130,8 @@
 				7D97DDAA195021AF00137633 /* XHPullRefreshTableViewController.m */,
 				7D97DDA5195021AF00137633 /* XHDemoTableViewController.h */,
 				7D97DDA6195021AF00137633 /* XHDemoTableViewController.m */,
+				7D264F0E195A9D180091FED8 /* XHCustomLoadMoreButtonDemoTableViewController.h */,
+				7D264F0F195A9D180091FED8 /* XHCustomLoadMoreButtonDemoTableViewController.m */,
 			);
 			path = CustomTableViewController;
 			sourceTree = "<group>";
@@ -348,6 +353,7 @@
 				7D97DDB4195021AF00137633 /* XHFoundationCommon.m in Sources */,
 				AB0B349019429D5E00EC0072 /* XHLoadMoreView.m in Sources */,
 				AB965A47194F98A500CDC2AA /* XHRefreshActivityIndicatorContainerView.m in Sources */,
+				7D264F10195A9D180091FED8 /* XHCustomLoadMoreButtonDemoTableViewController.m in Sources */,
 				AB0B349319429D5E00EC0072 /* XHRefreshCircleContainerView.m in Sources */,
 				7D97DDB7195021AF00137633 /* XHSysatemRefreshTableViewController.m in Sources */,
 				AB0B345C19429D4700EC0072 /* main.m in Sources */,

@@ -111,6 +111,11 @@ typedef NS_ENUM(NSInteger, XHPullDownRefreshViewType) {
  */
 - (void)customPullDownRefreshViewWillEndRefresh:(UIView *)customPullDownRefreshView;
 
+/**
+ *  10、加载更多的按钮，默认是网易新闻App的样式，如果你需要自己定制的话，可以，那你实现该Delegate方法
+ */
+- (UIButton *)customLoadMoreButton;
+
 @end
 
 @interface XHRefreshControl : NSObject

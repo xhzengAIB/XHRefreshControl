@@ -12,6 +12,8 @@
 
 #import "XHDemoSystemTableViewController.h"
 
+#import "XHCustomLoadMoreButtonDemoTableViewController.h"
+
 @interface XHRootTableViewController ()
 
 @end
@@ -24,7 +26,7 @@
     // Do any additional setup after loading the view.
     [self.view addSubview:self.tableView];
     
-    self.dataSource = [[NSMutableArray alloc] initWithObjects:@"网易新闻样式有导航条的", @"网易新闻样式没有导航条的", @"iOS7的系统样式，自定义出来啦！", @"系统级别的UITableViewController使用组件", @"用户高级自定义样式", nil];
+    self.dataSource = [[NSMutableArray alloc] initWithObjects:@"网易新闻样式有导航条的", @"网易新闻样式没有导航条的", @"iOS7的系统样式，自定义出来啦！", @"系统级别的UITableViewController使用组件", @"用户高级自定义样式", @"自定义加载更多的按钮样式", nil];
 }
 
 - (void)didReceiveMemoryWarning
@@ -56,28 +58,38 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
+    
     UIViewController *viewController;
     if (!indexPath.row) {
         viewController = [[XHDemoTableViewController alloc] init];
-        [self.navigationController pushViewController:viewController animated:YES];
     } else if (indexPath.row == 1) {
         viewController = [[XHDemoTableViewController alloc] init];
-        
         [self presentViewController:viewController animated:YES completion:NULL];
+        return;
     } else if (indexPath.row == 2) {
+        
         XHDemoTableViewController *demoTableViewController = [[XHDemoTableViewController alloc] init];
         demoTableViewController.refreshViewType = XHPullDownRefreshViewTypeActivityIndicator;
         viewController = demoTableViewController;
-        [self.navigationController pushViewController:viewController animated:YES];
+        
     } else if (indexPath.row == 3) {
+        
         viewController = [[XHDemoSystemTableViewController alloc] initWithStyle:UITableViewStylePlain];
-        [self.navigationController pushViewController:viewController animated:YES];
-    } else {
+        
+    } else if (indexPath.row == 4) {
+        
         XHDemoTableViewController *demoTableViewController = [[XHDemoTableViewController alloc] init];
         demoTableViewController.refreshViewType = XHPullDownRefreshViewTypeCustom;
         viewController = demoTableViewController;
-        [self.navigationController pushViewController:viewController animated:YES];
+
+    } else {
+        
+        viewController = [[XHCustomLoadMoreButtonDemoTableViewController alloc] init];
+        
     }
+    
+    [self.navigationController pushViewController:viewController animated:YES];
 }
 
 @end
