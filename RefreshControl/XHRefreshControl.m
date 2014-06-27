@@ -581,7 +581,7 @@ typedef NS_ENUM(NSInteger, XHRefreshState) {
                 } else {
                     CGFloat offset;
                     UIEdgeInsets contentInset;
-                    offset = MAX(self.scrollView.contentOffset.y * -1, 0.0f);
+                    offset = MAX(self.scrollView.contentOffset.y * -1, kXHDefaultRefreshTotalPixels);
                     offset = MIN(offset, self.refreshTotalPixels);
                     contentInset = self.scrollView.contentInset;
                     self.scrollView.contentInset = UIEdgeInsetsMake(offset, contentInset.left, contentInset.bottom, contentInset.right);
