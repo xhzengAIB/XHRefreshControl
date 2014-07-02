@@ -32,13 +32,6 @@ typedef NS_ENUM(NSInteger, XHPullDownRefreshViewType) {
  */
 - (void)beginLoadMoreRefreshing;
 
-/**
- *  3、最后更新数据的时间
- *
- *  @return 返回缓存最后更新某个页面的时间
- */
-- (NSString *)lastUpdateTimeString;
-
 @optional
 /**
  *  1、是否支持下拉刷新
@@ -115,6 +108,14 @@ typedef NS_ENUM(NSInteger, XHPullDownRefreshViewType) {
  *  10、加载更多的按钮，默认是网易新闻App的样式，如果你需要自己定制的话，可以，那你实现该Delegate方法
  */
 - (UIButton *)customLoadMoreButton;
+
+/**
+ *  11、最后更新数据的时间
+ *
+ *  @return 返回缓存最后更新某个页面的时间
+ */
+- (NSString *)lastUpdateTimeString;
+
 
 @end
 
