@@ -8,6 +8,8 @@
 
 #import "XHPullRefreshTableViewController.h"
 
+#import "NSDate+TimeAgo.h"
+
 @interface XHPullRefreshTableViewController ()
 
 @property (nonatomic, strong) XHRefreshControl *refreshControl;
@@ -71,11 +73,13 @@
 - (NSString *)lastUpdateTimeString {
     NSDate *date = [NSDate date];
     
-    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    NSString *destDateString;
     
-    [dateFormatter setDateFormat:@"MM-dd HH:mm:ss"];
-    
-    NSString *destDateString = [dateFormatter stringFromDate:date];
+    if (rand()%2 == 1) {
+        destDateString = [NSString stringWithFormat:@"上次刷新：%@", [date timeAgo]];
+    } else {
+        destDateString = @"从未更新";
+    }
     
     return destDateString;
 }

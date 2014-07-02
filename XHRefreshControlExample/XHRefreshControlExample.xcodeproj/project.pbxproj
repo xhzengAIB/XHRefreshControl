@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7D093BAC1963FE1100F563BD /* NSDate+TimeAgo.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D093BAA1963FE1100F563BD /* NSDate+TimeAgo.m */; };
+		7D093BAD1963FE1100F563BD /* NSDateTimeAgo.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 7D093BAB1963FE1100F563BD /* NSDateTimeAgo.bundle */; };
 		7D264F10195A9D180091FED8 /* XHCustomLoadMoreButtonDemoTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D264F0F195A9D180091FED8 /* XHCustomLoadMoreButtonDemoTableViewController.m */; };
 		7D97DDB2195021AF00137633 /* XHBaseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D97DDA4195021AF00137633 /* XHBaseTableViewController.m */; };
 		7D97DDB3195021AF00137633 /* XHDemoTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D97DDA6195021AF00137633 /* XHDemoTableViewController.m */; };
@@ -47,6 +49,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7D093BA91963FE1100F563BD /* NSDate+TimeAgo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+TimeAgo.h"; sourceTree = "<group>"; };
+		7D093BAA1963FE1100F563BD /* NSDate+TimeAgo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+TimeAgo.m"; sourceTree = "<group>"; };
+		7D093BAB1963FE1100F563BD /* NSDateTimeAgo.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = NSDateTimeAgo.bundle; sourceTree = "<group>"; };
 		7D264F0E195A9D180091FED8 /* XHCustomLoadMoreButtonDemoTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XHCustomLoadMoreButtonDemoTableViewController.h; sourceTree = "<group>"; };
 		7D264F0F195A9D180091FED8 /* XHCustomLoadMoreButtonDemoTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XHCustomLoadMoreButtonDemoTableViewController.m; sourceTree = "<group>"; };
 		7D97DDA3195021AF00137633 /* XHBaseTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XHBaseTableViewController.h; sourceTree = "<group>"; };
@@ -119,6 +124,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7D093BA81963FE1100F563BD /* Vendor */ = {
+			isa = PBXGroup;
+			children = (
+				7D093BA91963FE1100F563BD /* NSDate+TimeAgo.h */,
+				7D093BAA1963FE1100F563BD /* NSDate+TimeAgo.m */,
+				7D093BAB1963FE1100F563BD /* NSDateTimeAgo.bundle */,
+			);
+			path = Vendor;
+			sourceTree = "<group>";
+		};
 		7D97DDA2195021AF00137633 /* CustomTableViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -187,6 +202,7 @@
 				AB0B345F19429D4700EC0072 /* AppDelegate.m */,
 				ABCFC8031945077D00E44551 /* XHRootTableViewController.h */,
 				ABCFC8041945077D00E44551 /* XHRootTableViewController.m */,
+				7D093BA81963FE1100F563BD /* Vendor */,
 				7D97DDA2195021AF00137633 /* CustomTableViewController */,
 				7D97DDAB195021AF00137633 /* SystemTableViewController */,
 				AB0B346A19429D4700EC0072 /* Images.xcassets */,
@@ -320,6 +336,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7D093BAD1963FE1100F563BD /* NSDateTimeAgo.bundle in Resources */,
 				AB0B346B19429D4700EC0072 /* Images.xcassets in Resources */,
 				AB0B345A19429D4700EC0072 /* InfoPlist.strings in Resources */,
 			);
@@ -345,6 +362,7 @@
 				7D97DDB2195021AF00137633 /* XHBaseTableViewController.m in Sources */,
 				7D97DDB6195021AF00137633 /* XHDemoSystemTableViewController.m in Sources */,
 				7D97DDB5195021AF00137633 /* XHPullRefreshTableViewController.m in Sources */,
+				7D093BAC1963FE1100F563BD /* NSDate+TimeAgo.m in Sources */,
 				AB0B349219429D5E00EC0072 /* XHRefreshControl.m in Sources */,
 				7D97DDB3195021AF00137633 /* XHDemoTableViewController.m in Sources */,
 				AB228835194F92EB001B8E51 /* XHActivityIndicatorView.m in Sources */,

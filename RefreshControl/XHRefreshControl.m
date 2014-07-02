@@ -109,8 +109,6 @@ typedef NS_ENUM(NSInteger, XHRefreshState) {
 }
 
 - (void)callBeginPullDownRefreshing {
-    [self setupRefreshTime];
-    
     [self setScrollViewContentInsetForNoLoadMore];
     
     self.loadMoreRefreshedCount = 0;
@@ -121,6 +119,8 @@ typedef NS_ENUM(NSInteger, XHRefreshState) {
 
 - (void)endPullDownRefreshing {
     if (self.isPullDownRefreshed) {
+        [self setupRefreshTime];
+        
         self.pullDownRefreshing = NO;
         self.refreshState = XHRefreshStateStopped;
         
@@ -179,7 +179,7 @@ typedef NS_ENUM(NSInteger, XHRefreshState) {
 - (void)setupRefreshTime {
     NSString *dateString = [self.delegate lastUpdateTimeString];
     if ([dateString isKindOfClass:[NSString class]] || dateString) {
-        self.refreshCircleContainerView.timeLabel.text = [NSString stringWithFormat:@"上次刷新：%@", dateString];
+        self.refreshCircleContainerView.timeLabel.text = dateString;
     }
 }
 
