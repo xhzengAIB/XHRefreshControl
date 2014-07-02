@@ -177,14 +177,9 @@ typedef NS_ENUM(NSInteger, XHRefreshState) {
 #pragma mark - Refresh Time Helper Method
 
 - (void)setupRefreshTime {
-    NSDate *date = [self.delegate lastUpdateTime];
-    if ([date isKindOfClass:[NSDate class]] || date) {
-        NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-        
-        [dateFormatter setDateFormat:@"MM-dd HH:mm"];
-        
-        NSString *destDateString = [dateFormatter stringFromDate:date];
-        self.refreshCircleContainerView.timeLabel.text = [NSString stringWithFormat:@"上次刷新：%@", destDateString];
+    NSString *dateString = [self.delegate lastUpdateTimeString];
+    if ([dateString isKindOfClass:[NSString class]] || dateString) {
+        self.refreshCircleContainerView.timeLabel.text = [NSString stringWithFormat:@"上次刷新：%@", dateString];
     }
 }
 

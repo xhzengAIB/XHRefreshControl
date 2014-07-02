@@ -37,7 +37,7 @@ typedef NS_ENUM(NSInteger, XHPullDownRefreshViewType) {
  *
  *  @return 返回缓存最后更新某个页面的时间
  */
-- (NSDate *)lastUpdateTime;
+- (NSString *)lastUpdateTimeString;
 
 @optional
 /**

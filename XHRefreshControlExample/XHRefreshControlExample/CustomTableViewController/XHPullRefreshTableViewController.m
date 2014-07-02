@@ -68,8 +68,16 @@
     [self loadDataSource];
 }
 
-- (NSDate *)lastUpdateTime {
-    return [NSDate date];
+- (NSString *)lastUpdateTimeString {
+    NSDate *date = [NSDate date];
+    
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    
+    [dateFormatter setDateFormat:@"MM-dd HH:mm:ss"];
+    
+    NSString *destDateString = [dateFormatter stringFromDate:date];
+    
+    return destDateString;
 }
 
 - (BOOL)keepiOS7NewApiCharacter {
