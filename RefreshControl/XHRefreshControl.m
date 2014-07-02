@@ -70,15 +70,7 @@ typedef NS_ENUM(NSInteger, XHRefreshState) {
     if (self.isPullDownRefreshed) {
         self.pullDownRefreshing = YES;
         
-        NSDate *date = [self.delegate lastUpdateTime];
-        if ([date isKindOfClass:[NSDate class]] || date) {
-            NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-            
-            [dateFormatter setDateFormat:@"MM-dd HH:mm"];
-            
-            NSString *destDateString = [dateFormatter stringFromDate:date];
-            self.refreshCircleContainerView.timeLabel.text = [NSString stringWithFormat:@"上次刷新：%@", destDateString];
-        }
+        [self setupRefreshTime];
         
         self.refreshState = XHRefreshStatePulling;
         
@@ -117,6 +109,8 @@ typedef NS_ENUM(NSInteger, XHRefreshState) {
 }
 
 - (void)callBeginPullDownRefreshing {
+    [self setupRefreshTime];
+    
     [self setScrollViewContentInsetForNoLoadMore];
     
     self.loadMoreRefreshedCount = 0;
@@ -178,6 +172,20 @@ typedef NS_ENUM(NSInteger, XHRefreshState) {
     [self endLoadMoreRefresing];
     self.noMoreDataForLoaded = YES;
     [self.loadMoreView configuraNothingMoreWithMessage:message];
+}
+
+#pragma mark - Refresh Time Helper Method
+
+- (void)setupRefreshTime {
+    NSDate *date = [self.delegate lastUpdateTime];
+    if ([date isKindOfClass:[NSDate class]] || date) {
+        NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+        
+        [dateFormatter setDateFormat:@"MM-dd HH:mm"];
+        
+        NSString *destDateString = [dateFormatter stringFromDate:date];
+        self.refreshCircleContainerView.timeLabel.text = [NSString stringWithFormat:@"上次刷新：%@", destDateString];
+    }
 }
 
 #pragma mark - Scroll View
