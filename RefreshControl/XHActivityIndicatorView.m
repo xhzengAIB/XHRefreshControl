@@ -48,13 +48,18 @@ static NSString* const kXHRotationAnimation = @"XHRotationAnimation";
     self.animationLayer.hidden = YES;
 }
 
-- (id)initWithFrame:(CGRect)frame {
+- (instancetype)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
     if (self) {
         // Initialization code
-        [self setup];
     }
     return self;
+}
+
+- (void)willMoveToSuperview:(UIView *)newSuperview {
+    if (newSuperview) {
+        [self setup];
+    }
 }
 
 #pragma mark - Public methods
@@ -114,7 +119,7 @@ static NSString* const kXHRotationAnimation = @"XHRotationAnimation";
     for (int i = 0; i < 12; i ++) {
         CALayer *layer = [self createLayer];
         
-        layer.transform = CATransform3DMakeRotation(M_PI / 6 * i, 0, 0, 1);
+        layer.transform = CATransform3DMakeRotation(M_PI / 6 * i + (self.refreshViewLayerType ? M_PI : 0), 0, 0, 1);
         
         layer.hidden = YES;
         

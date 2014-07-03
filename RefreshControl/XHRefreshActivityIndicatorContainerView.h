@@ -10,15 +10,18 @@
 
 #import "XHActivityIndicatorView.h"
 
+#import "XHRefreshControlHeader.h"
+
 @interface XHRefreshActivityIndicatorContainerView : UIView
 
+/**
+ *  iOS7自定义菊花转圈控件
+ */
 @property (nonatomic, strong) XHActivityIndicatorView *activityIndicatorView;
 
 /**
- *  isRefreshViewOnTableView
- *  YES:refreshView是tableView的子view
- *  NO:refreshView是tableView.superView的子view
+ *  标识下拉刷新是UIScrollView的子view，还是UIScrollView父view的子view， 默认是scrollView的子View，为XHRefreshViewLayerTypeOnScrollViews
  */
-@property (nonatomic, assign) BOOL isRefreshViewOnTableView;
+@property (nonatomic, assign) XHRefreshViewLayerType refreshViewLayerType;
 
 @end

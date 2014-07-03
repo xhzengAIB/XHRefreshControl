@@ -8,23 +8,27 @@
 
 #import <UIKit/UIKit.h>
 
-//开始画圆圈时的offset
+#import "XHRefreshControlHeader.h"
+
+// 开始画圆圈时的offset
 #define kXHRefreshCircleViewHeight 20
 
 @interface XHCircleView : UIView
 
-//圆圈开始旋转时的offset （即开始刷新数据时）
+/**
+ *  圆圈开始旋转时的offset （即开始刷新数据时）
+ */
 @property (nonatomic, assign) CGFloat heightBeginToRefresh;
 
-//offset的Y值
+/**
+ *  offset的Y值
+ */
 @property (nonatomic, assign) CGFloat offsetY;
 
 /**
- *  isRefreshViewOnTableView
- *  YES:refreshView是tableView的子view
- *  NO:refreshView是tableView.superView的子view
+ *  标识下拉刷新是UIScrollView的子view，还是UIScrollView父view的子view， 默认是scrollView的子View，为XHRefreshViewLayerTypeOnScrollViews
  */
-@property (nonatomic, assign) BOOL isRefreshViewOnTableView;
+@property (nonatomic, assign) XHRefreshViewLayerType refreshViewLayerType;
 
 /**
  *  旋转的animation

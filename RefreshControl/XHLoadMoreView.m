@@ -10,6 +10,9 @@
 
 @interface XHLoadMoreView ()
 
+/**
+ *  系统默认菊花控件
+ */
 @property (nonatomic, strong) UIActivityIndicatorView *activityIndicatorView;
 
 @end

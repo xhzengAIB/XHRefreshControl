@@ -16,33 +16,46 @@
 
 #pragma mark - Propertys
 
-- (void)setIsRefreshViewOnTableView:(BOOL)isRefreshViewOnTableView {
-    _isRefreshViewOnTableView = isRefreshViewOnTableView;
-    CGRect activityFrame = self.activityIndicatorView.frame;
-    if (isRefreshViewOnTableView) {
-        activityFrame.origin.y = CGRectGetHeight(self.bounds) * 0.6;
-    } else {
-        activityFrame.origin.y = CGRectGetHeight(self.bounds) * 0.4;
+- (void)setRefreshViewLayerType:(XHRefreshViewLayerType)refreshViewLayerType {
+    _refreshViewLayerType = refreshViewLayerType;
+    
+    CGRect activityIndicatorViewFrame;
+    switch (refreshViewLayerType) {
+        case XHRefreshViewLayerTypeOnSuperView:
+            activityIndicatorViewFrame = CGRectMake(CGRectGetWidth(self.bounds) / 2.0, CGRectGetHeight(self.bounds) * 0.4, 0, 0);
+            break;
+        case XHRefreshViewLayerTypeOnScrollViews:
+            activityIndicatorViewFrame = CGRectMake(CGRectGetWidth(self.bounds) / 2.0, CGRectGetHeight(self.bounds) * 0.6, 0, 0);
+            break;
+        default:
+            break;
     }
-    self.activityIndicatorView.frame = activityFrame;
+    self.activityIndicatorView.frame = activityIndicatorViewFrame;
 }
 
 - (XHActivityIndicatorView *)activityIndicatorView {
     if (!_activityIndicatorView) {
-        _activityIndicatorView = [[XHActivityIndicatorView alloc] initWithFrame:CGRectMake(CGRectGetWidth(self.bounds) / 2.0, CGRectGetHeight(self.bounds) * 0.4, 0, 0)];
+        _activityIndicatorView = [[XHActivityIndicatorView alloc] initWithFrame:CGRectMake(CGRectGetWidth(self.bounds) / 2.0, CGRectGetHeight(self.bounds) * 0.6, 0, 0)];
+        _activityIndicatorView.refreshViewLayerType = self.refreshViewLayerType;
+        
     }
     return _activityIndicatorView;
 }
 
 #pragma mark - Life Cycle
 
-- (id)initWithFrame:(CGRect)frame {
+- (instancetype)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
     if (self) {
         // Initialization code
-        [self addSubview:self.activityIndicatorView];
     }
     return self;
+}
+
+- (void)willMoveToSuperview:(UIView *)newSuperview {
+    if (newSuperview) {
+        [self addSubview:self.activityIndicatorView];
+    }
 }
 
 @end

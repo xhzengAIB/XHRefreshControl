@@ -8,16 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-typedef NS_ENUM(NSInteger, XHRefreshViewLayerType) {
-    XHRefreshViewLayerTypeOnSuperView = 0,
-    XHRefreshViewLayerTypeOnScrollViews = 1,
-};
-
-typedef NS_ENUM(NSInteger, XHPullDownRefreshViewType) {
-    XHPullDownRefreshViewTypeCircle = 0,
-    XHPullDownRefreshViewTypeActivityIndicator = 1,
-    XHPullDownRefreshViewTypeCustom = 2,
-};
+#import "XHRefreshControlHeader.h"
 
 @protocol XHRefreshControlDelegate <NSObject>
 

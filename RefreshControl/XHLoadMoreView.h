@@ -12,16 +12,38 @@
 
 @interface XHLoadMoreView : UIView
 
+/**
+ *  加载更多的按钮
+ */
 @property (nonatomic, strong) UIButton *loadMoreButton;
 
+/**
+ *  当外部需要自定义加载更多的按钮时，需要通过该方法进行覆盖原本的按钮
+ *
+ *  @param customLoadMoreButton 目标自定义加载更多按钮
+ */
 - (void)setupCustomLoadMoreButton:(UIButton *)customLoadMoreButton;
 
+/**
+ *  开始加载
+ */
 - (void)startLoading;
 
+/**
+ *  结束加载
+ */
 - (void)endLoading;
 
+/**
+ *  设置手动加载更多的UI
+ */
 - (void)configuraManualState;
 
+/**
+ *  当外部加载更多数据的时候，发现没有数据了，可以进行设置一些提示字眼
+ *
+ *  @param message 被显示的目标文本
+ */
 - (void)configuraNothingMoreWithMessage:(NSString *)message;
 
 @end

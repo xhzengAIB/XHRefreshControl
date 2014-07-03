@@ -262,7 +262,7 @@ typedef NS_ENUM(NSInteger, XHRefreshState) {
         _refreshCircleContainerView.backgroundColor = [UIColor clearColor];
         _refreshCircleContainerView.circleView.heightBeginToRefresh = kXHDefaultRefreshTotalPixels - kXHRefreshCircleViewHeight;
         _refreshCircleContainerView.circleView.offsetY = 0;
-        _refreshCircleContainerView.circleView.isRefreshViewOnTableView = self.refreshViewLayerType;
+        _refreshCircleContainerView.circleView.refreshViewLayerType = self.refreshViewLayerType;
     }
     return _refreshCircleContainerView;
 }
@@ -271,7 +271,7 @@ typedef NS_ENUM(NSInteger, XHRefreshState) {
     if (!_refreshActivityIndicatorContainerView) {
         _refreshActivityIndicatorContainerView = [[XHRefreshActivityIndicatorContainerView alloc] initWithFrame:CGRectMake(0, (self.refreshViewLayerType == XHRefreshViewLayerTypeOnScrollViews ? -kXHDefaultRefreshTotalPixels : self.originalTopInset), CGRectGetWidth([[UIScreen mainScreen] bounds]), kXHDefaultRefreshTotalPixels)];
         _refreshActivityIndicatorContainerView.backgroundColor = [UIColor clearColor];
-        _refreshActivityIndicatorContainerView.isRefreshViewOnTableView = self.refreshViewLayerType;
+        _refreshActivityIndicatorContainerView.refreshViewLayerType = self.refreshViewLayerType;
     }
     return _refreshActivityIndicatorContainerView;
 }

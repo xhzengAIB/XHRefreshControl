@@ -12,10 +12,19 @@
 
 @interface XHRefreshCircleContainerView : UIView
 
+/**
+ *  线条圆形的控件
+ */
 @property (nonatomic, strong) XHCircleView *circleView;
 
+/**
+ *  提示下拉刷新状态的标签
+ */
 @property (nonatomic, strong) UILabel *stateLabel;
 
+/**
+ *  提示最后更新时间的标签
+ */
 @property (nonatomic, strong) UILabel *timeLabel;
 
 @end

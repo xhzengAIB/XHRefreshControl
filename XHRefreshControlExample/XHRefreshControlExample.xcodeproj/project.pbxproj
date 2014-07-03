@@ -52,6 +52,7 @@
 		7D093BA91963FE1100F563BD /* NSDate+TimeAgo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+TimeAgo.h"; sourceTree = "<group>"; };
 		7D093BAA1963FE1100F563BD /* NSDate+TimeAgo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+TimeAgo.m"; sourceTree = "<group>"; };
 		7D093BAB1963FE1100F563BD /* NSDateTimeAgo.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = NSDateTimeAgo.bundle; sourceTree = "<group>"; };
+		7D23B6CA1965246100614EFC /* XHRefreshControlHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XHRefreshControlHeader.h; sourceTree = "<group>"; };
 		7D264F0E195A9D180091FED8 /* XHCustomLoadMoreButtonDemoTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XHCustomLoadMoreButtonDemoTableViewController.h; sourceTree = "<group>"; };
 		7D264F0F195A9D180091FED8 /* XHCustomLoadMoreButtonDemoTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XHCustomLoadMoreButtonDemoTableViewController.m; sourceTree = "<group>"; };
 		7D97DDA3195021AF00137633 /* XHBaseTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XHBaseTableViewController.h; sourceTree = "<group>"; };
@@ -243,6 +244,7 @@
 		AB0B348719429D5E00EC0072 /* RefreshControl */ = {
 			isa = PBXGroup;
 			children = (
+				7D23B6CA1965246100614EFC /* XHRefreshControlHeader.h */,
 				AB0B348C19429D5E00EC0072 /* XHRefreshControl.h */,
 				AB0B348D19429D5E00EC0072 /* XHRefreshControl.m */,
 				AB0B348E19429D5E00EC0072 /* XHRefreshCircleContainerView.h */,

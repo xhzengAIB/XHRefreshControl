@@ -42,7 +42,7 @@
     CGContextSetLineWidth(context, 1.f);
     
     static CGFloat radius = 9;
-    if (_isRefreshViewOnTableView) {
+    if (self.refreshViewLayerType) {
         static CGFloat startAngle = M_PI / 2;
         CGFloat endAngle = (ABS(_offsetY) / _heightBeginToRefresh) * (M_PI * 19 / 10) + startAngle;
         CGContextAddArc(context, CGRectGetWidth(self.frame) / 2, CGRectGetHeight(self.frame) / 2, radius, startAngle, endAngle, 0);
