@@ -576,8 +576,10 @@ typedef NS_ENUM(NSInteger, XHRefreshState) {
                     scrollOffsetThreshold = -(kXHDefaultRefreshTotalPixels + self.originalTopInset);
                     
                     if(!self.scrollView.isDragging && self.refreshState == XHRefreshStatePulling) {
-                        self.pullDownRefreshing = YES;
-                        self.refreshState = XHRefreshStateLoading;
+                        if (!self.pullDownRefreshing) {
+                            self.pullDownRefreshing = YES;
+                            self.refreshState = XHRefreshStateLoading;
+                        }
                     } else if(contentOffset.y < scrollOffsetThreshold && self.scrollView.isDragging && self.refreshState == XHRefreshStateStopped) {
                         self.refreshState = XHRefreshStatePulling;
                     } else if(contentOffset.y >= scrollOffsetThreshold && self.refreshState != XHRefreshStateStopped) {
