@@ -28,4 +28,6 @@
 
 - (void)endMoreOverWithMessage:(NSString *)message;
 
+- (void)handleLoadMoreError;
+
 @end

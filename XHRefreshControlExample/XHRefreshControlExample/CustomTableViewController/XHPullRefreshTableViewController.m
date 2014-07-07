@@ -34,6 +34,10 @@
     [self.refreshControl endMoreOverWithMessage:message];
 }
 
+- (void)handleLoadMoreError {
+    [self.refreshControl handleLoadMoreError];
+}
+
 #pragma mark - Propertys
 
 - (XHRefreshControl *)refreshControl {
@@ -92,7 +96,7 @@
 }
 
 - (NSInteger)autoLoadMoreRefreshedCountConverManual {
-    return 2;
+    return 5;
 }
 
 - (BOOL)isPullDownRefreshed {
@@ -109,6 +113,10 @@
 
 - (XHPullDownRefreshViewType)pullDownRefreshViewType {
     return self.refreshViewType;
+}
+
+- (NSString *)displayAutoLoadMoreRefreshedMessage {
+    return @"显示下10条";
 }
 
 @end

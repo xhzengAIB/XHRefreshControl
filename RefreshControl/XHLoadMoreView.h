@@ -37,7 +37,7 @@
 /**
  *  设置手动加载更多的UI
  */
-- (void)configuraManualState;
+- (void)configuraManualStateWithMessage:(NSString *)message;
 
 /**
  *  当外部加载更多数据的时候，发现没有数据了，可以进行设置一些提示字眼

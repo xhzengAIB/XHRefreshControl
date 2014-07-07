@@ -32,6 +32,10 @@
     [self.customRefreshControl endMoreOverWithMessage:message];
 }
 
+- (void)handleLoadMoreError {
+    [self.customRefreshControl handleLoadMoreError];
+}
+
 #pragma mark - Propertys
 
 - (XHRefreshControl *)customRefreshControl {
@@ -97,6 +101,10 @@
 
 - (XHPullDownRefreshViewType)pullDownRefreshViewType {
     return XHPullDownRefreshViewTypeActivityIndicator;
+}
+
+- (NSString *)displayAutoLoadMoreRefreshedMessage {
+    return @"显示下10条";
 }
 
 @end

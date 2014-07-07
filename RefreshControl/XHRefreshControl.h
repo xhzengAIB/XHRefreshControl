@@ -107,6 +107,13 @@
  */
 - (NSString *)lastUpdateTimeString;
 
+/**
+ *  12、用于显示手动上提加载更多的提示字眼
+ *
+ *  @return 如果没有实现该Delegate，默认显示为显示下20条的字眼
+ */
+- (NSString *)displayAutoLoadMoreRefreshedMessage;
+
 
 @end
 
@@ -133,5 +140,10 @@
  *  没有更多的数据加载
  */
 - (void)endMoreOverWithMessage:(NSString *)message;
+
+/**
+ *  当加载更多出现网络错误的时候
+ */
+- (void)handleLoadMoreError;
 
 @end

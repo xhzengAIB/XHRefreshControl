@@ -28,9 +28,13 @@
         sleep(1.5);
         dispatch_async(dispatch_get_main_queue(), ^{
             if (self.requestCurrentPage) {
-                [self.dataSource addObjectsFromArray:dataSource];
-                [self.tableView insertRowsAtIndexPaths:indexPaths withRowAnimation:UITableViewRowAnimationNone];
-                [self endLoadMoreRefreshing];
+                if (self.requestCurrentPage == arc4random() % 10) {
+                    [self handleLoadMoreError];
+                } else {
+                    [self.dataSource addObjectsFromArray:dataSource];
+                    [self.tableView insertRowsAtIndexPaths:indexPaths withRowAnimation:UITableViewRowAnimationNone];
+                    [self endLoadMoreRefreshing];
+                }
             } else {
                 self.dataSource = dataSource;
                 [self.tableView reloadData];

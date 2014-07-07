@@ -19,6 +19,8 @@
 
 #define kXHAutoLoadMoreRefreshedCount 5
 
+#define kXHDefaultDisplayAutoLoadMoreRefreshedMessage @"显示下20条"
+
 
 typedef NS_ENUM(NSInteger, XHRefreshState) {
     XHRefreshStatePulling   = 0,
@@ -141,7 +143,7 @@ typedef NS_ENUM(NSInteger, XHRefreshState) {
         if (self.loadMoreRefreshedCount < self.autoLoadMoreRefreshedCount) {
             [self callBeginLoadMoreRefreshing];
         } else {
-            [self.loadMoreView configuraManualState];
+            [self.loadMoreView configuraManualStateWithMessage:[self displayAutoLoadMoreRefreshedMessage]];
         }
     }
 }
@@ -172,6 +174,12 @@ typedef NS_ENUM(NSInteger, XHRefreshState) {
     [self endLoadMoreRefresing];
     self.noMoreDataForLoaded = YES;
     [self.loadMoreView configuraNothingMoreWithMessage:message];
+}
+
+- (void)handleLoadMoreError {
+    [self endLoadMoreRefresing];
+    [self.loadMoreView configuraManualStateWithMessage:[self displayAutoLoadMoreRefreshedMessage]];
+    self.loadMoreRefreshedCount = self.autoLoadMoreRefreshedCount;
 }
 
 #pragma mark - Refresh Time Helper Method
@@ -358,6 +366,14 @@ typedef NS_ENUM(NSInteger, XHRefreshState) {
         return self.customRefreshView;
     }
     return nil;
+}
+
+- (NSString *)displayAutoLoadMoreRefreshedMessage {
+    NSString *message = kXHDefaultDisplayAutoLoadMoreRefreshedMessage;
+    if ([self.delegate respondsToSelector:@selector(displayAutoLoadMoreRefreshedMessage)]) {
+        message = [self.delegate displayAutoLoadMoreRefreshedMessage];
+    }
+    return message;
 }
 
 #pragma mark - Setter Method

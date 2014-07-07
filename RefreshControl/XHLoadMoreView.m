@@ -33,10 +33,10 @@
     [self.activityIndicatorView stopAnimating];
 }
 
-- (void)configuraManualState {
+- (void)configuraManualStateWithMessage:(NSString *)message {
     self.hidden = NO;
     self.loadMoreButton.userInteractionEnabled = YES;
-    [self.loadMoreButton setTitle:@"显示下20条" forState:UIControlStateNormal];
+    [self.loadMoreButton setTitle:message forState:UIControlStateNormal];
 }
 
 - (void)configuraNothingMoreWithMessage:(NSString *)message {
