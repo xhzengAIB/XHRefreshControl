@@ -27,14 +27,16 @@
                 if (self.requestCurrentPage == arc4random() % 10) {
                     [self handleLoadMoreError];
                 } else {
+                    [self endLoadMoreRefreshing];
                     [self.dataSource addObjectsFromArray:dataSource];
                     [self.tableView insertRowsAtIndexPaths:indexPaths withRowAnimation:UITableViewRowAnimationNone];
-                    [self endLoadMoreRefreshing];
+                    
                 }
             } else {
+                [self endPullDownRefreshing];
                 self.dataSource = dataSource;
                 [self.tableView reloadData];
-                [self endPullDownRefreshing];
+                
             }
         });
     });

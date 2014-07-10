@@ -247,8 +247,6 @@ typedef NS_ENUM(NSInteger, XHRefreshState) {
 }
 
 - (void)setScrollViewContentInsetForLoadMore {
-    if (self.pullDownRefreshing)
-        return;
     UIEdgeInsets currentInsets = self.scrollView.contentInset;
     currentInsets.bottom = kXHLoadMoreViewHeight;
     [self setScrollViewContentInset:currentInsets];
