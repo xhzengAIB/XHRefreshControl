@@ -108,7 +108,7 @@
 }
 
 - (XHRefreshViewLayerType)refreshViewLayerType {
-    return XHRefreshViewLayerTypeOnSuperView;
+    return XHRefreshViewLayerTypeOnScrollViews;
 }
 
 - (XHPullDownRefreshViewType)pullDownRefreshViewType {

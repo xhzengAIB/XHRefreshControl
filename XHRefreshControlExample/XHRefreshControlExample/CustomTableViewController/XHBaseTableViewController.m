@@ -51,6 +51,8 @@
         _tableView.delegate = self;
         _tableView.dataSource = self;
         
+//        _tableView.contentInset = UIEdgeInsetsMake(80, 0, 0, 0);
+        
         _tableView.tableFooterView = [[UIView alloc] init];
         if (![self validateSeparatorInset]) {
             if (self.tableViewStyle == UITableViewStyleGrouped) {

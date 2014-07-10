@@ -10,10 +10,15 @@
 
 @implementation XHCircleView
 
+- (void)setOffsetY:(CGFloat)offsetY {
+    _offsetY = offsetY;
+    [self setNeedsDisplay];
+}
+
 - (id)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
     if (self) {
-        _heightBeginToRefresh = 50;
+        _heightBeginToRefresh = 40;
         _offsetY = 0;
         
         self.backgroundColor = [UIColor clearColor];

@@ -85,7 +85,6 @@ typedef NS_ENUM(NSInteger, XHRefreshState) {
         case XHPullDownRefreshViewTypeCircle: {
             if (self.refreshCircleContainerView.circleView.offsetY != kXHDefaultRefreshTotalPixels - kXHRefreshCircleViewHeight) {
                 self.refreshCircleContainerView.circleView.offsetY = kXHDefaultRefreshTotalPixels - kXHRefreshCircleViewHeight;
-                [self.refreshCircleContainerView.circleView setNeedsDisplay];
             }
             // 先去除所有动画
             [self.refreshCircleContainerView.circleView.layer removeAllAnimations];
@@ -207,7 +206,6 @@ typedef NS_ENUM(NSInteger, XHRefreshState) {
         switch (self.pullDownRefreshViewType) {
             case XHPullDownRefreshViewTypeCircle: {
                 self.refreshCircleContainerView.circleView.offsetY = 0;
-                [self.refreshCircleContainerView.circleView setNeedsDisplay];
                 
                 if (self.refreshCircleContainerView.circleView) {
                     [self.refreshCircleContainerView.circleView.layer removeAllAnimations];
@@ -562,7 +560,6 @@ typedef NS_ENUM(NSInteger, XHRefreshState) {
                         switch (self.pullDownRefreshViewType) {
                             case XHPullDownRefreshViewTypeCircle: {
                                 self.refreshCircleContainerView.circleView.offsetY = pullDownOffset;
-                                [self.refreshCircleContainerView.circleView setNeedsDisplay];
                                 break;
                             }
                             case XHPullDownRefreshViewTypeActivityIndicator: {
