@@ -58,4 +58,8 @@
     }
 }
 
+- (void)dealloc {
+    _activityIndicatorView = nil;
+}
+
 @end

@@ -88,13 +88,6 @@
     return destDateString;
 }
 
-- (BOOL)keepiOS7NewApiCharacter {
-    if (!self.navigationController)
-        return NO;
-    BOOL keeped = [[[UIDevice currentDevice] systemVersion] integerValue] >= 7.0;
-    return keeped;
-}
-
 - (NSInteger)autoLoadMoreRefreshedCountConverManual {
     return 5;
 }

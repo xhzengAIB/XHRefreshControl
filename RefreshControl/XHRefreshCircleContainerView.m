@@ -59,4 +59,10 @@
     return self;
 }
 
+- (void)dealloc {
+    _circleView = nil;
+    _stateLabel = nil;
+    _timeLabel = nil;
+}
+
 @end

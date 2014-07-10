@@ -60,6 +60,10 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void)dealloc {
+    
+}
+
 #pragma mark - XHRefreshControl Delegate
 
 - (void)beginPullDownRefreshing {
@@ -76,13 +80,6 @@
     return [NSDate date];
 }
 
-- (BOOL)keepiOS7NewApiCharacter {
-    if (!self.navigationController)
-        return NO;
-    BOOL keeped = [[[UIDevice currentDevice] systemVersion] integerValue] >= 7.0;
-    return keeped;
-}
-
 - (NSInteger)autoLoadMoreRefreshedCountConverManual {
     return 2;
 }
@@ -96,7 +93,7 @@
 }
 
 - (XHRefreshViewLayerType)refreshViewLayerType {
-    return XHRefreshViewLayerTypeOnSuperView;
+    return XHRefreshViewLayerTypeOnScrollViews;
 }
 
 - (XHPullDownRefreshViewType)pullDownRefreshViewType {

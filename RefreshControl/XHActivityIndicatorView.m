@@ -62,6 +62,18 @@ static NSString* const kXHRotationAnimation = @"XHRotationAnimation";
     }
 }
 
+- (void)dealloc {
+    self.tintColor = nil;
+    
+    self.standbyLayer = nil;
+    
+    self.animationLayer = nil;
+    
+    self.standbyLayersArray = nil;
+
+    self.animationLayerArray = nil;
+}
+
 #pragma mark - Public methods
 
 - (void)setTintColor:(UIColor *)tintColor {

@@ -65,7 +65,7 @@
 #pragma mark - XHRefreshControl Delegate
 
 - (UIView *)customPullDownRefreshView {
-    UIView *backgroundView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 60)];
+    UIView *backgroundView = [[UIView alloc] initWithFrame:CGRectMake(0, -60, 320, 60)];
     backgroundView.backgroundColor = [UIColor whiteColor];
     UIProgressView *progressView = [[UIProgressView alloc] initWithProgressViewStyle:UIProgressViewStyleBar];
     progressView.tag = 100;

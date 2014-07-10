@@ -90,4 +90,9 @@
     return self;
 }
 
+- (void)dealloc {
+    _loadMoreButton = nil;
+    _activityIndicatorView = nil;
+}
+
 @end

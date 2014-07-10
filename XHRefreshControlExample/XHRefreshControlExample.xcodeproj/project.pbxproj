@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		7D093BAC1963FE1100F563BD /* NSDate+TimeAgo.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D093BAA1963FE1100F563BD /* NSDate+TimeAgo.m */; };
 		7D093BAD1963FE1100F563BD /* NSDateTimeAgo.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 7D093BAB1963FE1100F563BD /* NSDateTimeAgo.bundle */; };
+		7D216167196E8084008CB16B /* XHSegmentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D216166196E8084008CB16B /* XHSegmentViewController.m */; };
 		7D264F10195A9D180091FED8 /* XHCustomLoadMoreButtonDemoTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D264F0F195A9D180091FED8 /* XHCustomLoadMoreButtonDemoTableViewController.m */; };
 		7D97DDB2195021AF00137633 /* XHBaseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D97DDA4195021AF00137633 /* XHBaseTableViewController.m */; };
 		7D97DDB3195021AF00137633 /* XHDemoTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D97DDA6195021AF00137633 /* XHDemoTableViewController.m */; };
@@ -52,6 +53,8 @@
 		7D093BA91963FE1100F563BD /* NSDate+TimeAgo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+TimeAgo.h"; sourceTree = "<group>"; };
 		7D093BAA1963FE1100F563BD /* NSDate+TimeAgo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+TimeAgo.m"; sourceTree = "<group>"; };
 		7D093BAB1963FE1100F563BD /* NSDateTimeAgo.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = NSDateTimeAgo.bundle; sourceTree = "<group>"; };
+		7D216165196E8084008CB16B /* XHSegmentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XHSegmentViewController.h; sourceTree = "<group>"; };
+		7D216166196E8084008CB16B /* XHSegmentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XHSegmentViewController.m; sourceTree = "<group>"; };
 		7D23B6CA1965246100614EFC /* XHRefreshControlHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XHRefreshControlHeader.h; sourceTree = "<group>"; };
 		7D264F0E195A9D180091FED8 /* XHCustomLoadMoreButtonDemoTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XHCustomLoadMoreButtonDemoTableViewController.h; sourceTree = "<group>"; };
 		7D264F0F195A9D180091FED8 /* XHCustomLoadMoreButtonDemoTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XHCustomLoadMoreButtonDemoTableViewController.m; sourceTree = "<group>"; };
@@ -135,6 +138,15 @@
 			path = Vendor;
 			sourceTree = "<group>";
 		};
+		7D216164196E8063008CB16B /* SegmentController */ = {
+			isa = PBXGroup;
+			children = (
+				7D216165196E8084008CB16B /* XHSegmentViewController.h */,
+				7D216166196E8084008CB16B /* XHSegmentViewController.m */,
+			);
+			path = SegmentController;
+			sourceTree = "<group>";
+		};
 		7D97DDA2195021AF00137633 /* CustomTableViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -206,6 +218,7 @@
 				7D093BA81963FE1100F563BD /* Vendor */,
 				7D97DDA2195021AF00137633 /* CustomTableViewController */,
 				7D97DDAB195021AF00137633 /* SystemTableViewController */,
+				7D216164196E8063008CB16B /* SegmentController */,
 				AB0B346A19429D4700EC0072 /* Images.xcassets */,
 				AB0B345619429D4700EC0072 /* Supporting Files */,
 			);
@@ -375,6 +388,7 @@
 				AB965A47194F98A500CDC2AA /* XHRefreshActivityIndicatorContainerView.m in Sources */,
 				7D264F10195A9D180091FED8 /* XHCustomLoadMoreButtonDemoTableViewController.m in Sources */,
 				AB0B349319429D5E00EC0072 /* XHRefreshCircleContainerView.m in Sources */,
+				7D216167196E8084008CB16B /* XHSegmentViewController.m in Sources */,
 				7D97DDB7195021AF00137633 /* XHSysatemRefreshTableViewController.m in Sources */,
 				AB0B345C19429D4700EC0072 /* main.m in Sources */,
 			);

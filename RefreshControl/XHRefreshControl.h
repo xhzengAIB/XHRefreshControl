@@ -53,13 +53,6 @@
 - (XHPullDownRefreshViewType)pullDownRefreshViewType;
 
 /**
- *  4、UIScrollView的控制器是否保留iOS7新的特性，意思是：tablView的内容是否可以穿透过导航条
- *
- *  @return 如果不是先该delegate方法，默认是不支持的
- */
-- (BOOL)keepiOS7NewApiCharacter;
-
-/**
  *  5、将自动加载更多的状态转换为手动加载需要的条件，现在是加载更多多少次后，开始转换
  *
  *  @return 如果不实现该delegate方法，默认是5次

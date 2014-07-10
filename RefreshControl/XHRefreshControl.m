@@ -325,11 +325,7 @@ typedef NS_ENUM(NSInteger, XHRefreshState) {
 }
 
 - (CGFloat)getAdaptorHeight {
-    if ([self.delegate respondsToSelector:@selector(keepiOS7NewApiCharacter)]) {
-        return ([self.delegate keepiOS7NewApiCharacter] ? 64 : 0);
-    } else {
-        return 0;
-    }
+    return self.originalTopInset;
 }
 
 - (NSInteger)autoLoadMoreRefreshedCount {
@@ -513,11 +509,17 @@ typedef NS_ENUM(NSInteger, XHRefreshState) {
     self.delegate = nil;
     [self removeObserverWithScrollView:self.scrollView];
     self.scrollView = nil;
-    
+   
+    [self.refreshCircleContainerView removeFromSuperview];
     self.refreshCircleContainerView = nil;
     
+    [self.refreshActivityIndicatorContainerView removeFromSuperview];
     self.refreshActivityIndicatorContainerView = nil;
     
+    [self.customRefreshView removeFromSuperview];
+    self.customRefreshView = nil;
+    
+    [self.loadMoreView removeFromSuperview];
     self.loadMoreView = nil;
 }
 
