@@ -231,7 +231,7 @@ typedef NS_ENUM(NSInteger, XHRefreshState) {
                          self.scrollView.contentInset = contentInset;
                      }
                      completion:^(BOOL finished) {
-                         if (self.refreshState == XHRefreshStateStopped) {
+                         if (finished && self.refreshState == XHRefreshStateStopped) {
                              self.refreshState = XHRefreshStateNormal;
                              
                              if (self.refreshCircleContainerView.circleView) {
@@ -526,8 +526,8 @@ typedef NS_ENUM(NSInteger, XHRefreshState) {
 
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
     if ([keyPath isEqualToString:@"contentOffset"]) {
-        CGPoint contentOffset = [[change valueForKey:NSKeyValueChangeNewKey] CGPointValue];
         
+        CGPoint contentOffset = [[change valueForKey:NSKeyValueChangeNewKey] CGPointValue];
         
         // 上提加载更多的逻辑方法
         if (self.isLoadMoreRefreshed) {
@@ -560,7 +560,9 @@ typedef NS_ENUM(NSInteger, XHRefreshState) {
                     if (ABS(self.scrollView.contentOffset.y + [self getAdaptorHeight]) >= kXHRefreshCircleViewHeight) {
                         switch (self.pullDownRefreshViewType) {
                             case XHPullDownRefreshViewTypeCircle: {
-                                self.refreshCircleContainerView.circleView.offsetY = pullDownOffset;
+                                if (!self.pullDownRefreshing) {
+                                    self.refreshCircleContainerView.circleView.offsetY = pullDownOffset;
+                                }
                                 break;
                             }
                             case XHPullDownRefreshViewTypeActivityIndicator: {
@@ -600,12 +602,14 @@ typedef NS_ENUM(NSInteger, XHRefreshState) {
                         self.refreshState = XHRefreshStateStopped;
                     }
                 } else {
-                    CGFloat offset;
-                    UIEdgeInsets contentInset;
-                    offset = MAX(self.scrollView.contentOffset.y * -1, kXHDefaultRefreshTotalPixels);
-                    offset = MIN(offset, self.refreshTotalPixels);
-                    contentInset = self.scrollView.contentInset;
-                    self.scrollView.contentInset = UIEdgeInsetsMake(offset, contentInset.left, contentInset.bottom, contentInset.right);
+                    if (self.pullDownRefreshing) {
+                        CGFloat offset;
+                        UIEdgeInsets contentInset;
+                        offset = MAX(self.scrollView.contentOffset.y * -1, kXHDefaultRefreshTotalPixels);
+                        offset = MIN(offset, self.refreshTotalPixels);
+                        contentInset = self.scrollView.contentInset;
+                        self.scrollView.contentInset = UIEdgeInsetsMake(offset, contentInset.left, contentInset.bottom, contentInset.right);
+                    }
                 }
             }
         }
