@@ -19,7 +19,69 @@ and run `pod install`, then you're all done!
 
 ## How to use
 ```objc
+提供两种使用方式：
+1、继承UIViewController，自定义TableView。
+使用方法很简单
+#import "XHPullRefreshTableViewController.h"
 
+继承XHPullRefreshTableViewController，
+
+提供以下多个方法处理加载数据的不同处理方法：
+/**
+ *  是否支持下拉刷新
+ */
+@property (nonatomic, assign) BOOL pullDownRefreshed;
+
+/**
+ *  是否支持上拉刷新
+ */
+@property (nonatomic, assign) BOOL loadMoreRefreshed;
+
+/**
+ *  下拉刷新的样式
+ */
+@property (nonatomic, assign) XHPullDownRefreshViewType refreshViewType;
+
+/**
+ *  加载数据的页码
+ */
+@property (nonatomic, assign) NSInteger requestCurrentPage;
+
+/**
+ *  自动下拉刷新调用的方法，必须放在viewDidAppear方法内，别把这行代码放到别处，然后导致了错误，那就不好了嘛！
+ */
+- (void)startPullDownRefreshing;
+
+/**
+ *  当下拉加载数据完成后，你必须调用该方法哦！
+ */
+- (void)endPullDownRefreshing;
+
+/**
+ *  当上啦加载数据完成后，你也得调用该方法哦！然后你可能会问，那我要怎么判断是下拉还是上啦啊？requestCurrentPage看这个变量，会跟着变化哦！
+ */
+- (void)endLoadMoreRefreshing;
+
+/**
+ *  当上啦加载数据回调告诉我们，已经没有下一页了，那你可以调用该方法，告诉用户你已经没有数据了哦！
+ *
+ *  @param message 提示用户的信息
+ */
+- (void)endMoreOverWithMessage:(NSString *)message;
+
+/**
+ *  当网络加载失败的时候，你必须调用该方法，如果你不调用，我也帮不了你了
+ */
+- (void)handleLoadMoreError;
+
+
+2、直接使用UITableViewController，提供兼容下拉、上啦刷新的处理。
+#import "XHSysatemRefreshTableViewController.h"
+
+提供的内部方法和第一个方式是一样的！
+
+
+你也可以自己定制一个属于你自己的控制器，至于你要加入其他基础类的方法，那就您好好定制了。以下提供这些方法给您定制下拉、上拉的样式。
 #import "XHRefreshControl.h"
 
 XHRefreshControl *refreshControl = [[XHRefreshControl alloc] initWithScrollView:self.yourTableView delegate:self];
