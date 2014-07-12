@@ -95,7 +95,7 @@
 - (void)customPullDownRefreshViewWillEndRefresh:(UIView *)customPullDownRefreshView {
     UIProgressView *progressView = (UIProgressView *)[customPullDownRefreshView viewWithTag:100];
     if ([progressView respondsToSelector:@selector(setTintColor:)]) {
-        [progressView setTintColor:[UIColor orangeColor]];
+        [progressView setTintColor:[UIColor greenColor]];
     }
     [progressView setProgress:0.0 animated:NO];
 }

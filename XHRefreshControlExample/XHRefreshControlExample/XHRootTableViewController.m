@@ -14,6 +14,8 @@
 
 #import "XHCustomLoadMoreButtonDemoTableViewController.h"
 
+#import "XHSegueItem.h"
+
 @interface XHRootTableViewController ()
 
 @end
@@ -24,9 +26,23 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    self.title = @"高级下拉组件";
+    
     [self.view addSubview:self.tableView];
     
-    self.dataSource = [[NSMutableArray alloc] initWithObjects:@"网易新闻样式有导航条的", @"网易新闻样式没有导航条的", @"iOS7的系统样式，自定义出来啦！", @"系统级别的UITableViewController使用组件", @"用户高级自定义样式", @"自定义加载更多的按钮样式", nil];
+    self.dataSource = [[NSMutableArray alloc] initWithObjects:
+                       [XHSegueItem initSegueItemWithTitle:@"网易新闻样式有导航栏的" onClasseName:@"XHDemoTableViewController"],
+                       
+                       [XHSegueItem initSegueItemWithTitle:@"网易新闻样式没有导航栏的" onClasseName:@"XHDemoTableViewController"],
+                       
+                       [XHSegueItem initSegueItemWithTitle:@"iOS7的系统样式，自定义出来啦！" onClasseName:@"XHDemoTableViewController"],
+                       
+                       [XHSegueItem initSegueItemWithTitle:@"UITableViewController使用我的下拉组件" onClasseName:@"XHDemoSystemTableViewController"],
+                       
+                       [XHSegueItem initSegueItemWithTitle:@"用户高级自定义样式" onClasseName:@"XHDemoTableViewController"],
+                       
+                       [XHSegueItem initSegueItemWithTitle:@"自定义加载更多的按钮样式" onClasseName:@"XHCustomLoadMoreButtonDemoTableViewController"],
+                       nil];
 }
 
 - (void)didReceiveMemoryWarning
@@ -48,7 +64,8 @@
         
     }
     if (indexPath.row < self.dataSource.count) {
-        cell.textLabel.text = self.dataSource[indexPath.row];
+        XHSegueItem *segueItem = self.dataSource[indexPath.row];
+        cell.textLabel.text = segueItem.title;
     }
     
     return cell;
@@ -59,33 +76,24 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
+    NSInteger row = indexPath.row;
+    XHSegueItem *segueItem = self.dataSource[row];
     
-    UIViewController *viewController;
-    if (!indexPath.row) {
-        viewController = [[XHDemoTableViewController alloc] init];
-    } else if (indexPath.row == 1) {
-        viewController = [[XHDemoTableViewController alloc] init];
+    UIViewController *viewController = [[NSClassFromString(segueItem.className) alloc] init];
+    viewController.title = segueItem.title;
+    
+    if (row == 1) {
+        
         [self presentViewController:viewController animated:YES completion:NULL];
         return;
-    } else if (indexPath.row == 2) {
         
-        XHDemoTableViewController *demoTableViewController = [[XHDemoTableViewController alloc] init];
-        demoTableViewController.refreshViewType = XHPullDownRefreshViewTypeActivityIndicator;
-        viewController = demoTableViewController;
+    } else if (row == 2) {
         
-    } else if (indexPath.row == 3) {
+        ((XHDemoTableViewController *)viewController).refreshViewType = XHPullDownRefreshViewTypeActivityIndicator;
         
-        viewController = [[XHDemoSystemTableViewController alloc] initWithStyle:UITableViewStylePlain];
+    } else if (row == 4) {
         
-    } else if (indexPath.row == 4) {
-        
-        XHDemoTableViewController *demoTableViewController = [[XHDemoTableViewController alloc] init];
-        demoTableViewController.refreshViewType = XHPullDownRefreshViewTypeCustom;
-        viewController = demoTableViewController;
-
-    } else {
-        
-        viewController = [[XHCustomLoadMoreButtonDemoTableViewController alloc] init];
+        ((XHDemoTableViewController *)viewController).refreshViewType = XHPullDownRefreshViewTypeCustom;
         
     }
     

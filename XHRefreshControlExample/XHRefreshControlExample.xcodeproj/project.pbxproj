@@ -18,6 +18,7 @@
 		7D97DDB6195021AF00137633 /* XHDemoSystemTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D97DDAD195021AF00137633 /* XHDemoSystemTableViewController.m */; };
 		7D97DDB7195021AF00137633 /* XHSysatemRefreshTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D97DDAF195021AF00137633 /* XHSysatemRefreshTableViewController.m */; };
 		7D97DDB8195021AF00137633 /* XHSystemTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D97DDB1195021AF00137633 /* XHSystemTableViewController.m */; };
+		AB00D9E41971A8D30013387D /* XHSegueItem.m in Sources */ = {isa = PBXBuildFile; fileRef = AB00D9E31971A8D30013387D /* XHSegueItem.m */; };
 		AB0B345019429D4700EC0072 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB0B344F19429D4700EC0072 /* Foundation.framework */; };
 		AB0B345219429D4700EC0072 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB0B345119429D4700EC0072 /* CoreGraphics.framework */; };
 		AB0B345419429D4700EC0072 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB0B345319429D4700EC0072 /* UIKit.framework */; };
@@ -72,6 +73,8 @@
 		7D97DDAF195021AF00137633 /* XHSysatemRefreshTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XHSysatemRefreshTableViewController.m; sourceTree = "<group>"; };
 		7D97DDB0195021AF00137633 /* XHSystemTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XHSystemTableViewController.h; sourceTree = "<group>"; };
 		7D97DDB1195021AF00137633 /* XHSystemTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XHSystemTableViewController.m; sourceTree = "<group>"; };
+		AB00D9E21971A8D30013387D /* XHSegueItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XHSegueItem.h; sourceTree = "<group>"; };
+		AB00D9E31971A8D30013387D /* XHSegueItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XHSegueItem.m; sourceTree = "<group>"; };
 		AB0B344C19429D4700EC0072 /* XHRefreshControlExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = XHRefreshControlExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB0B344F19429D4700EC0072 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		AB0B345119429D4700EC0072 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -215,6 +218,8 @@
 				AB0B345F19429D4700EC0072 /* AppDelegate.m */,
 				ABCFC8031945077D00E44551 /* XHRootTableViewController.h */,
 				ABCFC8041945077D00E44551 /* XHRootTableViewController.m */,
+				AB00D9E21971A8D30013387D /* XHSegueItem.h */,
+				AB00D9E31971A8D30013387D /* XHSegueItem.m */,
 				7D093BA81963FE1100F563BD /* Vendor */,
 				7D97DDA2195021AF00137633 /* CustomTableViewController */,
 				7D97DDAB195021AF00137633 /* SystemTableViewController */,
@@ -384,6 +389,7 @@
 				7D97DDB8195021AF00137633 /* XHSystemTableViewController.m in Sources */,
 				AB0B346019429D4700EC0072 /* AppDelegate.m in Sources */,
 				7D97DDB4195021AF00137633 /* XHFoundationCommon.m in Sources */,
+				AB00D9E41971A8D30013387D /* XHSegueItem.m in Sources */,
 				AB0B349019429D5E00EC0072 /* XHLoadMoreView.m in Sources */,
 				AB965A47194F98A500CDC2AA /* XHRefreshActivityIndicatorContainerView.m in Sources */,
 				7D264F10195A9D180091FED8 /* XHCustomLoadMoreButtonDemoTableViewController.m in Sources */,
