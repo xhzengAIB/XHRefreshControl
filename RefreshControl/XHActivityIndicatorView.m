@@ -70,7 +70,7 @@ static NSString* const kXHRotationAnimation = @"XHRotationAnimation";
     self.animationLayer = nil;
     
     self.standbyLayersArray = nil;
-
+    
     self.animationLayerArray = nil;
 }
 
@@ -110,6 +110,20 @@ static NSString* const kXHRotationAnimation = @"XHRotationAnimation";
 - (void)beginRefreshing {
     self.isRotating = YES;
     [self.standbyLayer addAnimation:[self createRotationAnimation] forKey:kXHRotationAnimation];
+    [self addOpacityAnimationForAnimationLayers];
+}
+
+- (void)addOpacityAnimationForAnimationLayers {
+    [self.animationLayerArray enumerateObjectsUsingBlock:^(CALayer *animationLayer, NSUInteger idx, BOOL *stop) {
+        CAAnimation *animation = [self createOpacityAnimationWithIndex:idx];
+        [animationLayer addAnimation:animation forKey:[NSString stringWithFormat:@"key %lu", (unsigned long)idx]];
+    }];
+}
+
+- (void)removeOpacityAnimationForAnimationLayers {
+    [self.animationLayerArray enumerateObjectsUsingBlock:^(CALayer *animationLayer, NSUInteger idx, BOOL *stop) {
+        [animationLayer removeAnimationForKey:[NSString stringWithFormat:@"key %lu", (unsigned long)idx]];
+    }];
 }
 
 - (void)endRefreshing {
@@ -120,6 +134,7 @@ static NSString* const kXHRotationAnimation = @"XHRotationAnimation";
         self.animationLayer.transform = CATransform3DIdentity;
         self.animationLayer.opacity = 1.0f;
         self.animationLayer.hidden = YES;
+        [self removeOpacityAnimationForAnimationLayers];
         self.standbyLayer.hidden = NO;
         self.timeOffset = 0.0;
     }];
@@ -145,9 +160,6 @@ static NSString* const kXHRotationAnimation = @"XHRotationAnimation";
         CALayer *layer = [self createLayer];
         
         layer.transform = CATransform3DMakeRotation(M_PI / 6 * i, 0, 0, 1);
-        
-        CAAnimation *animation = [self createOpacityAnimationWithIndex:i];
-        [layer addAnimation:animation forKey:[NSString stringWithFormat:@"key %d", i]];
         
         [self.animationLayer addSublayer:layer];
         

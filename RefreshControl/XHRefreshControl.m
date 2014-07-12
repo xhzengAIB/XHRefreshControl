@@ -125,6 +125,10 @@ typedef NS_ENUM(NSInteger, XHRefreshState) {
         self.pullDownRefreshing = NO;
         self.refreshState = XHRefreshStateStopped;
         
+        if (self.pullDownRefreshViewType == XHPullDownRefreshViewTypeActivityIndicator) {
+            [self.refreshActivityIndicatorContainerView.activityIndicatorView endRefreshing];
+        }
+        
         [self resetScrollViewContentInset];
     }
     
@@ -197,6 +201,7 @@ typedef NS_ENUM(NSInteger, XHRefreshState) {
 - (void)resetScrollViewContentInset {
     UIEdgeInsets contentInset = self.scrollView.contentInset;
     contentInset.top = self.originalTopInset;
+    
     [UIView animateWithDuration:0.3f animations:^{
         [self.scrollView setContentInset:contentInset];
     } completion:^(BOOL finished) {
@@ -210,10 +215,6 @@ typedef NS_ENUM(NSInteger, XHRefreshState) {
                 if (self.refreshCircleContainerView.circleView) {
                     [self.refreshCircleContainerView.circleView.layer removeAllAnimations];
                 }
-                break;
-            }
-            case XHPullDownRefreshViewTypeActivityIndicator: {
-                [self.refreshActivityIndicatorContainerView.activityIndicatorView endRefreshing];
                 break;
             }
             default:
