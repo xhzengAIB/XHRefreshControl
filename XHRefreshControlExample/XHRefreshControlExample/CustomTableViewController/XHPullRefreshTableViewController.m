@@ -38,23 +38,35 @@
     [self.refreshControl handleLoadMoreError];
 }
 
-#pragma mark - Propertys
+#pragma mark - Life Cycle
 
-- (XHRefreshControl *)refreshControl {
+- (void)setupRefreshControl {
     if (!_refreshControl) {
         _refreshControl = [[XHRefreshControl alloc] initWithScrollView:self.tableView delegate:self];
     }
-    return _refreshControl;
 }
 
-#pragma mark - Life Cycle
+- (id)init {
+    self = [super init];
+    if (self) {
+        self.pullDownRefreshed = YES;
+        self.loadMoreRefreshed = YES;
+    }
+    return self;
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    if (self.pullDownRefreshed) {
+        [self setupRefreshControl];
+    }
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    self.pullDownRefreshed = YES;
-    self.loadMoreRefreshed = YES;
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -101,7 +113,7 @@
 }
 
 - (XHRefreshViewLayerType)refreshViewLayerType {
-    return XHRefreshViewLayerTypeOnSuperView;
+    return XHRefreshViewLayerTypeOnScrollViews;
 }
 
 - (XHPullDownRefreshViewType)pullDownRefreshViewType {

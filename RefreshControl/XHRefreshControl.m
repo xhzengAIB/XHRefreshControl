@@ -125,9 +125,7 @@ typedef NS_ENUM(NSInteger, XHRefreshState) {
         self.pullDownRefreshing = NO;
         self.refreshState = XHRefreshStateStopped;
         
-        if (self.pullDownRefreshViewType == XHPullDownRefreshViewTypeActivityIndicator) {
-            [self.refreshActivityIndicatorContainerView.activityIndicatorView endRefreshing];
-        }
+        
         
         [self resetScrollViewContentInset];
     }
@@ -205,7 +203,7 @@ typedef NS_ENUM(NSInteger, XHRefreshState) {
     [UIView animateWithDuration:0.3f animations:^{
         [self.scrollView setContentInset:contentInset];
     } completion:^(BOOL finished) {
-        
+
         self.refreshState = XHRefreshStateNormal;
         
         switch (self.pullDownRefreshViewType) {
@@ -215,6 +213,10 @@ typedef NS_ENUM(NSInteger, XHRefreshState) {
                 if (self.refreshCircleContainerView.circleView) {
                     [self.refreshCircleContainerView.circleView.layer removeAllAnimations];
                 }
+                break;
+            }
+            case XHPullDownRefreshViewTypeActivityIndicator: {
+                [self.refreshActivityIndicatorContainerView.activityIndicatorView endRefreshing];
                 break;
             }
             default:
@@ -427,13 +429,11 @@ typedef NS_ENUM(NSInteger, XHRefreshState) {
 
 - (void)configuraObserverWithScrollView:(UIScrollView *)scrollView {
     [scrollView addObserver:self forKeyPath:@"contentOffset" options:NSKeyValueObservingOptionNew context:nil];
-    [scrollView addObserver:self forKeyPath:@"contentInset" options:NSKeyValueObservingOptionNew context:nil];
     [scrollView addObserver:self forKeyPath:@"contentSize" options:NSKeyValueObservingOptionNew context:nil];
 }
 
 - (void)removeObserverWithScrollView:(UIScrollView *)scrollView {
     [scrollView removeObserver:self forKeyPath:@"contentOffset" context:nil];
-    [scrollView removeObserver:self forKeyPath:@"contentInset" context:nil];
     [scrollView removeObserver:self forKeyPath:@"contentSize" context:nil];
 }
 
@@ -525,6 +525,7 @@ typedef NS_ENUM(NSInteger, XHRefreshState) {
 #pragma mark - KVO
 
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
+    
     if ([keyPath isEqualToString:@"contentOffset"]) {
         
         CGPoint contentOffset = [[change valueForKey:NSKeyValueChangeNewKey] CGPointValue];
@@ -613,7 +614,6 @@ typedef NS_ENUM(NSInteger, XHRefreshState) {
                 }
             }
         }
-    } else if ([keyPath isEqualToString:@"contentInset"]) {
     } else if ([keyPath isEqualToString:@"contentSize"]) {
         if (self.isLoadMoreRefreshed && !self.noMoreDataForLoaded) {
             CGSize contentSize = [[change valueForKey:NSKeyValueChangeNewKey] CGSizeValue];

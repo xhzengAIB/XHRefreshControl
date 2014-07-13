@@ -36,23 +36,34 @@
     [self.customRefreshControl handleLoadMoreError];
 }
 
-#pragma mark - Propertys
+#pragma mark - Life Cycle
 
-- (XHRefreshControl *)customRefreshControl {
+- (void)setupRefreshControl {
     if (!_customRefreshControl) {
         _customRefreshControl = [[XHRefreshControl alloc] initWithScrollView:self.tableView delegate:self];
     }
-    return _customRefreshControl;
 }
 
-#pragma mark - Life Cycle
+- (id)init {
+    self = [super init];
+    if (self) {
+        self.pullDownRefreshed = YES;
+        self.loadMoreRefreshed = YES;
+    }
+    return self;
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    
+    if (self.pullDownRefreshed) {
+        [self setupRefreshControl];
+    }
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    
-    self.pullDownRefreshed = YES;
-    self.loadMoreRefreshed = YES;
 }
 
 - (void)didReceiveMemoryWarning {
