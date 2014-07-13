@@ -251,10 +251,10 @@
 		AB94836A19721DE0001BC1FD /* SystemTableViewController */ = {
 			isa = PBXGroup;
 			children = (
-				AB94836D19721DE0001BC1FD /* XHSysatemRefreshTableViewController.h */,
-				AB94836E19721DE0001BC1FD /* XHSysatemRefreshTableViewController.m */,
 				AB94836F19721DE0001BC1FD /* XHSystemTableViewController.h */,
 				AB94837019721DE0001BC1FD /* XHSystemTableViewController.m */,
+				AB94836D19721DE0001BC1FD /* XHSysatemRefreshTableViewController.h */,
+				AB94836E19721DE0001BC1FD /* XHSysatemRefreshTableViewController.m */,
 			);
 			path = SystemTableViewController;
 			sourceTree = "<group>";
