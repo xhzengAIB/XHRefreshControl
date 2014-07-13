@@ -8,6 +8,6 @@ Pod::Spec.new do |s|
   s.source       = { :git => "https://github.com/xhzengAIB/XHRefreshControl.git", :tag => "v1.8" }
   s.frameworks   = 'Foundation', 'CoreGraphics', 'UIKit'
   s.platform     = :ios, '5.0'
-  s.source_files = 'RefreshControl/**.{h,m}'
+  s.source_files = 'RefreshControl/**/**/*.{h,m}'
   s.requires_arc = true
 end
