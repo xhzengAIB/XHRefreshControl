@@ -87,15 +87,9 @@
 }
 
 - (NSString *)lastUpdateTimeString {
-    NSDate *date = [NSDate date];
     
     NSString *destDateString;
-    
-    if (rand()%2 == 1) {
-        destDateString = [NSString stringWithFormat:@"上次刷新：%@", [date timeAgo]];
-    } else {
-        destDateString = @"从未更新";
-    }
+    destDateString = @"从未更新";
     
     return destDateString;
 }

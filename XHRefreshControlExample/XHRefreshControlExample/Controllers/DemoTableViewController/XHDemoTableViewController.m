@@ -8,6 +8,8 @@
 
 #import "XHDemoTableViewController.h"
 
+#import "NSDate+TimeAgo.h"
+
 @interface XHDemoTableViewController ()
 
 @end
@@ -65,6 +67,15 @@
 }
 
 #pragma mark - XHRefreshControl Delegate
+
+- (NSString *)lastUpdateTimeString {
+    
+    NSDate *nowDate = [NSDate date];
+    
+    NSString *destDateString = [nowDate timeAgo];
+    
+    return destDateString;
+}
 
 - (UIView *)customPullDownRefreshView {
     UIView *backgroundView = [[UIView alloc] initWithFrame:CGRectMake(0, -60, 320, 60)];
