@@ -8,8 +8,6 @@
 
 #import "XHPullRefreshTableViewController.h"
 
-#import "NSDate+TimeAgo.h"
-
 @interface XHPullRefreshTableViewController ()
 
 @property (nonatomic, strong) XHRefreshControl *refreshControl;
