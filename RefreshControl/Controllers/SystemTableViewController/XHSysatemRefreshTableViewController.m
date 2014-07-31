@@ -112,7 +112,7 @@
 }
 
 - (NSString *)displayAutoLoadMoreRefreshedMessage {
-    return @"显示下10条";
+    return @"点击显示下10条";
 }
 
 @end

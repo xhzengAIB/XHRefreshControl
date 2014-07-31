@@ -14,6 +14,7 @@
 
 - (UIButton *)customLoadMoreButton {
     UIButton *_loadMoreButton = [[UIButton alloc] initWithFrame:CGRectMake(10, 5, CGRectGetWidth(self.view.bounds) - 20, CGRectGetHeight(self.view.bounds) - 10)];
+    [_loadMoreButton setTitle:@"加载更多" forState:UIControlStateNormal];
     _loadMoreButton.titleLabel.font = [UIFont systemFontOfSize:16];
     [_loadMoreButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     [_loadMoreButton setBackgroundColor:[UIColor colorWithWhite:0.922 alpha:1.000]];

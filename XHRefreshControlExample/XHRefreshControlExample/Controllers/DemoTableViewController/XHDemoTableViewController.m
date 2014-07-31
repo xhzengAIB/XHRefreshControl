@@ -18,7 +18,12 @@
 
 - (void)loadDataSource {
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-        NSMutableArray *dataSource = [[NSMutableArray alloc] initWithObjects:@"请问你现在在哪里啊？我在广州天河", @"点击我查看最新消息，里面有惊喜哦！", @"点击我查看最新消息，里面有惊喜哦！", @"点击我查看最新消息，里面有惊喜哦！", @"点进入聊天页面，这里有多种显示样式", @"点击我查看最新消息，里面有惊喜哦！", @"点击我查看最新消息，里面有惊喜哦！", @"点击我查看最新消息，里面有惊喜哦！", @"点击我查看最新消息，里面有惊喜哦！", @"点击我查看最新消息，里面有惊喜哦！", @"点进入聊天页面，这里有多种显示样式", @"点击我查看最新消息，里面有惊喜哦！", @"点击我查看最新消息，里面有惊喜哦！", @"点击我查看最新消息，里面有惊喜哦！", nil];
+        NSMutableArray *dataSource = [[NSMutableArray alloc] initWithObjects:
+                                      @"请问你现在在哪里啊？我在广州天河",
+                                      @"请问你现在在哪里啊？我在广州天河",
+                                      @"请问你现在在哪里啊？我在广州天河",
+                                      @"请问你现在在哪里啊？我在广州天河",
+                                      nil];
         
         NSMutableArray *indexPaths;
         if (self.requestCurrentPage) {

@@ -285,7 +285,7 @@ typedef NS_ENUM(NSInteger, XHRefreshState) {
 
 - (XHLoadMoreView *)loadMoreView {
     if (!_loadMoreView) {
-        _loadMoreView = [[XHLoadMoreView alloc] initWithFrame:CGRectMake(0, CGRectGetHeight([[UIScreen mainScreen] bounds])-kXHLoadMoreViewHeight, CGRectGetWidth([[UIScreen mainScreen] bounds]), kXHLoadMoreViewHeight)];
+        _loadMoreView = [[XHLoadMoreView alloc] initWithFrame:CGRectMake(0, CGRectGetHeight(self.scrollView.frame) - [self getAdaptorHeight], CGRectGetWidth([[UIScreen mainScreen] bounds]), kXHLoadMoreViewHeight)];
         if ([self.delegate respondsToSelector:@selector(customLoadMoreButton)]) {
             UIButton *customLoadMoreButton = [self.delegate customLoadMoreButton];
             if (customLoadMoreButton) {
@@ -615,14 +615,16 @@ typedef NS_ENUM(NSInteger, XHRefreshState) {
             }
         }
     } else if ([keyPath isEqualToString:@"contentSize"]) {
-        if (self.isLoadMoreRefreshed && !self.noMoreDataForLoaded) {
+        if (self.isLoadMoreRefreshed && !self.noMoreDataForLoaded && !self.pullDownRefreshing) {
             CGSize contentSize = [[change valueForKey:NSKeyValueChangeNewKey] CGSizeValue];
-            if (contentSize.height > CGRectGetHeight(self.scrollView.frame)) {
+            CGFloat scrollViewHeight = CGRectGetHeight(self.scrollView.frame);
+            CGFloat thubs = scrollViewHeight - [self getAdaptorHeight];
+//            if (contentSize.height >= thubs) {
                 CGRect loadMoreViewFrame = self.loadMoreView.frame;
                 loadMoreViewFrame.origin.y = contentSize.height;
                 self.loadMoreView.frame = loadMoreViewFrame;
                 [self setScrollViewContentInsetForLoadMore];
-            }
+//            }
         }
     }
 }
