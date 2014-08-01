@@ -33,9 +33,9 @@
     self.activityIndicatorView.frame = activityIndicatorViewFrame;
 }
 
-- (XHActivityIndicatorView *)activityIndicatorView {
+- (XHActivityCircleIndicatorView *)activityIndicatorView {
     if (!_activityIndicatorView) {
-        _activityIndicatorView = [[XHActivityIndicatorView alloc] initWithFrame:CGRectMake(CGRectGetWidth(self.bounds) / 2.0, CGRectGetHeight(self.bounds) * 0.6, 0, 0)];
+        _activityIndicatorView = [[XHActivityCircleIndicatorView alloc] initWithFrame:CGRectMake(CGRectGetWidth(self.bounds) / 2.0, CGRectGetHeight(self.bounds) * 0.6, 0, 0)];
         _activityIndicatorView.refreshViewLayerType = self.refreshViewLayerType;
         
     }

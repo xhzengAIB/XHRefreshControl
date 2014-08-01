@@ -1,16 +1,16 @@
 //
-//  XHActivityIndicatorView.m
+//  XHActivityCircleIndicatorView.m
 //  XHRefreshControlExample
 //
 //  Created by 曾 宪华 on 14-6-16.
 //  Copyright (c) 2014年 曾宪华 QQ群: (142557668) QQ:543413507  Gmail:xhzengAIB@gmail.com. All rights reserved.
 //
 
-#import "XHActivityIndicatorView.h"
+#import "XHActivityCircleIndicatorView.h"
 
 static NSString* const kXHRotationAnimation = @"XHRotationAnimation";
 
-@interface XHActivityIndicatorView ()
+@interface XHActivityCircleIndicatorView ()
 
 @property (nonatomic, strong) CALayer *standbyLayer;
 @property (nonatomic, strong) CALayer *animationLayer;
@@ -22,7 +22,7 @@ static NSString* const kXHRotationAnimation = @"XHRotationAnimation";
 
 @end
 
-@implementation XHActivityIndicatorView
+@implementation XHActivityCircleIndicatorView
 
 - (void)setup {
     self.standbyLayersArray = [[NSMutableArray alloc] init];

@@ -1,5 +1,5 @@
 //
-//  XHActivityIndicatorView.h
+//  XHActivityCircleIndicatorView.h
 //  XHRefreshControlExample
 //
 //  Created by 曾 宪华 on 14-6-16.
@@ -10,7 +10,7 @@
 
 #import "XHRefreshControlHeader.h"
 
-@interface XHActivityIndicatorView : UIView
+@interface XHActivityCircleIndicatorView : UIView
 
 /**
  *  菊花的颜色

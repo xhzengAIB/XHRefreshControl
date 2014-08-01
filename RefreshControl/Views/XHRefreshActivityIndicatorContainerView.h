@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-#import "XHActivityIndicatorView.h"
+#import "XHActivityCircleIndicatorView.h"
 
 #import "XHRefreshControlHeader.h"
 
@@ -17,7 +17,7 @@
 /**
  *  iOS7自定义菊花转圈控件
  */
-@property (nonatomic, strong) XHActivityIndicatorView *activityIndicatorView;
+@property (nonatomic, strong) XHActivityCircleIndicatorView *activityIndicatorView;
 
 /**
  *  标识下拉刷新是UIScrollView的子view，还是UIScrollView父view的子view， 默认是scrollView的子View，为XHRefreshViewLayerTypeOnScrollViews

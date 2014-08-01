@@ -27,7 +27,7 @@
 		AB94838619721DE0001BC1FD /* XHSysatemRefreshTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB94836E19721DE0001BC1FD /* XHSysatemRefreshTableViewController.m */; };
 		AB94838719721DE0001BC1FD /* XHSystemTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB94837019721DE0001BC1FD /* XHSystemTableViewController.m */; };
 		AB94838819721DE0001BC1FD /* XHRefreshControl.m in Sources */ = {isa = PBXBuildFile; fileRef = AB94837319721DE0001BC1FD /* XHRefreshControl.m */; };
-		AB94838919721DE0001BC1FD /* XHActivityIndicatorView.m in Sources */ = {isa = PBXBuildFile; fileRef = AB94837719721DE0001BC1FD /* XHActivityIndicatorView.m */; };
+		AB94838919721DE0001BC1FD /* XHActivityCircleIndicatorView.m in Sources */ = {isa = PBXBuildFile; fileRef = AB94837719721DE0001BC1FD /* XHActivityCircleIndicatorView.m */; };
 		AB94838A19721DE0001BC1FD /* XHCircleView.m in Sources */ = {isa = PBXBuildFile; fileRef = AB94837919721DE0001BC1FD /* XHCircleView.m */; };
 		AB94838B19721DE0001BC1FD /* XHLoadMoreView.m in Sources */ = {isa = PBXBuildFile; fileRef = AB94837B19721DE0001BC1FD /* XHLoadMoreView.m */; };
 		AB94838C19721DE0001BC1FD /* XHRefreshActivityIndicatorContainerView.m in Sources */ = {isa = PBXBuildFile; fileRef = AB94837D19721DE0001BC1FD /* XHRefreshActivityIndicatorContainerView.m */; };
@@ -83,8 +83,8 @@
 		AB94837219721DE0001BC1FD /* XHRefreshControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XHRefreshControl.h; sourceTree = "<group>"; };
 		AB94837319721DE0001BC1FD /* XHRefreshControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XHRefreshControl.m; sourceTree = "<group>"; };
 		AB94837419721DE0001BC1FD /* XHRefreshControlHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XHRefreshControlHeader.h; sourceTree = "<group>"; };
-		AB94837619721DE0001BC1FD /* XHActivityIndicatorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XHActivityIndicatorView.h; sourceTree = "<group>"; };
-		AB94837719721DE0001BC1FD /* XHActivityIndicatorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XHActivityIndicatorView.m; sourceTree = "<group>"; };
+		AB94837619721DE0001BC1FD /* XHActivityCircleIndicatorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XHActivityCircleIndicatorView.h; sourceTree = "<group>"; };
+		AB94837719721DE0001BC1FD /* XHActivityCircleIndicatorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XHActivityCircleIndicatorView.m; sourceTree = "<group>"; };
 		AB94837819721DE0001BC1FD /* XHCircleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XHCircleView.h; sourceTree = "<group>"; };
 		AB94837919721DE0001BC1FD /* XHCircleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XHCircleView.m; sourceTree = "<group>"; };
 		AB94837A19721DE0001BC1FD /* XHLoadMoreView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XHLoadMoreView.h; sourceTree = "<group>"; };
@@ -272,8 +272,8 @@
 		AB94837519721DE0001BC1FD /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				AB94837619721DE0001BC1FD /* XHActivityIndicatorView.h */,
-				AB94837719721DE0001BC1FD /* XHActivityIndicatorView.m */,
+				AB94837619721DE0001BC1FD /* XHActivityCircleIndicatorView.h */,
+				AB94837719721DE0001BC1FD /* XHActivityCircleIndicatorView.m */,
 				AB94837819721DE0001BC1FD /* XHCircleView.h */,
 				AB94837919721DE0001BC1FD /* XHCircleView.m */,
 				AB94837A19721DE0001BC1FD /* XHLoadMoreView.h */,
@@ -462,7 +462,7 @@
 				AB94838319721DE0001BC1FD /* XHFoundationCommon.m in Sources */,
 				AB94838D19721DE0001BC1FD /* XHRefreshCircleContainerView.m in Sources */,
 				AB9483A619721E8D001BC1FD /* XHSegueItem.m in Sources */,
-				AB94838919721DE0001BC1FD /* XHActivityIndicatorView.m in Sources */,
+				AB94838919721DE0001BC1FD /* XHActivityCircleIndicatorView.m in Sources */,
 				AB9483A419721E8D001BC1FD /* XHRootTableViewController.m in Sources */,
 				AB94838419721DE0001BC1FD /* XHPullRefreshTableViewController.m in Sources */,
 				AB0B346019429D4700EC0072 /* AppDelegate.m in Sources */,
