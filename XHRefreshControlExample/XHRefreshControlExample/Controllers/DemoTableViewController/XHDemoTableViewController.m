@@ -44,7 +44,10 @@
                     [self endLoadMoreRefreshing];
                 }
             } else {
-                
+                if (rand() % 3 > 1) {
+                    self.loadMoreRefreshed = NO;
+                }
+
                 self.dataSource = dataSource;
                 [self.tableView reloadData];
                 [self endPullDownRefreshing];
