@@ -59,6 +59,12 @@
                 _tableView.backgroundView = backgroundView;
             }
         }
+        
+        if (self.tabBarController) {
+            UIEdgeInsets scrollIndicatorInsets = _tableView.scrollIndicatorInsets;
+            scrollIndicatorInsets.bottom -= CGRectGetHeight(self.tabBarController.tabBar.bounds);
+            _tableView.scrollIndicatorInsets = scrollIndicatorInsets;
+        }
     }
     return _tableView;
 }
