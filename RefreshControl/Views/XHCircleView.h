@@ -31,6 +31,16 @@
 @property (nonatomic, assign) XHRefreshViewLayerType refreshViewLayerType;
 
 /**
+ *  圆圈的颜色，默认是[UIColor colorWithRed:173 / 255.0 green:53 / 255.0 blue:60 / 255.0 alpha:1]
+ */
+@property (nonatomic, strong) UIColor *circleColor;
+
+/**
+ *  圆圈的线条粗细
+ */
+@property (nonatomic, assign) CGFloat circleLineWidth;
+
+/**
  *  旋转的animation
  *
  *  @return animation

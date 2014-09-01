@@ -16,6 +16,18 @@
 
 #pragma mark - Propertys
 
+- (void)setHasStatusLabelShowed:(BOOL)hasStatusLabelShowed {
+    _hasStatusLabelShowed = hasStatusLabelShowed;
+    
+    if (hasStatusLabelShowed) {
+        self.circleView.frame = CGRectMake((CGRectGetWidth(self.bounds) - kXHRefreshCircleViewHeight) / 2 - 40, (CGRectGetHeight(self.bounds) - kXHRefreshCircleViewHeight) / 2 - 5, kXHRefreshCircleViewHeight, kXHRefreshCircleViewHeight);
+    } else {
+        self.circleView.center = CGPointMake(CGRectGetMidX(self.bounds), CGRectGetMidY(self.bounds));
+    }
+    self.stateLabel.hidden = !hasStatusLabelShowed;
+    self.timeLabel.hidden = !hasStatusLabelShowed;
+}
+
 - (XHCircleView *)circleView {
     if (!_circleView) {
         _circleView = [[XHCircleView alloc] initWithFrame:CGRectMake((CGRectGetWidth(self.bounds) - kXHRefreshCircleViewHeight) / 2 - 40, (CGRectGetHeight(self.bounds) - kXHRefreshCircleViewHeight) / 2 - 5, kXHRefreshCircleViewHeight, kXHRefreshCircleViewHeight)];

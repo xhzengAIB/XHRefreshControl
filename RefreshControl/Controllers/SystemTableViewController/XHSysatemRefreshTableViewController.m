@@ -45,6 +45,9 @@
 - (void)setupRefreshControl {
     if (!_customRefreshControl) {
         _customRefreshControl = [[XHRefreshControl alloc] initWithScrollView:self.tableView delegate:self];
+        _customRefreshControl.hasStatusLabelShowed = self.hasStatusLabelShowed;
+        _customRefreshControl.circleColor = self.circleColor;
+        _customRefreshControl.circleLineWidth = self.circleLineWidth;
     }
 }
 

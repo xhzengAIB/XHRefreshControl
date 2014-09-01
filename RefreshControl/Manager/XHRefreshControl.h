@@ -107,10 +107,25 @@
  */
 - (NSString *)displayAutoLoadMoreRefreshedMessage;
 
-
 @end
 
 @interface XHRefreshControl : NSObject
+
+/**
+ *  是否显示下拉刷新的标签文本,如果返回YES，按照正常排版,如果返回NO,那转圈居中,默认是YES
+ */
+@property (nonatomic, assign) BOOL hasStatusLabelShowed;
+
+/**
+ *  圆圈的颜色，默认是[UIColor colorWithRed:173 / 255.0 green:53 / 255.0 blue:60 / 255.0 alpha:1]
+ */
+@property (nonatomic, strong) UIColor *circleColor;
+
+/**
+ *  圆圈的线条粗细,默认为1, 最大为2
+ */
+@property (nonatomic, assign) CGFloat circleLineWidth;
+
 
 - (id)initWithScrollView:(UIScrollView *)scrollView delegate:(id <XHRefreshControlDelegate>)delegate;
 

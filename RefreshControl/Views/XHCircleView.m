@@ -43,8 +43,8 @@
     
     CGContextRef context = UIGraphicsGetCurrentContext();
     
-    CGContextSetStrokeColorWithColor(context, [UIColor colorWithRed:173 / 255.0 green:53 / 255.0 blue:60 / 255.0 alpha:1].CGColor);
-    CGContextSetLineWidth(context, 1.f);
+    CGContextSetStrokeColorWithColor(context, self.circleColor.CGColor);
+    CGContextSetLineWidth(context, self.circleLineWidth);
     
     static CGFloat radius = 9;
     if (self.refreshViewLayerType) {

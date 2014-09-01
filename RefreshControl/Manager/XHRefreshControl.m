@@ -305,6 +305,21 @@ typedef NS_ENUM(NSInteger, XHRefreshState) {
     return _loadMoreView;
 }
 
+- (void)setHasStatusLabelShowed:(BOOL)hasStatusLabelShowed {
+    _hasStatusLabelShowed = hasStatusLabelShowed;
+    self.refreshCircleContainerView.hasStatusLabelShowed = hasStatusLabelShowed;
+}
+
+- (void)setCircleColor:(UIColor *)circleColor {
+    _circleColor = circleColor;
+    self.refreshCircleContainerView.circleView.circleColor = circleColor;
+}
+
+- (void)setCircleLineWidth:(CGFloat)circleLineWidth {
+    _circleLineWidth = circleLineWidth;
+    self.refreshCircleContainerView.circleView.circleLineWidth = circleLineWidth;
+}
+
 #pragma mark - Getter Method
 
 - (BOOL)isPullDownRefreshed {
@@ -498,6 +513,12 @@ typedef NS_ENUM(NSInteger, XHRefreshState) {
     if (self.isLoadMoreRefreshed) {
         [self.scrollView addSubview:self.loadMoreView];
     }
+    
+    self.hasStatusLabelShowed = YES;
+    
+    self.circleColor = [UIColor colorWithRed:173 / 255.0 green:53 / 255.0 blue:60 / 255.0 alpha:1];
+    
+    self.circleLineWidth = 1.0;
 }
 
 - (id)initWithScrollView:(UIScrollView *)scrollView delegate:(id <XHRefreshControlDelegate>)delegate {

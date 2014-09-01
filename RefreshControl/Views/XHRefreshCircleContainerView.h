@@ -27,4 +27,9 @@
  */
 @property (nonatomic, strong) UILabel *timeLabel;
 
+/**
+ *  是否显示下拉刷新的标签文本,如果返回YES，按照正常排版,如果返回NO,那转圈居中
+ */
+@property (nonatomic, assign) BOOL hasStatusLabelShowed;
+
 @end
