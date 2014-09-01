@@ -139,4 +139,12 @@
  */
 - (void)handleLoadMoreError;
 
+/**
+ *  获取是否下啦刷新中
+ *
+ *  @return 返回预期结果
+ */
+- (BOOL)isLoading;
+
+
 @end

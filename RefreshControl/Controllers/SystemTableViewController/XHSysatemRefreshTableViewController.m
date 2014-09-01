@@ -36,6 +36,10 @@
     [self.customRefreshControl handleLoadMoreError];
 }
 
+- (BOOL)isLoadingDataSource {
+    return [self.customRefreshControl isLoading];
+}
+
 #pragma mark - Life Cycle
 
 - (void)setupRefreshControl {

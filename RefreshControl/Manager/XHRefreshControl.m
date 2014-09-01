@@ -183,6 +183,10 @@ typedef NS_ENUM(NSInteger, XHRefreshState) {
     self.loadMoreRefreshedCount = self.autoLoadMoreRefreshedCount;
 }
 
+- (BOOL)isLoading {
+    return self.pullDownRefreshing;
+}
+
 #pragma mark - Refresh Time Helper Method
 
 - (void)setupRefreshTime {

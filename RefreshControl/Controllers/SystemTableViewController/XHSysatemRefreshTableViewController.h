@@ -58,4 +58,12 @@
  *  当网络加载失败的时候，你必须调用该方法，如果你不调用，我也帮不了你了
  */
 - (void)handleLoadMoreError;
+
+/**
+ *  获取当前是否在加载数据中
+ *
+ *  @return 返回预期结果
+ */
+- (BOOL)isLoadingDataSource;
+
 @end

@@ -59,4 +59,11 @@
  */
 - (void)handleLoadMoreError;
 
+/**
+ *  获取当前是否在加载数据中
+ *
+ *  @return 返回预期结果
+ */
+- (BOOL)isLoadingDataSource;
+
 @end
