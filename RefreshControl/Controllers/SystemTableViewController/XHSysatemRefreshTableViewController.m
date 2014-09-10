@@ -56,6 +56,8 @@
     if (self) {
         self.pullDownRefreshed = YES;
         self.loadMoreRefreshed = YES;
+        self.circleColor = [UIColor colorWithRed:173 / 255.0 green:53 / 255.0 blue:60 / 255.0 alpha:1];
+        self.circleLineWidth = 1.0;
     }
     return self;
 }
