@@ -36,7 +36,7 @@
         dispatch_async(dispatch_get_main_queue(), ^{
             if (self.requestCurrentPage) {
                 if (self.requestCurrentPage == arc4random() % 10) {
-                    [self handleLoadMoreError];
+                    [self endMoreOverWithMessage:@"段子已加载完"];
                 } else {
                     
                     [self.dataSource addObjectsFromArray:dataSource];
