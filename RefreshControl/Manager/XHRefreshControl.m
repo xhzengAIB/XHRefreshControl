@@ -337,8 +337,9 @@ typedef NS_ENUM(NSInteger, XHRefreshState) {
         loadMored = [self.delegate isLoadMoreRefreshed];
         if (self.noMoreDataForLoaded) {
             self.loadMoreView.hidden = NO;
+        } else {
+            self.loadMoreView.hidden = !loadMored;
         }
-        self.loadMoreView.hidden = !loadMored;
         return loadMored;
     }
     self.loadMoreView.hidden = !loadMored;
