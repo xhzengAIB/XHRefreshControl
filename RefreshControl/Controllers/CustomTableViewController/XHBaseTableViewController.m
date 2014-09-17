@@ -87,9 +87,9 @@
 
 - (void)dealloc {
     self.dataSource = nil;
-    self.tableView.delegate = nil;
-    self.tableView.dataSource = nil;
-    self.tableView = nil;
+    _tableView.delegate = nil;
+    _tableView.dataSource = nil;
+    _tableView = nil;
 }
 
 - (void)didReceiveMemoryWarning {
