@@ -646,8 +646,8 @@ typedef NS_ENUM(NSInteger, XHRefreshState) {
             }
         }
     } else if ([keyPath isEqualToString:@"contentSize"]) {
+        CGSize contentSize = [[change valueForKey:NSKeyValueChangeNewKey] CGSizeValue];
         if (self.isLoadMoreRefreshed && !self.noMoreDataForLoaded && !self.pullDownRefreshing) {
-            CGSize contentSize = [[change valueForKey:NSKeyValueChangeNewKey] CGSizeValue];
 //            CGFloat scrollViewHeight = CGRectGetHeight(self.scrollView.frame);
 //            CGFloat thubs = scrollViewHeight - [self getAdaptorHeight];
 //            if (contentSize.height >= thubs) {
@@ -656,6 +656,10 @@ typedef NS_ENUM(NSInteger, XHRefreshState) {
                 self.loadMoreView.frame = loadMoreViewFrame;
                 [self setScrollViewContentInsetForLoadMore];
 //            }
+        } else {
+            CGRect loadMoreViewFrame = self.loadMoreView.frame;
+            loadMoreViewFrame.origin.y = contentSize.height;
+            self.loadMoreView.frame = loadMoreViewFrame;
         }
     }
 }
