@@ -48,6 +48,7 @@ typedef NS_ENUM(NSInteger, XHRefreshState) {
 
 // recoder
 @property (nonatomic, readwrite) CGFloat originalTopInset;
+@property (nonatomic, readwrite) CGFloat originalBottomInset;
 
 // target scrollview
 @property (nonatomic, strong) UIScrollView *scrollView;
@@ -255,13 +256,13 @@ typedef NS_ENUM(NSInteger, XHRefreshState) {
 
 - (void)setScrollViewContentInsetForLoadMore {
     UIEdgeInsets currentInsets = self.scrollView.contentInset;
-    currentInsets.bottom = kXHLoadMoreViewHeight;
+    currentInsets.bottom = kXHLoadMoreViewHeight + self.originalBottomInset;
     [self setScrollViewContentInset:currentInsets];
 }
 
 - (void)setScrollViewContentInsetForNoLoadMore {
     UIEdgeInsets currentInsets = self.scrollView.contentInset;
-    currentInsets.bottom = 0;
+    currentInsets.bottom = self.originalBottomInset;
     [self setScrollViewContentInset:currentInsets];
 }
 
@@ -464,7 +465,7 @@ typedef NS_ENUM(NSInteger, XHRefreshState) {
 
 - (void)setup {
     self.originalTopInset = self.scrollView.contentInset.top;
-    
+    self.originalBottomInset = self.scrollView.contentInset.bottom;
     
     self.refreshState = XHRefreshStateNormal;
     
