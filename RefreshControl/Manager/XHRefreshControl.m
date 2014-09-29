@@ -574,7 +574,7 @@ typedef NS_ENUM(NSInteger, XHRefreshState) {
                 
                 UIEdgeInsets inset = self.scrollView.contentInset;//视图周围额外的滚动视图区域
                 
-                float y = currentPostion + bounds.size.height + inset. bottom;
+                float y = currentPostion + bounds.size.height + inset.bottom;
                 
                 //判断是否滚动到底部
                 if((y - size.height) > kXHLoadMoreViewHeight && self.refreshState != XHRefreshStateLoading && self.isLoadMoreRefreshed && !self.loadMoreRefreshing && !self.noMoreDataForLoaded) {
