@@ -63,6 +63,9 @@ typedef NS_ENUM(NSInteger, XHRefreshState) {
 
 @property (nonatomic, assign) BOOL noMoreDataForLoaded;
 
+// preload more distanse
+@property (nonatomic, assign) CGFloat preloadValue;
+
 @end
 
 @implementation XHRefreshControl
@@ -397,6 +400,14 @@ typedef NS_ENUM(NSInteger, XHRefreshState) {
     return message;
 }
 
+- (CGFloat)preloadValue {
+    CGFloat currentValue = 0.0;
+    if ([self.delegate respondsToSelector:@selector(preloadDistance)]) {
+        currentValue = [self.delegate preloadDistance];
+    }
+    return currentValue;
+}
+
 #pragma mark - Setter Method
 
 - (void)setRefreshState:(XHRefreshState)refreshState {
@@ -577,7 +588,7 @@ typedef NS_ENUM(NSInteger, XHRefreshState) {
                 float y = currentPostion + bounds.size.height + inset.bottom;
                 
                 //判断是否滚动到底部
-                if((y - size.height) > kXHLoadMoreViewHeight && self.refreshState != XHRefreshStateLoading && self.isLoadMoreRefreshed && !self.loadMoreRefreshing && !self.noMoreDataForLoaded) {
+                if(((y - size.height) + self.preloadValue) > kXHLoadMoreViewHeight && self.refreshState != XHRefreshStateLoading && self.isLoadMoreRefreshed && !self.loadMoreRefreshing && !self.noMoreDataForLoaded) {
                     [self startLoadMoreRefreshing];
                 }
             }

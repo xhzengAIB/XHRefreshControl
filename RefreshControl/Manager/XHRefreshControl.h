@@ -107,6 +107,13 @@
  */
 - (NSString *)displayAutoLoadMoreRefreshedMessage;
 
+/**
+ *  当scrollView滚动到距离底部有多少距离
+ *
+ *  @return 返回你预期想要的距离，默认是0，即是拖动scrollView到底部才开始加载
+ */
+- (CGFloat)preloadDistance;
+
 @end
 
 @interface XHRefreshControl : NSObject
