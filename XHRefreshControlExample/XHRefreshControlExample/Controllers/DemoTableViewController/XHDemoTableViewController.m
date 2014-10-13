@@ -18,12 +18,10 @@
 
 - (void)loadDataSource {
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-        NSMutableArray *dataSource = [[NSMutableArray alloc] initWithObjects:
-                                      @"请问你现在在哪里啊？我在广州天河",
-                                      @"请问你现在在哪里啊？我在广州天河",
-                                      @"请问你现在在哪里啊？我在广州天河",
-                                      @"请问你现在在哪里啊？我在广州天河",
-                                      nil];
+        NSMutableArray *dataSource = [[NSMutableArray alloc] init];
+        for (int i = 0; i < 100; i ++) {
+            [dataSource addObject:@"请问你现在在哪里啊？我在广州天河"];
+        }
         
         NSMutableArray *indexPaths;
         if (self.requestCurrentPage) {
@@ -118,7 +116,9 @@
     }
     [progressView setProgress:0.0 animated:NO];
 }
-
+- (CGFloat)preloadDistance {
+    return 1500;
+}
 #pragma mark - UITableView DataSource
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {

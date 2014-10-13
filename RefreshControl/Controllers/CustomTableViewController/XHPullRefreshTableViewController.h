@@ -48,6 +48,11 @@
 @property (nonatomic, assign) CGFloat circleLineWidth;
 
 /**
+ *  配置下拉、上拉加载组件
+ */
+- (void)setupRefreshControl;
+
+/**
  *  自动下拉刷新调用的方法，必须放在viewDidAppear方法内，别把这行代码放到别处，然后导致了错误，那就不好了嘛！
  */
 - (void)startPullDownRefreshing;
