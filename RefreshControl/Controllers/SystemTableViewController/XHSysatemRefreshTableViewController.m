@@ -32,6 +32,13 @@
     [self.customRefreshControl endMoreOverWithMessage:message];
 }
 
+/**
+ *  重置是否有更多翻页数据要加载
+ */
+- (void)resetLoadMoreStatue:(BOOL)noMoreDataForLoaded {
+    [self.customRefreshControl resetLoadMoreStatue:noMoreDataForLoaded];
+}
+
 - (void)handleLoadMoreError {
     [self.customRefreshControl handleLoadMoreError];
 }

@@ -157,6 +157,11 @@
 - (void)endMoreOverWithMessage:(NSString *)message;
 
 /**
+ *  重置是否有更多翻页数据要加载
+ */
+- (void)resetLoadMoreStatue:(BOOL)noMoreDataForLoaded;
+
+/**
  *  当加载更多出现网络错误的时候
  */
 - (void)handleLoadMoreError;

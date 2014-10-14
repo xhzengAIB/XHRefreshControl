@@ -181,6 +181,13 @@ typedef NS_ENUM(NSInteger, XHRefreshState) {
     [self.loadMoreView configuraNothingMoreWithMessage:message];
 }
 
+/**
+ *  重置是否有更多翻页数据要加载
+ */
+- (void)resetLoadMoreStatue:(BOOL)noMoreDataForLoaded {
+    self.noMoreDataForLoaded = noMoreDataForLoaded;
+}
+
 - (void)handleLoadMoreError {
     [self endLoadMoreRefresing];
     [self.loadMoreView configuraManualStateWithMessage:[self displayAutoLoadMoreRefreshedMessage]];

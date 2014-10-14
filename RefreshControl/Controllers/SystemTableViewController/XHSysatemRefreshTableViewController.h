@@ -70,6 +70,11 @@
 - (void)endMoreOverWithMessage:(NSString *)message;
 
 /**
+ *  重置是否有更多翻页数据要加载
+ */
+- (void)resetLoadMoreStatue:(BOOL)noMoreDataForLoaded;
+
+/**
  *  当网络加载失败的时候，你必须调用该方法，如果你不调用，我也帮不了你了
  */
 - (void)handleLoadMoreError;

@@ -32,6 +32,10 @@
     [self.refreshControl endMoreOverWithMessage:message];
 }
 
+- (void)resetLoadMoreStatue:(BOOL)noMoreDataForLoaded {
+    [self.refreshControl resetLoadMoreStatue:noMoreDataForLoaded];
+}
+
 - (void)handleLoadMoreError {
     [self.refreshControl handleLoadMoreError];
 }
