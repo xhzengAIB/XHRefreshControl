@@ -9,14 +9,24 @@
 #import "DemoCollectionViewController.h"
 
 @interface CollectionViewCell : UICollectionViewCell
+@property (nonatomic, strong) UIImageView *imageView;
 @property (nonatomic, strong) UILabel *label;
 @end
 
 @implementation CollectionViewCell
 
+- (UIImageView *)imageView {
+    if (!_imageView) {
+        _imageView = [[UIImageView alloc] initWithFrame:self.bounds];
+        _imageView.contentMode = UIViewContentModeScaleAspectFit;
+        _imageView.image = [UIImage imageNamed:@"奥迪.jpg"];
+    }
+    return _imageView;
+}
+
 - (UILabel *)label {
     if (!_label) {
-        _label = [[UILabel alloc] initWithFrame:self.contentView.bounds];
+        _label = [[UILabel alloc] initWithFrame:CGRectMake(0, CGRectGetHeight(self.bounds) - 30, CGRectGetWidth(self.bounds), 30)];
         _label.textColor = [UIColor redColor];
         _label.textAlignment = NSTextAlignmentCenter;
     }
@@ -26,6 +36,7 @@
 - (id)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
     if (self) {
+        [self.contentView addSubview:self.imageView];
         [self.contentView addSubview:self.label];
     }
     return self;
