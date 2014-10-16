@@ -14,7 +14,11 @@
 
 #import "XHCustomLoadMoreButtonDemoTableViewController.h"
 
+#import "DemoCollectionViewController.h"
+
 #import "XHSegueItem.h"
+
+#import "CollectionViewFlowLayout.h"
 
 @interface XHRootTableViewController ()
 
@@ -42,6 +46,8 @@
                        [XHSegueItem initSegueItemWithTitle:@"用户高级自定义样式" onClasseName:@"XHDemoTableViewController"],
                        
                        [XHSegueItem initSegueItemWithTitle:@"自定义加载更多的按钮样式" onClasseName:@"XHCustomLoadMoreButtonDemoTableViewController"],
+                       
+                       [XHSegueItem initSegueItemWithTitle:@"CollectionViewController" onClasseName:@"DemoCollectionViewController"],
                        nil];
 }
 
@@ -79,7 +85,13 @@
     NSInteger row = indexPath.row;
     XHSegueItem *segueItem = self.dataSource[row];
     
-    UIViewController *viewController = [[NSClassFromString(segueItem.className) alloc] init];
+    UIViewController *viewController = nil;
+    if (row == 6) {
+        viewController = [[DemoCollectionViewController alloc] initWithCollectionViewLayout:[[CollectionViewFlowLayout alloc] init]];
+    } else {
+        viewController = [[NSClassFromString(segueItem.className) alloc] init];
+    }
+    
     viewController.title = segueItem.title;
     
     if (row == 1) {

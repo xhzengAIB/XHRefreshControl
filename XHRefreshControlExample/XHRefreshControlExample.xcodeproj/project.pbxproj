@@ -11,6 +11,8 @@
 		7D093BAC1963FE1100F563BD /* NSDate+TimeAgo.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D093BAA1963FE1100F563BD /* NSDate+TimeAgo.m */; };
 		7D093BAD1963FE1100F563BD /* NSDateTimeAgo.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 7D093BAB1963FE1100F563BD /* NSDateTimeAgo.bundle */; };
 		7D6DF80919C8704100405BCB /* XHSystemRefreshCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D6DF80819C8704100405BCB /* XHSystemRefreshCollectionViewController.m */; };
+		7DEF9CF519EFC36300E6996E /* DemoCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DEF9CF419EFC36300E6996E /* DemoCollectionViewController.m */; };
+		7DEF9CFB19EFD04600E6996E /* CollectionViewFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DEF9CFA19EFD04600E6996E /* CollectionViewFlowLayout.m */; };
 		AB0B345019429D4700EC0072 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB0B344F19429D4700EC0072 /* Foundation.framework */; };
 		AB0B345219429D4700EC0072 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB0B345119429D4700EC0072 /* CoreGraphics.framework */; };
 		AB0B345419429D4700EC0072 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB0B345319429D4700EC0072 /* UIKit.framework */; };
@@ -60,6 +62,10 @@
 		7D093BAB1963FE1100F563BD /* NSDateTimeAgo.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = NSDateTimeAgo.bundle; sourceTree = "<group>"; };
 		7D6DF80719C8704100405BCB /* XHSystemRefreshCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XHSystemRefreshCollectionViewController.h; sourceTree = "<group>"; };
 		7D6DF80819C8704100405BCB /* XHSystemRefreshCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XHSystemRefreshCollectionViewController.m; sourceTree = "<group>"; };
+		7DEF9CF319EFC36300E6996E /* DemoCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DemoCollectionViewController.h; sourceTree = "<group>"; };
+		7DEF9CF419EFC36300E6996E /* DemoCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DemoCollectionViewController.m; sourceTree = "<group>"; };
+		7DEF9CF919EFD04600E6996E /* CollectionViewFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectionViewFlowLayout.h; sourceTree = "<group>"; };
+		7DEF9CFA19EFD04600E6996E /* CollectionViewFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectionViewFlowLayout.m; sourceTree = "<group>"; };
 		AB0B344C19429D4700EC0072 /* XHRefreshControlExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = XHRefreshControlExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB0B344F19429D4700EC0072 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		AB0B345119429D4700EC0072 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -156,6 +162,17 @@
 				7D093BAB1963FE1100F563BD /* NSDateTimeAgo.bundle */,
 			);
 			path = Vendor;
+			sourceTree = "<group>";
+		};
+		7DEF9CF219EFC34300E6996E /* CollectionViewController */ = {
+			isa = PBXGroup;
+			children = (
+				7DEF9CF319EFC36300E6996E /* DemoCollectionViewController.h */,
+				7DEF9CF419EFC36300E6996E /* DemoCollectionViewController.m */,
+				7DEF9CF919EFD04600E6996E /* CollectionViewFlowLayout.h */,
+				7DEF9CFA19EFD04600E6996E /* CollectionViewFlowLayout.m */,
+			);
+			path = CollectionViewController;
 			sourceTree = "<group>";
 		};
 		AB0B344319429D4700EC0072 = {
@@ -312,6 +329,7 @@
 				AB94838F19721E8D001BC1FD /* CustomLoadMoreButtonDemoTableViewController */,
 				AB94839219721E8D001BC1FD /* DemoSystemTableViewController */,
 				AB94839B19721E8D001BC1FD /* SegmentController */,
+				7DEF9CF219EFC34300E6996E /* CollectionViewController */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -469,6 +487,7 @@
 			files = (
 				4755DE7919C498FC0088B5D2 /* XHSystemCollectionViewController.m in Sources */,
 				AB94838B19721DE0001BC1FD /* XHLoadMoreView.m in Sources */,
+				7DEF9CF519EFC36300E6996E /* DemoCollectionViewController.m in Sources */,
 				AB94838619721DE0001BC1FD /* XHSysatemRefreshTableViewController.m in Sources */,
 				AB94838719721DE0001BC1FD /* XHSystemTableViewController.m in Sources */,
 				7D6DF80919C8704100405BCB /* XHSystemRefreshCollectionViewController.m in Sources */,
@@ -476,6 +495,7 @@
 				7D093BAC1963FE1100F563BD /* NSDate+TimeAgo.m in Sources */,
 				AB94838C19721DE0001BC1FD /* XHRefreshActivityIndicatorContainerView.m in Sources */,
 				AB94838819721DE0001BC1FD /* XHRefreshControl.m in Sources */,
+				7DEF9CFB19EFD04600E6996E /* CollectionViewFlowLayout.m in Sources */,
 				AB9483A219721E8D001BC1FD /* XHDemoSystemTableViewController.m in Sources */,
 				AB9483A319721E8D001BC1FD /* XHDemoTableViewController.m in Sources */,
 				AB94838019721DE0001BC1FD /* XHBaseTableViewController.m in Sources */,
