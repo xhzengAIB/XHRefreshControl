@@ -618,8 +618,10 @@ typedef NS_ENUM(NSInteger, XHRefreshState) {
                                 break;
                             }
                             case XHPullDownRefreshViewTypeActivityIndicator: {
-                                CGFloat timeOffset = pullDownOffset / 36.0;
-                                self.refreshActivityIndicatorContainerView.activityIndicatorView.timeOffset = timeOffset;
+                                if (self.scrollView.contentOffset.y <= -([self getAdaptorHeight] - kXHRefreshCircleViewHeight)) {
+                                    CGFloat timeOffset = pullDownOffset / 36.0;
+                                    self.refreshActivityIndicatorContainerView.activityIndicatorView.timeOffset = timeOffset;
+                                }
                                 break;
                             }
                             case XHPullDownRefreshViewTypeCustom: {
