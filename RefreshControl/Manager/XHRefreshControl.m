@@ -249,7 +249,8 @@ typedef NS_ENUM(NSInteger, XHRefreshState) {
                      }
                      completion:^(BOOL finished) {
                          if (finished && self.refreshState == XHRefreshStateStopped) {
-                             self.refreshState = XHRefreshStateNormal;
+                             if (!self.scrollView.isDragging)
+                                 self.refreshState = XHRefreshStateNormal;
                              
                              if (self.refreshCircleContainerView.circleView) {
                                  [self.refreshCircleContainerView.circleView.layer removeAllAnimations];
