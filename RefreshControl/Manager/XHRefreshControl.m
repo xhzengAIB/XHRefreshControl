@@ -332,6 +332,11 @@ typedef NS_ENUM(NSInteger, XHRefreshState) {
     self.refreshCircleContainerView.circleView.circleLineWidth = circleLineWidth;
 }
 
+- (void)setIndicatorColor:(UIColor *)indicatorColor {
+    _indicatorColor = indicatorColor;
+    self.refreshActivityIndicatorContainerView.activityIndicatorView.tintColor = indicatorColor;
+}
+
 #pragma mark - Getter Method
 
 - (BOOL)isPullDownRefreshed {

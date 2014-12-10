@@ -133,6 +133,10 @@
  */
 @property (nonatomic, assign) CGFloat circleLineWidth;
 
+/**
+ *  菊花的颜色
+ */
+@property (nonatomic, strong) UIColor *indicatorColor;
 
 - (id)initWithScrollView:(UIScrollView *)scrollView delegate:(id <XHRefreshControlDelegate>)delegate;
 

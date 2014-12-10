@@ -55,6 +55,7 @@
         _customRefreshControl.hasStatusLabelShowed = self.hasStatusLabelShowed;
         _customRefreshControl.circleColor = self.circleColor;
         _customRefreshControl.circleLineWidth = self.circleLineWidth;
+        _customRefreshControl.indicatorColor = self.indicatorColor;
     }
 }
 
@@ -65,6 +66,7 @@
         self.loadMoreRefreshed = YES;
         self.circleColor = [UIColor colorWithRed:173 / 255.0 green:53 / 255.0 blue:60 / 255.0 alpha:1];
         self.circleLineWidth = 1.0;
+        self.indicatorColor = [UIColor colorWithRed:0.000 green:0.690 blue:0.209 alpha:1.000];
     }
     return self;
 }

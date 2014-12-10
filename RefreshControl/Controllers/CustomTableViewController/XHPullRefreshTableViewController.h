@@ -48,6 +48,11 @@
 @property (nonatomic, assign) CGFloat circleLineWidth;
 
 /**
+ *  菊花的颜色
+ */
+@property (nonatomic, strong) UIColor *indicatorColor;
+
+/**
  *  配置下拉、上拉加载组件
  */
 - (void)setupRefreshControl;
