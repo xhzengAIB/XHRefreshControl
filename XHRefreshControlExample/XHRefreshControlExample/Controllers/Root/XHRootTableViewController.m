@@ -39,6 +39,8 @@
                        
                        [XHSegueItem initSegueItemWithTitle:@"网易新闻样式没有导航栏的" onClasseName:@"XHDemoTableViewController"],
                        
+                       [XHSegueItem initSegueItemWithTitle:@"模仿网易新闻4.0网络差的情况" onClasseName:@"XHSimulationNetEaseNetworkErrorViewController"],
+                       
                        [XHSegueItem initSegueItemWithTitle:@"iOS7的系统样式，自定义出来啦！" onClasseName:@"XHDemoTableViewController"],
                        
                        [XHSegueItem initSegueItemWithTitle:@"UITableViewController使用我的下拉组件" onClasseName:@"XHDemoSystemTableViewController"],

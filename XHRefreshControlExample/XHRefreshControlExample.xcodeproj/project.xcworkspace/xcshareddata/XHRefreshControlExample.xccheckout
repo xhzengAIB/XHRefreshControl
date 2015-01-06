@@ -10,29 +10,29 @@
 	<string>XHRefreshControlExample</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>DF9813A3-71FC-4931-91F9-995689930C42</key>
+		<key>AE94791ACD45CA8923DDC1AA92F1358E8D97E19C</key>
 		<string>https://github.com/xhzengAIB/XHRefreshControl.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>XHRefreshControlExample/XHRefreshControlExample.xcodeproj/project.xcworkspace</string>
+	<string>XHRefreshControlExample/XHRefreshControlExample.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>DF9813A3-71FC-4931-91F9-995689930C42</key>
+		<key>AE94791ACD45CA8923DDC1AA92F1358E8D97E19C</key>
 		<string>../../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
 	<string>https://github.com/xhzengAIB/XHRefreshControl.git</string>
 	<key>IDESourceControlProjectVersion</key>
-	<integer>110</integer>
+	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>DF9813A3-71FC-4931-91F9-995689930C42</string>
+	<string>AE94791ACD45CA8923DDC1AA92F1358E8D97E19C</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>DF9813A3-71FC-4931-91F9-995689930C42</string>
+			<string>AE94791ACD45CA8923DDC1AA92F1358E8D97E19C</string>
 			<key>IDESourceControlWCCName</key>
 			<string>XHRefreshControl</string>
 		</dict>

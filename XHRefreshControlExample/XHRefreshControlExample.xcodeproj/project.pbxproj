@@ -43,6 +43,7 @@
 		AB9483A419721E8D001BC1FD /* XHRootTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB94839A19721E8D001BC1FD /* XHRootTableViewController.m */; };
 		AB9483A519721E8D001BC1FD /* XHSegmentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB94839D19721E8D001BC1FD /* XHSegmentViewController.m */; };
 		AB9483A619721E8D001BC1FD /* XHSegueItem.m in Sources */ = {isa = PBXBuildFile; fileRef = AB9483A019721E8D001BC1FD /* XHSegueItem.m */; };
+		F7CDBF4E1A5BCB8300DE641D /* XHSimulationNetEaseNetworkErrorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F7CDBF4D1A5BCB8300DE641D /* XHSimulationNetEaseNetworkErrorViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -119,6 +120,8 @@
 		AB94839D19721E8D001BC1FD /* XHSegmentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XHSegmentViewController.m; sourceTree = "<group>"; };
 		AB94839F19721E8D001BC1FD /* XHSegueItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XHSegueItem.h; sourceTree = "<group>"; };
 		AB9483A019721E8D001BC1FD /* XHSegueItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XHSegueItem.m; sourceTree = "<group>"; };
+		F7CDBF4C1A5BCB8300DE641D /* XHSimulationNetEaseNetworkErrorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XHSimulationNetEaseNetworkErrorViewController.h; sourceTree = "<group>"; };
+		F7CDBF4D1A5BCB8300DE641D /* XHSimulationNetEaseNetworkErrorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XHSimulationNetEaseNetworkErrorViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -330,6 +333,7 @@
 				AB94839819721E8D001BC1FD /* Root */,
 				AB94839519721E8D001BC1FD /* DemoTableViewController */,
 				AB94838F19721E8D001BC1FD /* CustomLoadMoreButtonDemoTableViewController */,
+				F7CDBF4B1A5BCB7300DE641D /* SimulationNetEaseNetworkErrorViewController */,
 				AB94839219721E8D001BC1FD /* DemoSystemTableViewController */,
 				AB94839B19721E8D001BC1FD /* SegmentController */,
 				7DEF9CF219EFC34300E6996E /* CollectionViewController */,
@@ -389,6 +393,15 @@
 				AB9483A019721E8D001BC1FD /* XHSegueItem.m */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		F7CDBF4B1A5BCB7300DE641D /* SimulationNetEaseNetworkErrorViewController */ = {
+			isa = PBXGroup;
+			children = (
+				F7CDBF4C1A5BCB8300DE641D /* XHSimulationNetEaseNetworkErrorViewController.h */,
+				F7CDBF4D1A5BCB8300DE641D /* XHSimulationNetEaseNetworkErrorViewController.m */,
+			);
+			path = SimulationNetEaseNetworkErrorViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -507,6 +520,7 @@
 				AB94838D19721DE0001BC1FD /* XHRefreshCircleContainerView.m in Sources */,
 				AB9483A619721E8D001BC1FD /* XHSegueItem.m in Sources */,
 				AB94838919721DE0001BC1FD /* XHActivityCircleIndicatorView.m in Sources */,
+				F7CDBF4E1A5BCB8300DE641D /* XHSimulationNetEaseNetworkErrorViewController.m in Sources */,
 				AB9483A419721E8D001BC1FD /* XHRootTableViewController.m in Sources */,
 				AB94838419721DE0001BC1FD /* XHPullRefreshTableViewController.m in Sources */,
 				AB0B346019429D4700EC0072 /* AppDelegate.m in Sources */,

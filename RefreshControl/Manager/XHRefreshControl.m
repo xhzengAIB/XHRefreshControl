@@ -19,7 +19,7 @@
 
 #define kXHAutoLoadMoreRefreshedCount 5
 
-#define kXHDefaultDisplayAutoLoadMoreRefreshedMessage @"显示下20条"
+#define kXHDefaultDisplayAutoLoadMoreRefreshedMessage @"点击显示下10条"
 
 
 typedef NS_ENUM(NSInteger, XHRefreshState) {
@@ -65,6 +65,9 @@ typedef NS_ENUM(NSInteger, XHRefreshState) {
 
 // preload more distanse
 @property (nonatomic, assign) CGFloat preloadValue;
+
+// Handle Network Error
+@property (nonatomic, assign) BOOL handleNetworkError;
 
 @end
 
@@ -145,7 +148,7 @@ typedef NS_ENUM(NSInteger, XHRefreshState) {
 
 - (void)startLoadMoreRefreshing {
     if (self.isLoadMoreRefreshed) {
-        if (self.loadMoreRefreshedCount < self.autoLoadMoreRefreshedCount) {
+        if (self.loadMoreRefreshedCount < self.autoLoadMoreRefreshedCount && !self.handleNetworkError) {
             [self callBeginLoadMoreRefreshing];
         } else {
             [self.loadMoreView configuraManualStateWithMessage:[self displayAutoLoadMoreRefreshedMessage]];
@@ -157,6 +160,7 @@ typedef NS_ENUM(NSInteger, XHRefreshState) {
     if (self.loadMoreRefreshing)
         return;
     self.loadMoreRefreshing = YES;
+    self.handleNetworkError = NO;
     self.loadMoreRefreshedCount ++;
     self.refreshState = XHRefreshStateLoading;
     [self.loadMoreView startLoading];
@@ -166,6 +170,7 @@ typedef NS_ENUM(NSInteger, XHRefreshState) {
 - (void)endLoadMoreRefresing {
     if (self.isLoadMoreRefreshed) {
         self.loadMoreRefreshing = NO;
+        self.handleNetworkError = NO;
         self.refreshState = XHRefreshStateNormal;
         [self.loadMoreView endLoading];
     }
@@ -178,6 +183,7 @@ typedef NS_ENUM(NSInteger, XHRefreshState) {
 - (void)endMoreOverWithMessage:(NSString *)message {
     [self endLoadMoreRefresing];
     self.noMoreDataForLoaded = YES;
+    self.handleNetworkError = NO;
     [self.loadMoreView configuraNothingMoreWithMessage:message];
 }
 
@@ -191,7 +197,7 @@ typedef NS_ENUM(NSInteger, XHRefreshState) {
 - (void)handleLoadMoreError {
     [self endLoadMoreRefresing];
     [self.loadMoreView configuraManualStateWithMessage:[self displayAutoLoadMoreRefreshedMessage]];
-    self.loadMoreRefreshedCount = self.autoLoadMoreRefreshedCount;
+    self.handleNetworkError = YES;
 }
 
 - (BOOL)isLoading {
@@ -218,7 +224,7 @@ typedef NS_ENUM(NSInteger, XHRefreshState) {
     [UIView animateWithDuration:0.3f animations:^{
         [self.scrollView setContentInset:contentInset];
     } completion:^(BOOL finished) {
-
+        
         self.refreshState = XHRefreshStateNormal;
         
         switch (self.pullDownRefreshViewType) {
@@ -564,7 +570,7 @@ typedef NS_ENUM(NSInteger, XHRefreshState) {
     self.delegate = nil;
     [self removeObserverWithScrollView:self.scrollView];
     self.scrollView = nil;
-   
+    
     [self.refreshCircleContainerView removeFromSuperview];
     self.refreshCircleContainerView = nil;
     
