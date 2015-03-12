@@ -88,7 +88,7 @@
     XHSegueItem *segueItem = self.dataSource[row];
     
     UIViewController *viewController = nil;
-    if (row == 6) {
+    if (row == 7) {
         viewController = [[DemoCollectionViewController alloc] initWithCollectionViewLayout:[[CollectionViewFlowLayout alloc] init]];
     } else {
         viewController = [[NSClassFromString(segueItem.className) alloc] init];
