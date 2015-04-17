@@ -112,8 +112,6 @@ typedef NS_ENUM(NSInteger, XHRefreshState) {
         default:
             break;
     }
-    
-    [self callBeginPullDownRefreshing];
 }
 
 - (void)callBeginPullDownRefreshing {
@@ -247,6 +245,10 @@ typedef NS_ENUM(NSInteger, XHRefreshState) {
 }
 
 - (void)setScrollViewContentInset:(UIEdgeInsets)contentInset {
+    [self setScrollViewContentInset:contentInset completion:NULL];
+}
+
+- (void)setScrollViewContentInset:(UIEdgeInsets)contentInset completion:(void (^)(BOOL finished))completion {
     [UIView animateWithDuration:0.3
                           delay:0
                         options:UIViewAnimationOptionAllowUserInteraction|UIViewAnimationOptionBeginFromCurrentState
@@ -254,6 +256,9 @@ typedef NS_ENUM(NSInteger, XHRefreshState) {
                          self.scrollView.contentInset = contentInset;
                      }
                      completion:^(BOOL finished) {
+                         if (completion) {
+                             completion(finished);
+                         }
                          if (finished && self.refreshState == XHRefreshStateStopped) {
                              if (!self.scrollView.isDragging)
                                  self.refreshState = XHRefreshStateNormal;
@@ -265,10 +270,10 @@ typedef NS_ENUM(NSInteger, XHRefreshState) {
                      }];
 }
 
-- (void)setScrollViewContentInsetForLoading {
+- (void)setScrollViewContentInsetForLoadingCompletion:(void (^)(BOOL finished))completion {
     UIEdgeInsets currentInsets = self.scrollView.contentInset;
     currentInsets.top = self.refreshTotalPixels;
-    [self setScrollViewContentInset:currentInsets];
+    [self setScrollViewContentInset:currentInsets completion:completion];
 }
 
 - (void)setScrollViewContentInsetForLoadMore {
@@ -452,9 +457,12 @@ typedef NS_ENUM(NSInteger, XHRefreshState) {
                     self.refreshCircleContainerView.stateLabel.text = @"正在加载";
                 }
                 
-                
-                [self setScrollViewContentInsetForLoading];
-                
+                __weak typeof(self) weakSelf = self;
+                [self setScrollViewContentInsetForLoadingCompletion:^(BOOL finished) {
+                    if (finished) {
+                        [weakSelf callBeginPullDownRefreshing];
+                    }
+                }];
                 if(_refreshState == XHRefreshStatePulling) {
                     [self animationRefreshCircleView];
                 }

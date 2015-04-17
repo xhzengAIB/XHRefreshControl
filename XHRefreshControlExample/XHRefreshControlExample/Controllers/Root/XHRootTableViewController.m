@@ -101,11 +101,11 @@
         [self presentViewController:viewController animated:YES completion:NULL];
         return;
         
-    } else if (row == 2) {
+    } else if (row == 3) {
         
         ((XHDemoTableViewController *)viewController).refreshViewType = XHPullDownRefreshViewTypeActivityIndicator;
         
-    } else if (row == 4) {
+    } else if (row == 5) {
         
         ((XHDemoTableViewController *)viewController).refreshViewType = XHPullDownRefreshViewTypeCustom;
         

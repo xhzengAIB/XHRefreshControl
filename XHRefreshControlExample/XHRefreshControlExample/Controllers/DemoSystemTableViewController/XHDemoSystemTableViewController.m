@@ -21,7 +21,6 @@
                 [indexPaths addObject:[NSIndexPath indexPathForRow:self.dataSource.count + idx inSection:0]];
             }];
         }
-        sleep(1.5);
         dispatch_async(dispatch_get_main_queue(), ^{
             if (self.requestCurrentPage) {
                 if (self.requestCurrentPage == arc4random() % 10) {

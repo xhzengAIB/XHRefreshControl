@@ -30,7 +30,7 @@
                 [indexPaths addObject:[NSIndexPath indexPathForRow:self.dataSource.count + idx inSection:0]];
             }];
         }
-        sleep(1.5);
+        sleep(1);
         dispatch_async(dispatch_get_main_queue(), ^{
             if (self.requestCurrentPage) {
                 if (self.requestCurrentPage == arc4random() % 10) {
@@ -45,7 +45,7 @@
                 if (rand() % 3 > 1) {
                     self.loadMoreRefreshed = NO;
                 }
-
+                
                 self.dataSource = dataSource;
                 [self.tableView reloadData];
                 [self endPullDownRefreshing];
@@ -88,7 +88,7 @@
     backgroundView.backgroundColor = [UIColor whiteColor];
     UIProgressView *progressView = [[UIProgressView alloc] initWithProgressViewStyle:UIProgressViewStyleBar];
     progressView.tag = 100;
-    progressView.frame = CGRectMake(0, CGRectGetHeight(backgroundView.bounds) / 2.0 - 3, 320, 3);
+    progressView.frame = CGRectMake(0, CGRectGetHeight(backgroundView.bounds) - 10, 320, 3);
     if ([progressView respondsToSelector:@selector(setTintColor:)]) {
         progressView.tintColor = [UIColor orangeColor];
     }
@@ -112,7 +112,7 @@
 - (void)customPullDownRefreshViewWillEndRefresh:(UIView *)customPullDownRefreshView {
     UIProgressView *progressView = (UIProgressView *)[customPullDownRefreshView viewWithTag:100];
     if ([progressView respondsToSelector:@selector(setTintColor:)]) {
-        [progressView setTintColor:[UIColor greenColor]];
+        [progressView setTintColor:[UIColor orangeColor]];
     }
     [progressView setProgress:0.0 animated:NO];
 }
