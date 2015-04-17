@@ -32,6 +32,10 @@
     [self.refreshControl endMoreOverWithMessage:message];
 }
 
+- (void)endMoreOverWithMessageTipsView:(UIView *)messageTipsView {
+    [self.refreshControl endMoreOverWithMessageTipsView:messageTipsView];
+}
+
 - (void)resetLoadMoreStatue:(BOOL)noMoreDataForLoaded {
     [self.refreshControl resetLoadMoreStatue:noMoreDataForLoaded];
 }

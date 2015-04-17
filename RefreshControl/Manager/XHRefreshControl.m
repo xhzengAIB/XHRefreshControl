@@ -185,6 +185,13 @@ typedef NS_ENUM(NSInteger, XHRefreshState) {
     [self.loadMoreView configuraNothingMoreWithMessage:message];
 }
 
+- (void)endMoreOverWithMessageTipsView:(UIView *)messageTipsView {
+    [self endLoadMoreRefresing];
+    self.noMoreDataForLoaded = YES;
+    self.handleNetworkError = NO;
+    [self.loadMoreView configuraNothingMoreWithMessageView:messageTipsView];
+}
+
 /**
  *  重置是否有更多翻页数据要加载
  */

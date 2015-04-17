@@ -46,4 +46,11 @@
  */
 - (void)configuraNothingMoreWithMessage:(NSString *)message;
 
+/**
+ *  当外部加载更多数据的时候，发现没有数据了，可以进行设置一些更有趣的视图
+ *
+ *  @param messageView 被显示的目标视图
+ */
+- (void)configuraNothingMoreWithMessageView:(UIView *)messageView;
+
 @end

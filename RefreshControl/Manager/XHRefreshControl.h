@@ -108,7 +108,7 @@
 - (NSString *)displayAutoLoadMoreRefreshedMessage;
 
 /**
- *  当scrollView滚动到距离底部有多少距离
+ *  13、当scrollView滚动到距离底部有多少距离
  *
  *  @return 返回你预期想要的距离，默认是0，即是拖动scrollView到底部才开始加载
  */
@@ -156,9 +156,14 @@
 - (void)endLoadMoreRefresing;
 
 /**
- *  没有更多的数据加载
+ *  没有更多的数据加载，展示一个提示语
  */
 - (void)endMoreOverWithMessage:(NSString *)message;
+
+/**
+ *  没有更多的数据加载，展示一个提示视图
+ */
+- (void)endMoreOverWithMessageTipsView:(UIView *)messageTipsView;
 
 /**
  *  重置是否有更多翻页数据要加载

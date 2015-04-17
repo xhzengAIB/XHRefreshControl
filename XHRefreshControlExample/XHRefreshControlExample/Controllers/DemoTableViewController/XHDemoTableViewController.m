@@ -12,6 +12,8 @@
 
 @interface XHDemoTableViewController ()
 
+@property (nonatomic, strong) UIImageView *messageTipsView;
+
 @end
 
 @implementation XHDemoTableViewController
@@ -70,6 +72,16 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+#pragma mark - Propertys
+
+- (UIImageView *)messageTipsView {
+    if (!_messageTipsView) {
+        _messageTipsView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, CGRectGetWidth([[UIScreen mainScreen] bounds]), 50)];
+        _messageTipsView.image = [UIImage imageNamed:@"nothing_more_tips"];
+    }
+    return _messageTipsView;
 }
 
 #pragma mark - XHRefreshControl Delegate

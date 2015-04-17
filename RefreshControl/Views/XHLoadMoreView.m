@@ -15,20 +15,35 @@
  */
 @property (nonatomic, strong) UIActivityIndicatorView *activityIndicatorView;
 
+/**
+ *  外部定制的提示视图，只有在没有数据的情况下才会出现的
+ */
+@property (nonatomic, strong) UIView *messageView;
+
 @end
 
 @implementation XHLoadMoreView
 
-- (void)startLoading {
+- (void)setupNormalButton {
     self.loadMoreButton.userInteractionEnabled = NO;
     self.loadMoreButton.hidden = NO;
+    [self hideMessageView];
+}
+
+- (void)hideMessageView {
+    if (_messageView) {
+        _messageView.hidden = YES;
+    }
+}
+
+- (void)startLoading {
+    [self setupNormalButton];
     [self.loadMoreButton setTitle:@"正在载入" forState:UIControlStateNormal];
     [self.activityIndicatorView startAnimating];
 }
 
 - (void)endLoading {
-    self.loadMoreButton.userInteractionEnabled = NO;
-    self.loadMoreButton.hidden = NO;
+    [self setupNormalButton];
     [self.loadMoreButton setTitle:@"加载更多" forState:UIControlStateNormal];
     [self.activityIndicatorView stopAnimating];
 }
@@ -36,13 +51,22 @@
 - (void)configuraManualStateWithMessage:(NSString *)message {
     self.loadMoreButton.userInteractionEnabled = YES;
     self.loadMoreButton.hidden = NO;
+    [self hideMessageView];
     [self.loadMoreButton setTitle:message forState:UIControlStateNormal];
 }
 
 - (void)configuraNothingMoreWithMessage:(NSString *)message {
-    self.loadMoreButton.userInteractionEnabled = NO;
-    self.loadMoreButton.hidden = NO;
+    [self setupNormalButton];
     [self.loadMoreButton setTitle:message forState:UIControlStateNormal];
+}
+
+- (void)configuraNothingMoreWithMessageView:(UIView *)messageView {
+    if (_messageView == messageView) {
+        _messageView.hidden = NO;
+        return;
+    }
+    self.messageView = messageView;
+    [self addSubview:self.messageView];
 }
 
 - (void)setupCustomLoadMoreButton:(UIButton *)customLoadMoreButton {

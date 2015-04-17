@@ -32,6 +32,10 @@
     [self.customRefreshControl endMoreOverWithMessage:message];
 }
 
+- (void)endMoreOverWithMessageTipsView:(UIView *)messageTipsView {
+    [self.customRefreshControl endMoreOverWithMessageTipsView:messageTipsView];
+}
+
 /**
  *  重置是否有更多翻页数据要加载
  */

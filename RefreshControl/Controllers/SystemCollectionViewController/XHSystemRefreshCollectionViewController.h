@@ -70,6 +70,13 @@
 - (void)endMoreOverWithMessage:(NSString *)message;
 
 /**
+ *  当上拉加载数据回调告诉我们，已经没有下一页了，那你可以调用该方法，告诉用户你已经没有数据了哦！
+ *
+ *  @param messageTipsView 提示用户的视图
+ */
+- (void)endMoreOverWithMessageTipsView:(UIView *)messageTipsView;
+
+/**
  *  重置是否有更多翻页数据要加载
  */
 - (void)resetLoadMoreStatue:(BOOL)noMoreDataForLoaded;

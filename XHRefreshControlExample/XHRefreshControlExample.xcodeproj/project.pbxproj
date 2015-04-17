@@ -43,6 +43,7 @@
 		AB9483A419721E8D001BC1FD /* XHRootTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB94839A19721E8D001BC1FD /* XHRootTableViewController.m */; };
 		AB9483A519721E8D001BC1FD /* XHSegmentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB94839D19721E8D001BC1FD /* XHSegmentViewController.m */; };
 		AB9483A619721E8D001BC1FD /* XHSegueItem.m in Sources */ = {isa = PBXBuildFile; fileRef = AB9483A019721E8D001BC1FD /* XHSegueItem.m */; };
+		E4E0DCD81AE144F700B23B93 /* nothing_more_tips@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E4E0DCD71AE144F700B23B93 /* nothing_more_tips@2x.png */; };
 		F7CDBF4E1A5BCB8300DE641D /* XHSimulationNetEaseNetworkErrorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F7CDBF4D1A5BCB8300DE641D /* XHSimulationNetEaseNetworkErrorViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -120,6 +121,7 @@
 		AB94839D19721E8D001BC1FD /* XHSegmentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XHSegmentViewController.m; sourceTree = "<group>"; };
 		AB94839F19721E8D001BC1FD /* XHSegueItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XHSegueItem.h; sourceTree = "<group>"; };
 		AB9483A019721E8D001BC1FD /* XHSegueItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XHSegueItem.m; sourceTree = "<group>"; };
+		E4E0DCD71AE144F700B23B93 /* nothing_more_tips@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "nothing_more_tips@2x.png"; sourceTree = "<group>"; };
 		F7CDBF4C1A5BCB8300DE641D /* XHSimulationNetEaseNetworkErrorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XHSimulationNetEaseNetworkErrorViewController.h; sourceTree = "<group>"; };
 		F7CDBF4D1A5BCB8300DE641D /* XHSimulationNetEaseNetworkErrorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XHSimulationNetEaseNetworkErrorViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -151,10 +153,10 @@
 		4755DE7319C498CA0088B5D2 /* SystemCollectionViewController */ = {
 			isa = PBXGroup;
 			children = (
-				7D6DF80719C8704100405BCB /* XHSystemRefreshCollectionViewController.h */,
-				7D6DF80819C8704100405BCB /* XHSystemRefreshCollectionViewController.m */,
 				4755DE7619C498FC0088B5D2 /* XHSystemCollectionViewController.h */,
 				4755DE7719C498FC0088B5D2 /* XHSystemCollectionViewController.m */,
+				7D6DF80719C8704100405BCB /* XHSystemRefreshCollectionViewController.h */,
+				7D6DF80819C8704100405BCB /* XHSystemRefreshCollectionViewController.m */,
 			);
 			path = SystemCollectionViewController;
 			sourceTree = "<group>";
@@ -229,6 +231,7 @@
 		AB0B345619429D4700EC0072 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				E4E0DCD71AE144F700B23B93 /* nothing_more_tips@2x.png */,
 				AB0B345719429D4700EC0072 /* XHRefreshControlExample-Info.plist */,
 				AB0B345819429D4700EC0072 /* InfoPlist.strings */,
 				AB0B345B19429D4700EC0072 /* main.m */,
@@ -484,6 +487,7 @@
 				7D093BAD1963FE1100F563BD /* NSDateTimeAgo.bundle in Resources */,
 				AB0B346B19429D4700EC0072 /* Images.xcassets in Resources */,
 				AB0B345A19429D4700EC0072 /* InfoPlist.strings in Resources */,
+				E4E0DCD81AE144F700B23B93 /* nothing_more_tips@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

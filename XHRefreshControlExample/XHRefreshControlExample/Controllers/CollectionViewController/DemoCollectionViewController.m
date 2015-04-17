@@ -46,17 +46,24 @@
 
 @interface DemoCollectionViewController ()
 
+@property (nonatomic, strong) UIImageView *messageTipsView;
+
 @end
 
 @implementation DemoCollectionViewController
 
 - (void)loadDataSource {
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.02 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         if (self.requestCurrentPage > 0) {
+            
             [self.dataSource addObjectsFromArray:@[@"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @""]];
             [self.collectionView reloadData];
             [self endLoadMoreRefreshing];
             
+            if (self.requestCurrentPage == 5) {
+                [self endMoreOverWithMessageTipsView:self.messageTipsView];
+                return ;
+            }
         } else {
             self.dataSource = [@[@"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @""] mutableCopy];
             [self.collectionView reloadData];
@@ -81,18 +88,37 @@
     }
 }
 
-- (void)viewDidLoad
-{
+- (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.collectionView.backgroundColor = [UIColor whiteColor];
+    self.collectionView.backgroundColor = [UIColor colorWithRed:248/255.0 green:249/255.0 blue:251/255.0 alpha:1.0];
     [self.collectionView registerClass:[CollectionViewCell class] forCellWithReuseIdentifier:@"CollectionViewCell"];
 }
 
-- (void)didReceiveMemoryWarning
-{
+- (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+#pragma mark - Propertys
+
+- (UIImageView *)messageTipsView {
+    if (!_messageTipsView) {
+        _messageTipsView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, CGRectGetWidth([[UIScreen mainScreen] bounds]), 50)];
+        _messageTipsView.image = [UIImage imageNamed:@"nothing_more_tips"];
+    }
+    return _messageTipsView;
+}
+
+#pragma mark - XHRefreshControl Delegate
+
+- (UIButton *)customLoadMoreButton {
+    UIButton *_loadMoreButton = [[UIButton alloc] initWithFrame:CGRectMake(10, 5, CGRectGetWidth(self.view.bounds) - 20, CGRectGetHeight(self.view.bounds) - 10)];
+    [_loadMoreButton setTitle:@"加载更多" forState:UIControlStateNormal];
+    _loadMoreButton.titleLabel.font = [UIFont systemFontOfSize:16];
+    [_loadMoreButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    [_loadMoreButton setBackgroundColor:[UIColor colorWithRed:248/255.0 green:249/255.0 blue:251/255.0 alpha:1.0]];
+    return _loadMoreButton;
 }
 
 #pragma mark - CollectionView Delegate

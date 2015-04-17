@@ -68,16 +68,23 @@
 - (void)endPullDownRefreshing;
 
 /**
- *  当上啦加载数据完成后，你也得调用该方法哦！然后你可能会问，那我要怎么判断是下拉还是上啦啊？requestCurrentPage看这个变量，会跟着变化哦！
+ *  当上拉加载数据完成后，你也得调用该方法哦！然后你可能会问，那我要怎么判断是下拉还是上啦啊？requestCurrentPage看这个变量，会跟着变化哦！
  */
 - (void)endLoadMoreRefreshing;
 
 /**
- *  当上啦加载数据回调告诉我们，已经没有下一页了，那你可以调用该方法，告诉用户你已经没有数据了哦！
+ *  当上拉加载数据回调告诉我们，已经没有下一页了，那你可以调用该方法，告诉用户你已经没有数据了哦！
  *
  *  @param message 提示用户的信息
  */
 - (void)endMoreOverWithMessage:(NSString *)message;
+
+/**
+ *  当上拉加载数据回调告诉我们，已经没有下一页了，那你可以调用该方法，告诉用户你已经没有数据了哦！
+ *
+ *  @param messageTipsView 提示用户的视图
+ */
+- (void)endMoreOverWithMessageTipsView:(UIView *)messageTipsView;
 
 /**
  *  重置是否有更多翻页数据要加载

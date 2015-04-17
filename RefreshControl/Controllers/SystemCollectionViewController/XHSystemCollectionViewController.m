@@ -21,10 +21,12 @@
     // in subClass
 }
 
-#pragma mark - UITableView DataSource
+#pragma mark - UICollectionView DataSource
+
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
   return 1;
 }
+
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
   return self.dataSource.count;
 }
