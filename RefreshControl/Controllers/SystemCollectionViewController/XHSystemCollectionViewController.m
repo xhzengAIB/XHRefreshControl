@@ -15,6 +15,11 @@
 
 @implementation XHSystemCollectionViewController
 
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    self.collectionView.alwaysBounceVertical = YES;
+}
+
 #pragma mark - Publish Method
 
 - (void)loadDataSource {

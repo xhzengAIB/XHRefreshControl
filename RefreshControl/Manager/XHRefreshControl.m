@@ -701,13 +701,13 @@ typedef NS_ENUM(NSInteger, XHRefreshState) {
             self.loadMoreView.frame = loadMoreViewFrame;
             [self setScrollViewContentInsetForLoadMore];
         } else {
-            CGFloat scrollViewHeight = CGRectGetHeight(self.scrollView.frame);
-            CGFloat thubs = scrollViewHeight - [self getAdaptorHeight];
-            if (contentSize.height >= thubs) {
+//            CGFloat scrollViewHeight = CGRectGetHeight(self.scrollView.frame);
+//            CGFloat thubs = scrollViewHeight - [self getAdaptorHeight];
+//            if (contentSize.height >= thubs) {
                 CGRect loadMoreViewFrame = self.loadMoreView.frame;
                 loadMoreViewFrame.origin.y = contentSize.height;
                 self.loadMoreView.frame = loadMoreViewFrame;
-            }
+//            }
         }
     }
 }
