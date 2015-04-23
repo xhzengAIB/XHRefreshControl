@@ -14,60 +14,60 @@
 
 @required
 /**
- *  1、将要开始下拉刷新的方法
+ *  将要开始下拉刷新的方法
  */
 - (void)beginPullDownRefreshing;
 
 /**
- *  2、将要开始上提加载更多的方法
+ *  将要开始上提加载更多的方法
  */
 - (void)beginLoadMoreRefreshing;
 
 @optional
 /**
- *  1、是否支持下拉刷新
+ *  是否支持下拉刷新
  *
  *  @return 如果没有实现该delegate方法，默认是支持下拉的，为YES
  */
 - (BOOL)isPullDownRefreshed;
 
 /**
- *  2、是否支持上提加载更多
+ *  是否支持上提加载更多
  *
  *  @return 如果没有实现该delegate方法，默认是支持上提加载更多的，为YES
  */
 - (BOOL)isLoadMoreRefreshed;
 
 /**
- *  3、标识下拉刷新是UIScrollView的子view，还是UIScrollView父view的子view
+ *  标识下拉刷新是UIScrollView的子view，还是UIScrollView父view的子view
  *
  *  @return 如果没有实现该delegate方法，默认是scrollView的子View，为XHRefreshViewLayerTypeOnScrollViews
  */
 - (XHRefreshViewLayerType)refreshViewLayerType;
 
 /**
- *  4、下拉刷新使用哪种样式
+ *  下拉刷新使用哪种样式
  *
  *  @return 如果没有实现该delegate方法，默认是网易新闻App的样式
  */
 - (XHPullDownRefreshViewType)pullDownRefreshViewType;
 
 /**
- *  5、将自动加载更多的状态转换为手动加载需要的条件，现在是加载更多多少次后，开始转换
+ *  将自动加载更多的状态转换为手动加载需要的条件，现在是加载更多多少次后，开始转换
  *
  *  @return 如果不实现该delegate方法，默认是5次
  */
 - (NSInteger)autoLoadMoreRefreshedCountConverManual;
 
 /**
- *  6、获取用户定义下拉的View
+ *  获取用户定义下拉的View
  *
  *  @return 返回用户定义的View
  */
 - (UIView *)customPullDownRefreshView;
 
 /**
- *  7、通知外部，下拉的距离，用于定制某个时机的状态
+ *  通知外部，下拉的距离，用于定制某个时机的状态
  *
  *  @param refreshView    需要改变状态的View
  *  @param pullDownOffset 下拉的距离
@@ -75,40 +75,62 @@
 - (void)customPullDownRefreshView:(UIView *)customPullDownRefreshView withPullDownOffset:(CGFloat)pullDownOffset;
 
 /**
- *  8、将要下拉的时候，被调用
+ *  通知外部，下拉的状态，用于定制某个时机的状态
+ *
+ *  @param refreshView    需要改变状态的View
+ *  @param refreshState 下拉的状态
+ */
+- (void)customPullDownRefreshViewRefreshState:(XHRefreshState)refreshState;
+
+/**
+ *  将要下拉的时候，被调用
  *
  *  @param customPullDownRefreshView 目标下拉的View
  */
 - (void)customPullDownRefreshViewWillStartRefresh:(UIView *)customPullDownRefreshView;
 
 /**
- *  9、将要停止下啦的时候，被调用
+ *  刚进入下拉的时候，被调用
+ *
+ *  @param customPullDownRefreshView 目标下拉的View
+ */
+- (void)customPullDownRefreshViewDidStartRefresh:(UIView *)customPullDownRefreshView;
+
+/**
+ *  将要停止下啦的时候，被调用
  *
  *  @param customPullDownRefreshView 目标下啦的View
  */
 - (void)customPullDownRefreshViewWillEndRefresh:(UIView *)customPullDownRefreshView;
 
 /**
- *  10、加载更多的按钮，默认是网易新闻App的样式，如果你需要自己定制的话，可以，那你实现该Delegate方法
+ *  刚进入停止下啦的时候，被调用
+ *
+ *  @param customPullDownRefreshView 目标下啦的View
+ */
+- (void)customPullDownRefreshViewDidEndRefresh:(UIView *)customPullDownRefreshView;
+
+/**
+ *  加载更多的按钮，默认是网易新闻App的样式，如果你需要自己定制的话，可以，那你实现该Delegate方法
  */
 - (UIButton *)customLoadMoreButton;
 
 /**
- *  11、最后更新数据的时间
+ *  最后更新数据的时间
  *
  *  @return 返回缓存最后更新某个页面的时间
  */
 - (NSString *)lastUpdateTimeString;
 
 /**
- *  12、用于显示手动上提加载更多的提示字眼
+ *  用于显示手动上提加载更多的提示字眼
  *
  *  @return 如果没有实现该Delegate，默认显示为显示下20条的字眼
  */
 - (NSString *)displayAutoLoadMoreRefreshedMessage;
 
 /**
- *  13、当scrollView滚动到距离底部有多少距离
+ *  当scrollView滚动到距离底部有多少距离
  *
  *  @return 返回你预期想要的距离，默认是0，即是拖动scrollView到底部才开始加载
  */

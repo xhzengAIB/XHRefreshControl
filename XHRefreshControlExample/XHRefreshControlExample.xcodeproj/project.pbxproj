@@ -43,6 +43,15 @@
 		AB9483A419721E8D001BC1FD /* XHRootTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB94839A19721E8D001BC1FD /* XHRootTableViewController.m */; };
 		AB9483A519721E8D001BC1FD /* XHSegmentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB94839D19721E8D001BC1FD /* XHSegmentViewController.m */; };
 		AB9483A619721E8D001BC1FD /* XHSegueItem.m in Sources */ = {isa = PBXBuildFile; fileRef = AB9483A019721E8D001BC1FD /* XHSegueItem.m */; };
+		E453903C1AE7F1BC0077DF19 /* XHJDPullRefreshTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E453903B1AE7F1BC0077DF19 /* XHJDPullRefreshTableViewController.m */; };
+		E453903F1AE7F33D0077DF19 /* XHJDRefreshView.m in Sources */ = {isa = PBXBuildFile; fileRef = E453903E1AE7F33D0077DF19 /* XHJDRefreshView.m */; };
+		E45390471AE7F7900077DF19 /* box@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E45390411AE7F7900077DF19 /* box@2x.png */; };
+		E45390481AE7F7900077DF19 /* deliveryStaff0@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E45390421AE7F7900077DF19 /* deliveryStaff0@2x.png */; };
+		E45390491AE7F7900077DF19 /* deliveryStaff1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E45390431AE7F7900077DF19 /* deliveryStaff1@2x.png */; };
+		E453904A1AE7F7900077DF19 /* deliveryStaff2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E45390441AE7F7900077DF19 /* deliveryStaff2@2x.png */; };
+		E453904B1AE7F7900077DF19 /* deliveryStaff3@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E45390451AE7F7900077DF19 /* deliveryStaff3@2x.png */; };
+		E453904C1AE7F7900077DF19 /* staticDeliveryStaff@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E45390461AE7F7900077DF19 /* staticDeliveryStaff@2x.png */; };
+		E45390501AE7F8340077DF19 /* XHJDRefreshDemoTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E453904F1AE7F8340077DF19 /* XHJDRefreshDemoTableViewController.m */; };
 		E4E0DCD81AE144F700B23B93 /* nothing_more_tips@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E4E0DCD71AE144F700B23B93 /* nothing_more_tips@2x.png */; };
 		F7CDBF4E1A5BCB8300DE641D /* XHSimulationNetEaseNetworkErrorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F7CDBF4D1A5BCB8300DE641D /* XHSimulationNetEaseNetworkErrorViewController.m */; };
 /* End PBXBuildFile section */
@@ -121,6 +130,18 @@
 		AB94839D19721E8D001BC1FD /* XHSegmentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XHSegmentViewController.m; sourceTree = "<group>"; };
 		AB94839F19721E8D001BC1FD /* XHSegueItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XHSegueItem.h; sourceTree = "<group>"; };
 		AB9483A019721E8D001BC1FD /* XHSegueItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XHSegueItem.m; sourceTree = "<group>"; };
+		E453903A1AE7F1BC0077DF19 /* XHJDPullRefreshTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XHJDPullRefreshTableViewController.h; sourceTree = "<group>"; };
+		E453903B1AE7F1BC0077DF19 /* XHJDPullRefreshTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XHJDPullRefreshTableViewController.m; sourceTree = "<group>"; };
+		E453903D1AE7F33D0077DF19 /* XHJDRefreshView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XHJDRefreshView.h; sourceTree = "<group>"; };
+		E453903E1AE7F33D0077DF19 /* XHJDRefreshView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XHJDRefreshView.m; sourceTree = "<group>"; };
+		E45390411AE7F7900077DF19 /* box@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "box@2x.png"; sourceTree = "<group>"; };
+		E45390421AE7F7900077DF19 /* deliveryStaff0@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "deliveryStaff0@2x.png"; sourceTree = "<group>"; };
+		E45390431AE7F7900077DF19 /* deliveryStaff1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "deliveryStaff1@2x.png"; sourceTree = "<group>"; };
+		E45390441AE7F7900077DF19 /* deliveryStaff2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "deliveryStaff2@2x.png"; sourceTree = "<group>"; };
+		E45390451AE7F7900077DF19 /* deliveryStaff3@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "deliveryStaff3@2x.png"; sourceTree = "<group>"; };
+		E45390461AE7F7900077DF19 /* staticDeliveryStaff@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "staticDeliveryStaff@2x.png"; sourceTree = "<group>"; };
+		E453904E1AE7F8340077DF19 /* XHJDRefreshDemoTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XHJDRefreshDemoTableViewController.h; sourceTree = "<group>"; };
+		E453904F1AE7F8340077DF19 /* XHJDRefreshDemoTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XHJDRefreshDemoTableViewController.m; sourceTree = "<group>"; };
 		E4E0DCD71AE144F700B23B93 /* nothing_more_tips@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "nothing_more_tips@2x.png"; sourceTree = "<group>"; };
 		F7CDBF4C1A5BCB8300DE641D /* XHSimulationNetEaseNetworkErrorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XHSimulationNetEaseNetworkErrorViewController.h; sourceTree = "<group>"; };
 		F7CDBF4D1A5BCB8300DE641D /* XHSimulationNetEaseNetworkErrorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XHSimulationNetEaseNetworkErrorViewController.m; sourceTree = "<group>"; };
@@ -261,6 +282,7 @@
 		AB94835D19721DE0001BC1FD /* RefreshControl */ = {
 			isa = PBXGroup;
 			children = (
+				E45390401AE7F7900077DF19 /* Assets */,
 				AB94837119721DE0001BC1FD /* Manager */,
 				AB94835E19721DE0001BC1FD /* Controllers */,
 				AB94837519721DE0001BC1FD /* Views */,
@@ -288,6 +310,8 @@
 				AB94836119721DE0001BC1FD /* XHBaseTableViewController.m */,
 				AB94836819721DE0001BC1FD /* XHPullRefreshTableViewController.h */,
 				AB94836919721DE0001BC1FD /* XHPullRefreshTableViewController.m */,
+				E453903A1AE7F1BC0077DF19 /* XHJDPullRefreshTableViewController.h */,
+				E453903B1AE7F1BC0077DF19 /* XHJDPullRefreshTableViewController.m */,
 			);
 			path = CustomTableViewController;
 			sourceTree = "<group>";
@@ -326,6 +350,8 @@
 				AB94837D19721DE0001BC1FD /* XHRefreshActivityIndicatorContainerView.m */,
 				AB94837E19721DE0001BC1FD /* XHRefreshCircleContainerView.h */,
 				AB94837F19721DE0001BC1FD /* XHRefreshCircleContainerView.m */,
+				E453903D1AE7F33D0077DF19 /* XHJDRefreshView.h */,
+				E453903E1AE7F33D0077DF19 /* XHJDRefreshView.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -334,6 +360,7 @@
 			isa = PBXGroup;
 			children = (
 				AB94839819721E8D001BC1FD /* Root */,
+				E453904D1AE7F8240077DF19 /* JDRefreshDemoTableViewController */,
 				AB94839519721E8D001BC1FD /* DemoTableViewController */,
 				AB94838F19721E8D001BC1FD /* CustomLoadMoreButtonDemoTableViewController */,
 				F7CDBF4B1A5BCB7300DE641D /* SimulationNetEaseNetworkErrorViewController */,
@@ -396,6 +423,28 @@
 				AB9483A019721E8D001BC1FD /* XHSegueItem.m */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		E45390401AE7F7900077DF19 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				E45390411AE7F7900077DF19 /* box@2x.png */,
+				E45390421AE7F7900077DF19 /* deliveryStaff0@2x.png */,
+				E45390431AE7F7900077DF19 /* deliveryStaff1@2x.png */,
+				E45390441AE7F7900077DF19 /* deliveryStaff2@2x.png */,
+				E45390451AE7F7900077DF19 /* deliveryStaff3@2x.png */,
+				E45390461AE7F7900077DF19 /* staticDeliveryStaff@2x.png */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		E453904D1AE7F8240077DF19 /* JDRefreshDemoTableViewController */ = {
+			isa = PBXGroup;
+			children = (
+				E453904E1AE7F8340077DF19 /* XHJDRefreshDemoTableViewController.h */,
+				E453904F1AE7F8340077DF19 /* XHJDRefreshDemoTableViewController.m */,
+			);
+			path = JDRefreshDemoTableViewController;
 			sourceTree = "<group>";
 		};
 		F7CDBF4B1A5BCB7300DE641D /* SimulationNetEaseNetworkErrorViewController */ = {
@@ -484,9 +533,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				7DEF9CFD19EFD36A00E6996E /* 奥迪.jpg in Resources */,
+				E453904B1AE7F7900077DF19 /* deliveryStaff3@2x.png in Resources */,
 				7D093BAD1963FE1100F563BD /* NSDateTimeAgo.bundle in Resources */,
+				E453904A1AE7F7900077DF19 /* deliveryStaff2@2x.png in Resources */,
+				E45390481AE7F7900077DF19 /* deliveryStaff0@2x.png in Resources */,
+				E45390491AE7F7900077DF19 /* deliveryStaff1@2x.png in Resources */,
+				E453904C1AE7F7900077DF19 /* staticDeliveryStaff@2x.png in Resources */,
 				AB0B346B19429D4700EC0072 /* Images.xcassets in Resources */,
 				AB0B345A19429D4700EC0072 /* InfoPlist.strings in Resources */,
+				E45390471AE7F7900077DF19 /* box@2x.png in Resources */,
 				E4E0DCD81AE144F700B23B93 /* nothing_more_tips@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -508,10 +563,12 @@
 			files = (
 				4755DE7919C498FC0088B5D2 /* XHSystemCollectionViewController.m in Sources */,
 				AB94838B19721DE0001BC1FD /* XHLoadMoreView.m in Sources */,
+				E45390501AE7F8340077DF19 /* XHJDRefreshDemoTableViewController.m in Sources */,
 				7DEF9CF519EFC36300E6996E /* DemoCollectionViewController.m in Sources */,
 				AB94838619721DE0001BC1FD /* XHSysatemRefreshTableViewController.m in Sources */,
 				AB94838719721DE0001BC1FD /* XHSystemTableViewController.m in Sources */,
 				7D6DF80919C8704100405BCB /* XHSystemRefreshCollectionViewController.m in Sources */,
+				E453903C1AE7F1BC0077DF19 /* XHJDPullRefreshTableViewController.m in Sources */,
 				AB94838A19721DE0001BC1FD /* XHCircleView.m in Sources */,
 				7D093BAC1963FE1100F563BD /* NSDate+TimeAgo.m in Sources */,
 				AB94838C19721DE0001BC1FD /* XHRefreshActivityIndicatorContainerView.m in Sources */,
@@ -530,6 +587,7 @@
 				AB0B346019429D4700EC0072 /* AppDelegate.m in Sources */,
 				AB9483A519721E8D001BC1FD /* XHSegmentViewController.m in Sources */,
 				AB9483A119721E8D001BC1FD /* XHCustomLoadMoreButtonDemoTableViewController.m in Sources */,
+				E453903F1AE7F33D0077DF19 /* XHJDRefreshView.m in Sources */,
 				AB0B345C19429D4700EC0072 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

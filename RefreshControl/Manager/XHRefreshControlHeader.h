@@ -20,4 +20,11 @@ typedef NS_ENUM(NSInteger, XHPullDownRefreshViewType) {
     XHPullDownRefreshViewTypeCustom = 2,
 };
 
+typedef NS_ENUM(NSInteger, XHRefreshState) {
+    XHRefreshStatePulling   = 0,
+    XHRefreshStateNormal    = 1,
+    XHRefreshStateLoading   = 2,
+    XHRefreshStateStopped   = 3,
+};
+
 #endif

@@ -22,13 +22,6 @@
 #define kXHDefaultDisplayAutoLoadMoreRefreshedMessage @"点击显示下10条"
 
 
-typedef NS_ENUM(NSInteger, XHRefreshState) {
-    XHRefreshStatePulling   = 0,
-    XHRefreshStateNormal    = 1,
-    XHRefreshStateLoading   = 2,
-    XHRefreshStateStopped   = 3,
-};
-
 @interface XHRefreshControl ()
 
 @property (nonatomic, weak) id <XHRefreshControlDelegate> delegate;
@@ -119,6 +112,12 @@ typedef NS_ENUM(NSInteger, XHRefreshState) {
     
     self.loadMoreRefreshedCount = 0;
     self.noMoreDataForLoaded = NO;
+    
+    if (self.pullDownRefreshViewType == XHPullDownRefreshViewTypeCustom) {
+        if ([self.delegate respondsToSelector:@selector(customPullDownRefreshViewDidStartRefresh:)]) {
+            [self.delegate customPullDownRefreshViewDidStartRefresh:[self pullDownCustomRefreshView]];
+        }
+    }
     
     [self.delegate beginPullDownRefreshing];
 }
@@ -243,6 +242,12 @@ typedef NS_ENUM(NSInteger, XHRefreshState) {
             }
             case XHPullDownRefreshViewTypeActivityIndicator: {
                 [self.refreshActivityIndicatorContainerView.activityIndicatorView endRefreshing];
+                break;
+            }
+            case XHPullDownRefreshViewTypeCustom: {
+                if ([self.delegate respondsToSelector:@selector(customPullDownRefreshViewDidEndRefresh:)]) {
+                    [self.delegate customPullDownRefreshViewDidEndRefresh:[self pullDownCustomRefreshView]];
+                }
                 break;
             }
             default:
@@ -442,6 +447,9 @@ typedef NS_ENUM(NSInteger, XHRefreshState) {
 #pragma mark - Setter Method
 
 - (void)setRefreshState:(XHRefreshState)refreshState {
+    if ([self.delegate respondsToSelector:@selector(customPullDownRefreshViewRefreshState:)]) {
+        [self.delegate customPullDownRefreshViewRefreshState:refreshState];
+    }
     switch (refreshState) {
         case XHRefreshStateStopped:
         case XHRefreshStateNormal: {
@@ -676,9 +684,9 @@ typedef NS_ENUM(NSInteger, XHRefreshState) {
                             self.pullDownRefreshing = YES;
                             self.refreshState = XHRefreshStateLoading;
                         }
-                    } else if(contentOffset.y < scrollOffsetThreshold && self.scrollView.isDragging && self.refreshState == XHRefreshStateStopped) {
+                    } else if (contentOffset.y < scrollOffsetThreshold && self.scrollView.isDragging && self.refreshState == XHRefreshStateStopped) {
                         self.refreshState = XHRefreshStatePulling;
-                    } else if(contentOffset.y >= scrollOffsetThreshold && self.refreshState != XHRefreshStateStopped) {
+                    } else if (contentOffset.y >= scrollOffsetThreshold && self.refreshState != XHRefreshStateStopped) {
                         self.refreshState = XHRefreshStateStopped;
                     }
                 } else {
