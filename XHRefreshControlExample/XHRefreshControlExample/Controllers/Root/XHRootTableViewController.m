@@ -36,6 +36,7 @@
     
     self.dataSource = [[NSMutableArray alloc] initWithObjects:
                        [XHSegueItem initSegueItemWithTitle:@"京东原版下拉刷新" onClasseName:@"XHJDRefreshDemoTableViewController"],
+                       
                        [XHSegueItem initSegueItemWithTitle:@"网易新闻样式有导航栏的" onClasseName:@"XHDemoTableViewController"],
                        
                        [XHSegueItem initSegueItemWithTitle:@"网易新闻样式没有导航栏的" onClasseName:@"XHDemoTableViewController"],
@@ -51,6 +52,8 @@
                        [XHSegueItem initSegueItemWithTitle:@"自定义加载更多的按钮样式" onClasseName:@"XHCustomLoadMoreButtonDemoTableViewController"],
                        
                        [XHSegueItem initSegueItemWithTitle:@"CollectionViewController" onClasseName:@"DemoCollectionViewController"],
+                       
+                       [XHSegueItem initSegueItemWithTitle:@"下一阶段准备写yelp的下拉刷新" onClasseName:@""],
                        nil];
 }
 
@@ -89,7 +92,7 @@
     XHSegueItem *segueItem = self.dataSource[row];
     
     UIViewController *viewController = nil;
-    if (row == 7) {
+    if (row == 8) {
         viewController = [[DemoCollectionViewController alloc] initWithCollectionViewLayout:[[CollectionViewFlowLayout alloc] init]];
     } else {
         viewController = [[NSClassFromString(segueItem.className) alloc] init];
@@ -97,22 +100,24 @@
     
     viewController.title = segueItem.title;
     
-    if (row == 1) {
+    if (row == 2) {
         
         [self presentViewController:viewController animated:YES completion:NULL];
         return;
         
-    } else if (row == 3) {
+    } else if (row == 4) {
         
         ((XHDemoTableViewController *)viewController).refreshViewType = XHPullDownRefreshViewTypeActivityIndicator;
         
-    } else if (row == 5) {
+    } else if (row == 6) {
         
         ((XHDemoTableViewController *)viewController).refreshViewType = XHPullDownRefreshViewTypeCustom;
         
     }
     
-    [self.navigationController pushViewController:viewController animated:YES];
+    if (viewController) {
+        [self.navigationController pushViewController:viewController animated:YES];
+    }
 }
 
 @end
