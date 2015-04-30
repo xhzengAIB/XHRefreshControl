@@ -165,12 +165,10 @@
 }
 
 - (void)endLoadMoreRefresing {
-    if (self.isLoadMoreRefreshed) {
-        self.loadMoreRefreshing = NO;
-        self.handleNetworkError = NO;
-        self.refreshState = XHRefreshStateNormal;
-        [self.loadMoreView endLoading];
-    }
+    self.loadMoreRefreshing = NO;
+    self.handleNetworkError = NO;
+    self.refreshState = XHRefreshStateNormal;
+    [self.loadMoreView endLoading];
 }
 
 - (void)loadMoreButtonClciked:(UIButton *)sender {
@@ -181,14 +179,18 @@
     [self endLoadMoreRefresing];
     self.noMoreDataForLoaded = YES;
     self.handleNetworkError = NO;
+    self.loadMoreView.hidden = NO;
     [self.loadMoreView configuraNothingMoreWithMessage:message];
+    [self setScrollViewContentInsetForNoLoadMore];
 }
 
 - (void)endMoreOverWithMessageTipsView:(UIView *)messageTipsView {
     [self endLoadMoreRefresing];
     self.noMoreDataForLoaded = YES;
     self.handleNetworkError = NO;
+    self.loadMoreView.hidden = NO;
     [self.loadMoreView configuraNothingMoreWithMessageView:messageTipsView];
+    [self setScrollViewContentInsetForNoLoadMore];
 }
 
 /**
@@ -296,7 +298,7 @@
 
 - (void)setScrollViewContentInsetForNoLoadMore {
     UIEdgeInsets currentInsets = self.scrollView.contentInset;
-    currentInsets.bottom = self.originalBottomInset;
+    currentInsets.bottom = kXHLoadMoreViewHeight + self.originalBottomInset;
     [self setScrollViewContentInset:currentInsets];
 }
 
@@ -375,11 +377,6 @@
     BOOL loadMored = YES;
     if ([self.delegate respondsToSelector:@selector(isLoadMoreRefreshed)]) {
         loadMored = [self.delegate isLoadMoreRefreshed];
-        if (self.noMoreDataForLoaded) {
-            self.loadMoreView.hidden = NO;
-        } else {
-            self.loadMoreView.hidden = !loadMored;
-        }
         return loadMored;
     }
     self.loadMoreView.hidden = !loadMored;

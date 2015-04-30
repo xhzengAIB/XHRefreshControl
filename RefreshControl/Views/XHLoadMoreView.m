@@ -65,6 +65,7 @@
         _messageView.hidden = NO;
         return;
     }
+    messageView.backgroundColor = self.loadMoreButton.backgroundColor;
     self.messageView = messageView;
     [self addSubview:self.messageView];
 }
@@ -96,7 +97,7 @@
     if (!_activityIndicatorView) {
         _activityIndicatorView = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
         _activityIndicatorView.hidesWhenStopped = YES;
-        _activityIndicatorView.center = CGPointMake(CGRectGetWidth(self.bounds) / 3, CGRectGetHeight(self.bounds) / 2.0);
+        _activityIndicatorView.center = CGPointMake(CGRectGetWidth(self.bounds) / 2.85, CGRectGetHeight(self.bounds) / 2.0);
     }
     return _activityIndicatorView;
 }
