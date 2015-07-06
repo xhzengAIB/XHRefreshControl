@@ -17,7 +17,7 @@ pod 'XHRefreshControl'
 
 and run `pod install`, then you're all done!
 
-## 组件要求
+## Requirements
 
 * Xcode6 or later
 * iOS 6.0+ 
