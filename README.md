@@ -17,6 +17,12 @@ pod 'XHRefreshControl'
 
 and run `pod install`, then you're all done!
 
+## 组件要求
+
+* Xcode6 or later
+* iOS 6.0+ 
+* ARC
+
 ## To Do:
 * 添加外部自定义下拉View和下拉状态-------已经完成
 
