@@ -30,11 +30,12 @@
 }
 
 - (void)willStartRefreshing {
-    [self.activityIndicatorView startAnimating];
-    [UIView animateWithDuration:0.1 delay:0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
+    [UIView animateWithDuration:0.2 delay:0 options:UIViewAnimationOptionCurveEaseInOut|UIViewAnimationOptionAllowUserInteraction | UIViewAnimationOptionBeginFromCurrentState animations:^{
         self.circularProgressView.alpha = 0.0;
+        self.activityIndicatorView.alpha = 1.0;
     } completion:^(BOOL finished) {
     }];
+    [self.activityIndicatorView startAnimating];
 }
 - (void)didStartRefreshing {
 }
@@ -45,12 +46,12 @@
 }
 
 - (void)willEndRefreshing {
-    [self.activityIndicatorView stopAnimating];
-    [UIView animateWithDuration:0.1 delay:0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
+    [UIView animateWithDuration:0.2 delay:0 options:UIViewAnimationOptionCurveEaseInOut|UIViewAnimationOptionAllowUserInteraction | UIViewAnimationOptionBeginFromCurrentState animations:^{
         self.circularProgressView.alpha = 1.0;
-        
+        self.activityIndicatorView.alpha = 0.0;
     } completion:^(BOOL finished) {
     }];
+    [self.activityIndicatorView stopAnimating];
 }
 - (void)didEndRefresing {
 }
@@ -70,8 +71,8 @@
 - (XHActivityIndicatorView *)activityIndicatorView {
     if (!_activityIndicatorView) {
         _activityIndicatorView = [[XHActivityIndicatorView alloc] initWithFrame:CGRectMake(0, 0, 50, 50)];
-        _activityIndicatorView.hidesWhenStopped = YES;
-        _activityIndicatorView.color = [UIColor redColor];
+        _activityIndicatorView.color = [UIColor colorWithRed:228/255.0 green:27 / 255.0 blue:70/255.0 alpha:1.000];
+        _activityIndicatorView.indicatorRadius = 6;
         _activityIndicatorView.center = CGPointMake(CGRectGetMidX(self.bounds), CGRectGetMidY(self.bounds));
     }
     return _activityIndicatorView;
