@@ -17,7 +17,8 @@ typedef NS_ENUM(NSInteger, XHRefreshViewLayerType) {
 typedef NS_ENUM(NSInteger, XHPullDownRefreshViewType) {
     XHPullDownRefreshViewTypeCircle = 0,
     XHPullDownRefreshViewTypeActivityIndicator = 1,
-    XHPullDownRefreshViewTypeCustom = 2,
+    XHPullDownRefreshViewTypePinterest = 2,
+    XHPullDownRefreshViewTypeCustom = 3,
 };
 
 typedef NS_ENUM(NSInteger, XHRefreshState) {

@@ -37,6 +37,8 @@
     self.dataSource = [[NSMutableArray alloc] initWithObjects:
                        [XHSegueItem initSegueItemWithTitle:@"京东原版下拉刷新" onClasseName:@"XHJDRefreshDemoTableViewController"],
                        
+                       [XHSegueItem initSegueItemWithTitle:@"Pinterest" onClasseName:@"PinterestDemoRefreshTableViewController"],
+                       
                        [XHSegueItem initSegueItemWithTitle:@"网易新闻样式有导航栏的" onClasseName:@"XHDemoTableViewController"],
                        
                        [XHSegueItem initSegueItemWithTitle:@"网易新闻样式没有导航栏的" onClasseName:@"XHDemoTableViewController"],

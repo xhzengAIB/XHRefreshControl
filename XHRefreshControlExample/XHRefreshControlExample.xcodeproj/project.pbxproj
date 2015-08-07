@@ -53,6 +53,17 @@
 		E453904C1AE7F7900077DF19 /* staticDeliveryStaff@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E45390461AE7F7900077DF19 /* staticDeliveryStaff@2x.png */; };
 		E45390501AE7F8340077DF19 /* XHJDRefreshDemoTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E453904F1AE7F8340077DF19 /* XHJDRefreshDemoTableViewController.m */; };
 		E4E0DCD81AE144F700B23B93 /* nothing_more_tips@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E4E0DCD71AE144F700B23B93 /* nothing_more_tips@2x.png */; };
+		E4ECA1B61B74E5510028E6E4 /* XHCircularProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = E4ECA1B51B74E5510028E6E4 /* XHCircularProgressView.m */; };
+		E4ECA1B91B74E74E0028E6E4 /* XHActivityIndicatorView.m in Sources */ = {isa = PBXBuildFile; fileRef = E4ECA1B81B74E74E0028E6E4 /* XHActivityIndicatorView.m */; };
+		E4ECA1BC1B74E86F0028E6E4 /* XHPinterestRefreshView.m in Sources */ = {isa = PBXBuildFile; fileRef = E4ECA1BB1B74E86F0028E6E4 /* XHPinterestRefreshView.m */; };
+		E4ECA1BF1B74E9280028E6E4 /* XHPinterestPullRefreshTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4ECA1BE1B74E9280028E6E4 /* XHPinterestPullRefreshTableViewController.m */; };
+		E4ECA1C61B74EA2F0028E6E4 /* bicon.png in Resources */ = {isa = PBXBuildFile; fileRef = E4ECA1C01B74EA2F0028E6E4 /* bicon.png */; };
+		E4ECA1C71B74EA2F0028E6E4 /* bicon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E4ECA1C11B74EA2F0028E6E4 /* bicon@2x.png */; };
+		E4ECA1C81B74EA2F0028E6E4 /* dark_circle.png in Resources */ = {isa = PBXBuildFile; fileRef = E4ECA1C21B74EA2F0028E6E4 /* dark_circle.png */; };
+		E4ECA1C91B74EA2F0028E6E4 /* dark_circle@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E4ECA1C31B74EA2F0028E6E4 /* dark_circle@2x.png */; };
+		E4ECA1CA1B74EA2F0028E6E4 /* light_circle.png in Resources */ = {isa = PBXBuildFile; fileRef = E4ECA1C41B74EA2F0028E6E4 /* light_circle.png */; };
+		E4ECA1CB1B74EA2F0028E6E4 /* light_circle@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E4ECA1C51B74EA2F0028E6E4 /* light_circle@2x.png */; };
+		E4ECA1CF1B74EBC00028E6E4 /* PinterestDemoRefreshTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4ECA1CE1B74EBC00028E6E4 /* PinterestDemoRefreshTableViewController.m */; };
 		F7CDBF4E1A5BCB8300DE641D /* XHSimulationNetEaseNetworkErrorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F7CDBF4D1A5BCB8300DE641D /* XHSimulationNetEaseNetworkErrorViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -143,6 +154,22 @@
 		E453904E1AE7F8340077DF19 /* XHJDRefreshDemoTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XHJDRefreshDemoTableViewController.h; sourceTree = "<group>"; };
 		E453904F1AE7F8340077DF19 /* XHJDRefreshDemoTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XHJDRefreshDemoTableViewController.m; sourceTree = "<group>"; };
 		E4E0DCD71AE144F700B23B93 /* nothing_more_tips@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "nothing_more_tips@2x.png"; sourceTree = "<group>"; };
+		E4ECA1B41B74E5510028E6E4 /* XHCircularProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XHCircularProgressView.h; sourceTree = "<group>"; };
+		E4ECA1B51B74E5510028E6E4 /* XHCircularProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XHCircularProgressView.m; sourceTree = "<group>"; };
+		E4ECA1B71B74E74E0028E6E4 /* XHActivityIndicatorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XHActivityIndicatorView.h; sourceTree = "<group>"; };
+		E4ECA1B81B74E74E0028E6E4 /* XHActivityIndicatorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XHActivityIndicatorView.m; sourceTree = "<group>"; };
+		E4ECA1BA1B74E86F0028E6E4 /* XHPinterestRefreshView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XHPinterestRefreshView.h; sourceTree = "<group>"; };
+		E4ECA1BB1B74E86F0028E6E4 /* XHPinterestRefreshView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XHPinterestRefreshView.m; sourceTree = "<group>"; };
+		E4ECA1BD1B74E9280028E6E4 /* XHPinterestPullRefreshTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XHPinterestPullRefreshTableViewController.h; sourceTree = "<group>"; };
+		E4ECA1BE1B74E9280028E6E4 /* XHPinterestPullRefreshTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XHPinterestPullRefreshTableViewController.m; sourceTree = "<group>"; };
+		E4ECA1C01B74EA2F0028E6E4 /* bicon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bicon.png; sourceTree = "<group>"; };
+		E4ECA1C11B74EA2F0028E6E4 /* bicon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bicon@2x.png"; sourceTree = "<group>"; };
+		E4ECA1C21B74EA2F0028E6E4 /* dark_circle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dark_circle.png; sourceTree = "<group>"; };
+		E4ECA1C31B74EA2F0028E6E4 /* dark_circle@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dark_circle@2x.png"; sourceTree = "<group>"; };
+		E4ECA1C41B74EA2F0028E6E4 /* light_circle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = light_circle.png; sourceTree = "<group>"; };
+		E4ECA1C51B74EA2F0028E6E4 /* light_circle@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "light_circle@2x.png"; sourceTree = "<group>"; };
+		E4ECA1CD1B74EBC00028E6E4 /* PinterestDemoRefreshTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PinterestDemoRefreshTableViewController.h; sourceTree = "<group>"; };
+		E4ECA1CE1B74EBC00028E6E4 /* PinterestDemoRefreshTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PinterestDemoRefreshTableViewController.m; sourceTree = "<group>"; };
 		F7CDBF4C1A5BCB8300DE641D /* XHSimulationNetEaseNetworkErrorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XHSimulationNetEaseNetworkErrorViewController.h; sourceTree = "<group>"; };
 		F7CDBF4D1A5BCB8300DE641D /* XHSimulationNetEaseNetworkErrorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XHSimulationNetEaseNetworkErrorViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -312,6 +339,8 @@
 				AB94836919721DE0001BC1FD /* XHPullRefreshTableViewController.m */,
 				E453903A1AE7F1BC0077DF19 /* XHJDPullRefreshTableViewController.h */,
 				E453903B1AE7F1BC0077DF19 /* XHJDPullRefreshTableViewController.m */,
+				E4ECA1BD1B74E9280028E6E4 /* XHPinterestPullRefreshTableViewController.h */,
+				E4ECA1BE1B74E9280028E6E4 /* XHPinterestPullRefreshTableViewController.m */,
 			);
 			path = CustomTableViewController;
 			sourceTree = "<group>";
@@ -352,6 +381,12 @@
 				AB94837F19721DE0001BC1FD /* XHRefreshCircleContainerView.m */,
 				E453903D1AE7F33D0077DF19 /* XHJDRefreshView.h */,
 				E453903E1AE7F33D0077DF19 /* XHJDRefreshView.m */,
+				E4ECA1BA1B74E86F0028E6E4 /* XHPinterestRefreshView.h */,
+				E4ECA1BB1B74E86F0028E6E4 /* XHPinterestRefreshView.m */,
+				E4ECA1B41B74E5510028E6E4 /* XHCircularProgressView.h */,
+				E4ECA1B51B74E5510028E6E4 /* XHCircularProgressView.m */,
+				E4ECA1B71B74E74E0028E6E4 /* XHActivityIndicatorView.h */,
+				E4ECA1B81B74E74E0028E6E4 /* XHActivityIndicatorView.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -360,6 +395,7 @@
 			isa = PBXGroup;
 			children = (
 				AB94839819721E8D001BC1FD /* Root */,
+				E4ECA1CC1B74EBB50028E6E4 /* PinterestDemoRefreshTableViewController */,
 				E453904D1AE7F8240077DF19 /* JDRefreshDemoTableViewController */,
 				AB94839519721E8D001BC1FD /* DemoTableViewController */,
 				AB94838F19721E8D001BC1FD /* CustomLoadMoreButtonDemoTableViewController */,
@@ -428,6 +464,12 @@
 		E45390401AE7F7900077DF19 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				E4ECA1C01B74EA2F0028E6E4 /* bicon.png */,
+				E4ECA1C11B74EA2F0028E6E4 /* bicon@2x.png */,
+				E4ECA1C21B74EA2F0028E6E4 /* dark_circle.png */,
+				E4ECA1C31B74EA2F0028E6E4 /* dark_circle@2x.png */,
+				E4ECA1C41B74EA2F0028E6E4 /* light_circle.png */,
+				E4ECA1C51B74EA2F0028E6E4 /* light_circle@2x.png */,
 				E45390411AE7F7900077DF19 /* box@2x.png */,
 				E45390421AE7F7900077DF19 /* deliveryStaff0@2x.png */,
 				E45390431AE7F7900077DF19 /* deliveryStaff1@2x.png */,
@@ -445,6 +487,15 @@
 				E453904F1AE7F8340077DF19 /* XHJDRefreshDemoTableViewController.m */,
 			);
 			path = JDRefreshDemoTableViewController;
+			sourceTree = "<group>";
+		};
+		E4ECA1CC1B74EBB50028E6E4 /* PinterestDemoRefreshTableViewController */ = {
+			isa = PBXGroup;
+			children = (
+				E4ECA1CD1B74EBC00028E6E4 /* PinterestDemoRefreshTableViewController.h */,
+				E4ECA1CE1B74EBC00028E6E4 /* PinterestDemoRefreshTableViewController.m */,
+			);
+			path = PinterestDemoRefreshTableViewController;
 			sourceTree = "<group>";
 		};
 		F7CDBF4B1A5BCB7300DE641D /* SimulationNetEaseNetworkErrorViewController */ = {
@@ -536,13 +587,19 @@
 				E453904B1AE7F7900077DF19 /* deliveryStaff3@2x.png in Resources */,
 				7D093BAD1963FE1100F563BD /* NSDateTimeAgo.bundle in Resources */,
 				E453904A1AE7F7900077DF19 /* deliveryStaff2@2x.png in Resources */,
+				E4ECA1C71B74EA2F0028E6E4 /* bicon@2x.png in Resources */,
 				E45390481AE7F7900077DF19 /* deliveryStaff0@2x.png in Resources */,
+				E4ECA1CA1B74EA2F0028E6E4 /* light_circle.png in Resources */,
 				E45390491AE7F7900077DF19 /* deliveryStaff1@2x.png in Resources */,
 				E453904C1AE7F7900077DF19 /* staticDeliveryStaff@2x.png in Resources */,
 				AB0B346B19429D4700EC0072 /* Images.xcassets in Resources */,
 				AB0B345A19429D4700EC0072 /* InfoPlist.strings in Resources */,
 				E45390471AE7F7900077DF19 /* box@2x.png in Resources */,
+				E4ECA1C81B74EA2F0028E6E4 /* dark_circle.png in Resources */,
 				E4E0DCD81AE144F700B23B93 /* nothing_more_tips@2x.png in Resources */,
+				E4ECA1CB1B74EA2F0028E6E4 /* light_circle@2x.png in Resources */,
+				E4ECA1C61B74EA2F0028E6E4 /* bicon.png in Resources */,
+				E4ECA1C91B74EA2F0028E6E4 /* dark_circle@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -568,6 +625,7 @@
 				AB94838619721DE0001BC1FD /* XHSysatemRefreshTableViewController.m in Sources */,
 				AB94838719721DE0001BC1FD /* XHSystemTableViewController.m in Sources */,
 				7D6DF80919C8704100405BCB /* XHSystemRefreshCollectionViewController.m in Sources */,
+				E4ECA1B61B74E5510028E6E4 /* XHCircularProgressView.m in Sources */,
 				E453903C1AE7F1BC0077DF19 /* XHJDPullRefreshTableViewController.m in Sources */,
 				AB94838A19721DE0001BC1FD /* XHCircleView.m in Sources */,
 				7D093BAC1963FE1100F563BD /* NSDate+TimeAgo.m in Sources */,
@@ -575,12 +633,15 @@
 				AB94838819721DE0001BC1FD /* XHRefreshControl.m in Sources */,
 				7DEF9CFB19EFD04600E6996E /* CollectionViewFlowLayout.m in Sources */,
 				AB9483A219721E8D001BC1FD /* XHDemoSystemTableViewController.m in Sources */,
+				E4ECA1B91B74E74E0028E6E4 /* XHActivityIndicatorView.m in Sources */,
 				AB9483A319721E8D001BC1FD /* XHDemoTableViewController.m in Sources */,
 				AB94838019721DE0001BC1FD /* XHBaseTableViewController.m in Sources */,
+				E4ECA1BC1B74E86F0028E6E4 /* XHPinterestRefreshView.m in Sources */,
 				AB94838319721DE0001BC1FD /* XHFoundationCommon.m in Sources */,
 				AB94838D19721DE0001BC1FD /* XHRefreshCircleContainerView.m in Sources */,
 				AB9483A619721E8D001BC1FD /* XHSegueItem.m in Sources */,
 				AB94838919721DE0001BC1FD /* XHActivityCircleIndicatorView.m in Sources */,
+				E4ECA1BF1B74E9280028E6E4 /* XHPinterestPullRefreshTableViewController.m in Sources */,
 				F7CDBF4E1A5BCB8300DE641D /* XHSimulationNetEaseNetworkErrorViewController.m in Sources */,
 				AB9483A419721E8D001BC1FD /* XHRootTableViewController.m in Sources */,
 				AB94838419721DE0001BC1FD /* XHPullRefreshTableViewController.m in Sources */,
@@ -589,6 +650,7 @@
 				AB9483A119721E8D001BC1FD /* XHCustomLoadMoreButtonDemoTableViewController.m in Sources */,
 				E453903F1AE7F33D0077DF19 /* XHJDRefreshView.m in Sources */,
 				AB0B345C19429D4700EC0072 /* main.m in Sources */,
+				E4ECA1CF1B74EBC00028E6E4 /* PinterestDemoRefreshTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
