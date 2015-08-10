@@ -271,7 +271,7 @@
                      }
                      completion:^(BOOL finished) {
                          if (completion) {
-                             completion(finished);
+                             completion(YES);
                          }
                          if (finished && self.refreshState == XHRefreshStateStopped) {
                              if (!self.scrollView.isDragging)
