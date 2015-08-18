@@ -15,6 +15,14 @@
     [self startPullDownRefreshing];
 }
 
+- (instancetype)init {
+    self = [super init];
+    if (self) {
+        //self.pullDownRefreshed = NO;
+    }
+    return self;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.

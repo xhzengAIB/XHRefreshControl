@@ -21,7 +21,6 @@
 
 #define kXHDefaultDisplayAutoLoadMoreRefreshedMessage @"点击显示下10条"
 
-
 @interface XHRefreshControl ()
 
 @property (nonatomic, weak) id <XHRefreshControlDelegate> delegate;
@@ -128,8 +127,6 @@
         
         self.pullDownRefreshing = NO;
         self.refreshState = XHRefreshStateStopped;
-        
-        
         
         [self resetScrollViewContentInset];
     }
@@ -534,11 +531,7 @@
                     [currentSuperView insertSubview:self.refreshActivityIndicatorContainerView belowSubview:self.scrollView];
                     break;
                 case XHPullDownRefreshViewTypeCustom: {
-                    UIView *customRefreshView = [self pullDownCustomRefreshView];
-                    customRefreshView.frame = CGRectMake(0, (self.refreshViewLayerType == XHRefreshViewLayerTypeOnScrollViews ? -kXHDefaultRefreshTotalPixels : self.originalTopInset), CGRectGetWidth([[UIScreen mainScreen] bounds]), kXHDefaultRefreshTotalPixels);
-                    if (customRefreshView) {
-                        [currentSuperView insertSubview:customRefreshView belowSubview:self.scrollView];
-                    }
+                    [currentSuperView insertSubview:[self pullDownCustomRefreshView] belowSubview:self.scrollView];
                     break;
                 }
                 default:
