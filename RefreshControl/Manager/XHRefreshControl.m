@@ -144,7 +144,9 @@
     if (self.loadMoreRefreshing)
         return;
     [self callLoadMoreStatus];
-    [self.delegate startLoadMoreForAutoTrigger];
+    if ([self.delegate respondsToSelector:@selector(startLoadMoreForAutoTrigger)]) {
+        [self.delegate startLoadMoreForAutoTrigger];
+    }
 }
 
 - (void)callLoadMoreStatus {
