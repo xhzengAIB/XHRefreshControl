@@ -25,6 +25,11 @@
 
 @optional
 /**
+ *  比如有一些页面不需要下拉刷新，仅仅需要一次自动上拉加载更多，然后其他情况就归为手动滑动到底部是上拉加载更多，这个方法就会被调用，前提是需要调用一下startLoadMoreRefreshing
+ */
+- (void)startLoadMoreForAutoTrigger;
+
+/**
  *  是否支持下拉刷新
  *
  *  @return 如果没有实现该delegate方法，默认是支持下拉的，为YES
@@ -171,6 +176,11 @@
  *  停止下拉刷新的方法
  */
 - (void)endPullDownRefreshing;
+
+/**
+ *  外部手动启动上拉加载更多的方法，这个方法不需要手动去拖动UIScrollView
+ */
+- (void)startLoadMoreRefreshing;
 
 /**
  *  停止上提加载更多的方法

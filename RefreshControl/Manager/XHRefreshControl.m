@@ -141,24 +141,29 @@
 #pragma mark - Load More Refreshing Method
 
 - (void)startLoadMoreRefreshing {
-    if (self.isLoadMoreRefreshed) {
-        if (self.loadMoreRefreshedCount < self.autoLoadMoreRefreshedCount && !self.handleNetworkError) {
-            [self callBeginLoadMoreRefreshing];
-        } else {
-            [self.loadMoreView configuraManualStateWithMessage:[self displayAutoLoadMoreRefreshedMessage]];
-        }
-    }
-}
-
-- (void)callBeginLoadMoreRefreshing {
     if (self.loadMoreRefreshing)
         return;
+    [self callLoadMoreStatus];
+    [self.delegate startLoadMoreForAutoTrigger];
+}
+
+- (void)callLoadMoreStatus {
     self.loadMoreRefreshing = YES;
     self.handleNetworkError = NO;
     self.loadMoreRefreshedCount ++;
     self.refreshState = XHRefreshStateLoading;
     [self.loadMoreView startLoading];
-    [self.delegate beginLoadMoreRefreshing];
+}
+
+- (void)callBeginLoadMoreRefreshing {
+    if (self.loadMoreRefreshing)
+        return;
+    if (self.loadMoreRefreshedCount < self.autoLoadMoreRefreshedCount && !self.handleNetworkError) {
+        [self callLoadMoreStatus];
+        [self.delegate beginLoadMoreRefreshing];
+    } else {
+        [self.loadMoreView configuraManualStateWithMessage:[self displayAutoLoadMoreRefreshedMessage]];
+    }
 }
 
 - (void)endLoadMoreRefresing {
@@ -621,7 +626,7 @@
                 
                 //判断是否滚动到底部
                 if(((y - size.height) + self.preloadValue) > kXHLoadMoreViewHeight && self.refreshState != XHRefreshStateLoading && self.isLoadMoreRefreshed && !self.loadMoreRefreshing && !self.noMoreDataForLoaded) {
-                    [self startLoadMoreRefreshing];
+                    [self callBeginLoadMoreRefreshing];
                 }
             }
         }
