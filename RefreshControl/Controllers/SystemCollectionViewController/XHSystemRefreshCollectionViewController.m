@@ -73,9 +73,7 @@
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     
-    if (self.pullDownRefreshed) {
-        [self setupRefreshControl];
-    }
+    [self setupRefreshControl];
 }
 
 - (void)viewDidLoad {

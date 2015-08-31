@@ -39,9 +39,9 @@
                        
                        [XHSegueItem initSegueItemWithTitle:@"Pinterest" onClasseName:@"PinterestDemoRefreshTableViewController"],
                        
-                       [XHSegueItem initSegueItemWithTitle:@"网易新闻样式有导航栏的" onClasseName:@"XHDemoTableViewController"],
-                       
                        [XHSegueItem initSegueItemWithTitle:@"网易新闻样式没有导航栏的" onClasseName:@"XHDemoTableViewController"],
+
+                       [XHSegueItem initSegueItemWithTitle:@"网易新闻样式有导航栏的" onClasseName:@"XHDemoTableViewController"],
                        
                        [XHSegueItem initSegueItemWithTitle:@"模仿网易新闻4.0网络差的情况" onClasseName:@"XHSimulationNetEaseNetworkErrorViewController"],
                        
@@ -94,7 +94,7 @@
     XHSegueItem *segueItem = self.dataSource[row];
     
     UIViewController *viewController = nil;
-    if (row == 8) {
+    if (row == 9) {
         viewController = [[DemoCollectionViewController alloc] initWithCollectionViewLayout:[[CollectionViewFlowLayout alloc] init]];
     } else {
         viewController = [[NSClassFromString(segueItem.className) alloc] init];
