@@ -172,6 +172,8 @@
  */
 - (void)startPullDownRefreshing;
 
+- (void)startControlPixelPullDownRefreshing;
+
 /**
  *  停止下拉刷新的方法
  */

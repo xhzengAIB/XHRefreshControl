@@ -61,11 +61,18 @@
 // Handle Network Error
 @property (nonatomic, assign) BOOL handleNetworkError;
 
+@property (nonatomic, assign) BOOL shouldNeedControlAutoPullDownPixel;
+
 @end
 
 @implementation XHRefreshControl
 
 #pragma mark - Pull Down Refreshing Method
+
+- (void)startControlPixelPullDownRefreshing {
+    self.shouldNeedControlAutoPullDownPixel = YES;
+    [self startPullDownRefreshing];
+}
 
 - (void)startPullDownRefreshing {
     if (self.isPullDownRefreshed) {
@@ -122,6 +129,7 @@
 }
 
 - (void)endPullDownRefreshing {
+    self.shouldNeedControlAutoPullDownPixel = NO;
     if (self.isPullDownRefreshed) {
         [self setupRefreshTime];
         
@@ -189,7 +197,6 @@
 }
 
 - (void)endMoreOverWithMessageTipsView:(UIView *)messageTipsView {
-    [self endLoadMoreRefresing];
     self.noMoreDataForLoaded = YES;
     self.handleNetworkError = NO;
     self.loadMoreView.hidden = NO;
@@ -392,6 +399,9 @@
 }
 
 - (CGFloat)getAdaptorHeight {
+    if (self.shouldNeedControlAutoPullDownPixel) {
+        return 0;
+    }
     return self.originalTopInset;
 }
 
@@ -709,9 +719,9 @@
 //            CGFloat scrollViewHeight = CGRectGetHeight(self.scrollView.frame);
 //            CGFloat thubs = scrollViewHeight - [self getAdaptorHeight];
 //            if (contentSize.height >= thubs) {
-                CGRect loadMoreViewFrame = self.loadMoreView.frame;
-                loadMoreViewFrame.origin.y = contentSize.height;
-                self.loadMoreView.frame = loadMoreViewFrame;
+            CGRect loadMoreViewFrame = self.loadMoreView.frame;
+            loadMoreViewFrame.origin.y = contentSize.height;
+            self.loadMoreView.frame = loadMoreViewFrame;
 //            }
         }
     }

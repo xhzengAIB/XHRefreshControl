@@ -30,6 +30,11 @@
     [self hideMessageView];
 }
 
+- (void)setupNoneDataStauts {
+    self.loadMoreButton.hidden = YES;
+    [self.activityIndicatorView stopAnimating];
+}
+
 - (void)hideMessageView {
     if (_messageView) {
         _messageView.hidden = YES;
@@ -65,6 +70,7 @@
         _messageView.hidden = NO;
         return;
     }
+    [self setupNoneDataStauts];
     messageView.backgroundColor = self.loadMoreButton.backgroundColor;
     self.messageView = messageView;
     [self addSubview:self.messageView];
