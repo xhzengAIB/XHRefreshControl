@@ -19,6 +19,7 @@
     self = [super init];
     if (self) {
         //self.pullDownRefreshed = NO;
+        self.indicatorColor = [UIColor greenColor];
     }
     return self;
 }

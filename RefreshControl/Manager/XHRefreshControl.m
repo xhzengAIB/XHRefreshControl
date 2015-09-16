@@ -371,6 +371,7 @@
 - (void)setIndicatorColor:(UIColor *)indicatorColor {
     _indicatorColor = indicatorColor;
     self.refreshActivityIndicatorContainerView.activityIndicatorView.tintColor = indicatorColor;
+    self.loadMoreView.activityIndicatorColor = indicatorColor;
 }
 
 #pragma mark - Getter Method

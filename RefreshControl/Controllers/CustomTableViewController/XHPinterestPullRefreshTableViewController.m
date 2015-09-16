@@ -23,6 +23,7 @@
 - (XHPinterestRefreshView *)refreshView {
     if (!_refreshView) {
         _refreshView = [[XHPinterestRefreshView alloc] initWithFrame:CGRectMake(0, -50, CGRectGetWidth(self.view.bounds), 50)];
+        _refreshView.activityIndicatorColor = self.indicatorColor;
     }
     return _refreshView;
 }

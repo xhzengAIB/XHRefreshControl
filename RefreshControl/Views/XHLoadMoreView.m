@@ -8,12 +8,14 @@
 
 #import "XHLoadMoreView.h"
 
+#import "XHActivityIndicatorView.h"
+
 @interface XHLoadMoreView ()
 
 /**
  *  系统默认菊花控件
  */
-@property (nonatomic, strong) UIActivityIndicatorView *activityIndicatorView;
+@property (nonatomic, strong) XHActivityIndicatorView *activityIndicatorView;
 
 /**
  *  外部定制的提示视图，只有在没有数据的情况下才会出现的
@@ -99,9 +101,16 @@
     return _loadMoreButton;
 }
 
-- (UIActivityIndicatorView *)activityIndicatorView {
+- (void)setActivityIndicatorColor:(UIColor *)activityIndicatorColor {
+    _activityIndicatorColor = activityIndicatorColor;
+    self.activityIndicatorView.color = activityIndicatorColor;
+}
+
+- (XHActivityIndicatorView *)activityIndicatorView {
     if (!_activityIndicatorView) {
-        _activityIndicatorView = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
+        _activityIndicatorView = [[XHActivityIndicatorView alloc] initWithFrame:CGRectMake(0, 0, 50, 50)];
+        _activityIndicatorView.color = [UIColor colorWithRed:228/255.0 green:27 / 255.0 blue:70/255.0 alpha:1.000];
+        _activityIndicatorView.indicatorRadius = 6;
         _activityIndicatorView.hidesWhenStopped = YES;
         _activityIndicatorView.center = CGPointMake(CGRectGetWidth(self.bounds) / 2.85, CGRectGetHeight(self.bounds) / 2.0);
     }

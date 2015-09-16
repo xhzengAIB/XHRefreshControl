@@ -17,6 +17,8 @@
  */
 @property (nonatomic, strong) UIButton *loadMoreButton;
 
+@property (nonatomic, strong) UIColor *activityIndicatorColor;
+
 /**
  *  当外部需要自定义加载更多的按钮时，需要通过该方法进行覆盖原本的按钮
  *

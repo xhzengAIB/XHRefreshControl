@@ -10,7 +10,14 @@
 
 @interface XHPinterestRefreshView : UIView
 
+@property (nonatomic, strong) UIColor *activityIndicatorColor;
+
 @property (nonatomic, assign) CGFloat pullDownOffset;
+
+- (instancetype)initWithFrame:(CGRect)frame
+                logoImageName:(NSString *)logoImageName
+          backCircleImageName:(NSString *)backCircleImageName
+             frontCircleImage:(NSString *)frontCircleImage;
 
 - (void)willStartRefreshing;
 - (void)didStartRefreshing;

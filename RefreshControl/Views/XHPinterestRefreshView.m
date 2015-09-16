@@ -16,13 +16,28 @@
 @property (nonatomic, strong) XHActivityIndicatorView *activityIndicatorView;
 @property (nonatomic, strong) XHCircularProgressView *circularProgressView;
 
+@property (nonatomic, copy) NSString *logoImageName;
+@property (nonatomic, copy) NSString *backCircleImageName;
+@property (nonatomic, copy) NSString *frontCircleImage;
+
 @end
 
 @implementation XHPinterestRefreshView
 
 - (instancetype)initWithFrame:(CGRect)frame {
+    return [self initWithFrame:frame logoImageName:@"bicon" backCircleImageName:@"light_circle" frontCircleImage:@"dark_circle"];
+}
+
+- (instancetype)initWithFrame:(CGRect)frame
+                logoImageName:(NSString *)logoImageName
+          backCircleImageName:(NSString *)backCircleImageName
+             frontCircleImage:(NSString *)frontCircleImage {
     self = [super initWithFrame:frame];
     if (self) {
+        self.logoImageName = logoImageName;
+        self.backCircleImageName = backCircleImageName;
+        self.frontCircleImage = frontCircleImage;
+        
         [self addSubview:self.activityIndicatorView];
         [self addSubview:self.circularProgressView];
     }
@@ -68,6 +83,11 @@
     self.circularProgressView.progress = progress;
 }
 
+- (void)setActivityIndicatorColor:(UIColor *)activityIndicatorColor {
+    _activityIndicatorColor = activityIndicatorColor;
+    self.activityIndicatorView.color = activityIndicatorColor;
+}
+
 - (XHActivityIndicatorView *)activityIndicatorView {
     if (!_activityIndicatorView) {
         _activityIndicatorView = [[XHActivityIndicatorView alloc] initWithFrame:CGRectMake(0, 0, 50, 50)];
@@ -80,9 +100,9 @@
 
 - (XHCircularProgressView *)circularProgressView {
     if (!_circularProgressView) {
-        UIImage *logoImage = [UIImage imageNamed:@"bicon.png"];
-        UIImage *backCircleImage = [UIImage imageNamed:@"light_circle.png"];
-        UIImage *frontCircleImage = [UIImage imageNamed:@"dark_circle.png"];
+        UIImage *logoImage = [UIImage imageNamed:self.logoImageName];
+        UIImage *backCircleImage = [UIImage imageNamed:self.backCircleImageName];
+        UIImage *frontCircleImage = [UIImage imageNamed:self.frontCircleImage];
         
         _circularProgressView = [[XHCircularProgressView alloc] initWithFrame:CGRectMake(0, 0, 25, 25)
                                                                          logo:logoImage
